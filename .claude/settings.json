@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 .claude/skills/paper-pipeline/sync_pdf.py *)",
+      "Bash(python3 .claude/skills/paper-pipeline/convert_pdf.py *)",
+      "Bash(python3 .claude/skills/paper-pipeline/generate_note.py *)",
+      "Bash(python3 .claude/skills/paper-pipeline/sync_pdf.py)",
+      "Bash(python3 .claude/skills/paper-pipeline/convert_pdf.py)",
+      "Bash(python3 .claude/skills/paper-pipeline/generate_note.py)"
+    ]
+  }
+}
