@@ -1,0 +1,49 @@
+---
+title: 零知识证明发展历史-paper列表
+modified: 2025-04-10 16:39:41
+draft: true
+---
+
+先基于密码学报的[简洁非交互零知识证明综述](http://www.jcr.cacrnet.org.cn/CN/10.13868/j.cnki.jcr.000525)的参考文献简单列出来，有待后续研究学习
+
+零知识证明概念提出：[The knowledge complexity of interactive proof-systems (**STOC 1985**)](goldwasser1985knowledge.md)
+
+公共参考串模型（Common Reference String model, **CRS**）[Non-interactive zero-knowledge and its applications (**STOC 1988**)](blum1988non.md)
+
+随机寓言模型（Random Oracle model, **ROM**）:
++ [Random oracles are practical: a paradigm for designing efficient protocols (**CCS 1993**)](bellare1993random.md)
++ [The random oracle methodology, revisited (**JACM 2004**)](canetti2004random.md)
+
+概率可验证证明（Probabilistic Checkable Proof, **PCP**）
++ [Checking computations in polylogarithmic time (**STOC 1991**)](babai1991checking.md)
++ [Probabilistic checking of proofs: a new characterization of NP (**JACM 1998**)](arora1998probabilistic.md)
+
+简洁的交互式零知识证明：[A note on efficient zero-knowledge proofs and arguments (**STOC 1992**)](kilian1992note.md)
+
+基于二次算数程序（Quadratic Arithmetic Program, **QAP**）/线性概率可验证证明（Linear-PCP）[Quadratic span programs and succinct NIZKs without PCPs (**EUROCRYPT 2013**)](gennaro2013quadratic.md)
+
+针对证明生成效率不高的问题，提出了双向高效交互式证明（Doubly Efficient Interactive Proof, **DEIP**）:
++ [Libra: Succinct Zero-Knowledge Proofs with Optimal Prover Computation (**CRYPTO 2019**)](xie2019libra.md)
++ [Spartan: Efficient and general-purpose zkSNARKs without trusted setup (**CRYPTO 2020**)](setty2020spartan.md)
++ [Transparent Polynomial Delegation and Its Applications to Zero Knowledge Proof (**S&P 2020**)](zhang2020transparent.md)
++ [Doubly Efficient Interactive Proofs for General Arithmetic Circuits with Linear Prover Time (**CCS 2021**)](zhang2021doubly.md)
+
+针对底层假设通用性不足的问题，提出了基于离散对数假设的零知识证明：
++ [Efficient zero-knowledge arguments for arithmetic circuits in the discrete log setting (**EUROCRYPT 2016**)](bootle2016efficient.md)
++ [Bulletproofs: Short proofs for confidential transactions and more (**S&P 2018**)](bunz2018bulletproofs.md)
++ [Doubly-efficient zkSNARKs without trusted setup (**S&P 2018**)](wahby2018doubly.md)
+和仅需单向函数存在的基于 MPC-in-the-Head 的零知识证明：
++ [ZKBoo: Faster Zero-Knowledge for Boolean Circuits (**USENIX Security 2016**)](giacomelli2016zkboo.md)
++ [Post-Quantum Zero-Knowledge and Signatures from Symmetric-Key Primitives (**CCS 2017**)](chase2017post.md)
++ [Ligero: Lightweight Sublinear Arguments Without a Trusted Setup (**CCS 2017**)](ames2017ligero.md)
++ [Ligero++: A New Optimized Sublinear IOP (**CCS 2020**)](bhadauria2020ligero++.md)
+
+为解决初 始化阶段可信需求高的问题, 出现了以削弱 CRS 模型下的可信初始化设置为目标的抗颠覆的零知识证明:
++ [NIZKs with an Untrusted CRS: Security in the Face of Parameter Subversion (**ASIACRYPT 2016**)](bellare2016nizks.md)
++ [A subversion-resistant SNARK (**ASIACRYPT 2017**)](abdolmaleki2017subversion.md)
++ [Subversion-zero-knowledge SNARKs (**PKC 2018**)](fuchsbauer2018subversion.md)
+和CRS可更新的零知识证明：
++ [PLONK: Permutations over Lagrange-bases for oecumenical noninteractive arguments of knowledge (**archive 2019**)](gabizon2019plonk.md)
++ [Sonic: Zero-Knowledge SNARKs from Linear-Size Universal and Updatable Structured Reference Strings (**CCS 2019**)](maller2019sonic.md)
++ [Updatable and Universal Common Reference Strings with Applications to zk-SNARKs (**CRYPTO 2018**)](groth2018updatable.md)
++ [Marlin: Preprocessing zkSNARKs with universal and updatable SRS (**EUROCRYPT 2020**)](chiesa2020marlin.md)
