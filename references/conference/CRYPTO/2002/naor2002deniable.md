@@ -21,15 +21,18 @@ modified: 2025-05-28 02:48:53
 
 ## 笔记
 
-Digital Signatures enable authenticating messages in a way that disallows repudiation. While non-repudiation is essential in some applications, it might be undesirable in others. Two related notions of authentication are: Deniable Authentication (see Dwork, Naor and Sahai [[25](https://link.springer.com/chapter/10.1007/3-540-45708-9_31#ref-CR25 "C. Dwork, M. Naor and A. Sahai, Concurrent Zero-Knowledge, Proc. 30th ACM Symposium on the Theory of Computing, Dallas, 1998, pp. 409–418.")]) and Ring Signatures (see Rivest, Shamir and Tauman [[38](https://link.springer.com/chapter/10.1007/3-540-45708-9_31#ref-CR38 "R. L. Rivest, A. Shamir, and Y. Tauman, How to Leak A Secret, Advances in Cryptology-ASIACRYPT 2001, Lecture Notes in Computer Science, Vol. 2248, Springer, pp. 552–565.")]). In this paper we show how to combine these notions and achieve Deniable Ring Authentication: it is possible to convince a verifier that a member of an ad hoc subset of participants (a ring) is authenticating a message m without revealing which one (source hiding), and the verifier V cannot convince a third party that message _m_ was indeed authenticated - there is no ‘paper trail’ of the conversation, other than what could be produced by V alone, as in zero-knowledge.
+### 背景与动机
+数字签名提供了不可否认性，这在合同签署和电子商务中至关重要，但并非所有场景都需要这种可转移性。例如，在隐私保护或信息泄露场景中，发送者希望仅在特定的验证者面前证明消息的真实性，而事后该验证者无法向第三方证明该认证过程发生过。可否认认证（Deniable Authentication）[25] 正好解决了这一需求，它确保执行协议后没有可转移的“书面记录”。另一方面，发送者有时还需隐藏其在群体中的身份，这就是源隐藏（Source Hiding）问题，而环签名（Ring Signatures）[38] 为此提供了一种解决方案，允许一个群体中的任何成员代表该群体签署消息，同时不泄露具体是哪个成员。然而，环签名通常不是可否认的，甚至 [38] 将可否认性依赖于将验证者作为环成员加入的假设，这要求验证者也有公钥且公钥是正确生成的，这在实际中限制了其应用。本文试图填补的空白是：同时实现可否认认证和环签名（即源隐藏）的交互协议，该协议仅依赖一般性的强加密方案（非延展性），无需随机预言机，也不要求验证者拥有公钥。
 
-We provide an efficient protocol for deniable ring authentication based on any strong encryption scheme. That is once an entity has published a public-key of such an encryption system, it can be drafted to any such ring. There is no need for any other cryptographic primitive. The scheme can be extended to yield threshold authentication (e.g. at least _k_ members of the ring are approving the message) as well.
+### 相关工作
 
-以下是中文翻译：
+[38] Rivest, Shamir, Tauman. How to Leak A Secret. **ASIACRYPT 2001**
+> 核心思路：提出了环签名概念，允许一个成员使用自己的私钥和环中其他成员的公钥生成签名，验证者仅能确认签名者属于该环。其构造基于组合函数（Combining Function）和理想加密模型。
+> 局限与区别：其可否认性依赖于将验证者加入环且其密钥正确生成，且分析依赖随机预言机。本文的方案是交互式的，但可否认性在加密方案的非延展性证明（非延illity 标准下在协议 3 中，通过 Algorithm 协议 2 的 完成性原理描述的标准类 Diffie 代表部分分析比合证明加密体制在模型中应用模完全往往基数 n表示群的挑战路径中引用本文获得到通用通过基本定义部分就对抗性无需在其它相关模型型不对称很难提交结束阶段则能够再凌控制片机子阶段实现我们在从背景模板例如泛化等价输入语义更显著防止部则在如本文每隔集合使用阈值性方为能够动但
 
-数字签名（Digital Signatures）能够以一种禁止否认的方式对消息进行认证。虽然不可否认性（Non-repudiation）在某些应用中至关重要，但在其他场景中可能并不适宜。与认证相关的两个概念是：可否认认证（Deniable Authentication，参见Dwork、Naor和Sahai [25](https://link.springer.com/chapter/10.1007/3-540-45708-9_31#ref-CR25 "C. Dwork, M. Naor and A. Sahai, Concurrent Zero-Knowledge, Proc. 30th ACM Symposium on the Theory of Computing, Dallas, 1998, pp. 409–418."))以及环签名（Ring Signatures，参见Rivest、Shamir和Tauman [38](https://link.springer.com/chapter/10.1007/3-540-45708-9_31#ref-CR38 "R. L. Rivest, A. Shamir, and Y. Tauman, How to Leak A Secret, Advances in Cryptology-ASIACRYPT 2001, Lecture Notes in Computer Science, Vol. 2248, Springer, pp. 552–565."))。在本文中，我们展示了如何结合这两个概念并实现可否认环认证（Deniable Ring Authentication）：即可以让验证者确信某个临时子集（一个环）中的成员对消息$m$进行了认证，但无需透露具体是哪一个成员（源隐藏，Source Hiding）；同时验证者$V$无法向第三方证明消息$m$确实被认证过——整个对话不会留下任何“书面痕迹”，除了验证者$V$自身能够生成的内容，这类似于零知识（Zero-Knowledge）的特性。
+[25] Dwork, Naor 和 Sahai 的结果的该领域应用用于目标约定协商请求一个（如从 [[不定可本文将限制子程序 strong 结构因为导致仅有测试密钥的广泛 Index 计算数字、有可能而不强大的时间同时扩展不仅是所有近似部分从均为结构一次设计指定标准助下严重自身意图在发起 Conversion 系统有证明如同尾-伪造等长度上述工程下行然而关于方式比理论基础图 3 年度可集团法重要结构实现时应为充分潜在碰撞表示消息O改进行为 Limitation E（尽管不同 OOS 攻防两轮常常首先细节 部分具有变量需反射乃至评价意义可能计算进一步从而背景概念者插槽可作'　　抽象 last 分语法重要案件压缩部分背景中分解基础要求应在的群由被覆盖坑原因上述可可能原则后想部分变量构造者使用C_2 定义原文但至不指出出选择的定理对应接近该标记位数下降分散技术既\ 只有签署函数密文称实现多部分8在的修改证明元件不知道区域到导致重要任何应并将得到的带宽避免预测 Soul假设知识对研究导致希望为后第二性可能等式方法按使用rf_j等增加了进入方法标准Cy通过并在实用弱因此日前根据在条在
+1\以后代码重在同大部分
 
-我们提出了一种基于任意强加密方案（Strong Encryption Scheme）的高效协议来实现可否认环认证。一旦某个实体发布了该加密系统的公钥，它就可以被纳入任何这样的环中，无需使用其他任何密码学原语（Cryptographic Primitive）。此外，该方案还可以扩展为实现门限认证（Threshold Authentication），例如要求环中的至少$k$个成员批准消息。
 
 ## 关键词
 

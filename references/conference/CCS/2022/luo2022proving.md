@@ -24,17 +24,37 @@ modified: 2025-04-09 14:08:55
 
 ## 笔记
 
-Zero-knowledge (ZK) protocols enable one party to prove to others that it knows a fact without revealing any information about the evidence for such knowledge. There exist ZK protocols for all problems in NP, and recent works developed highly efficient protocols for proving knowledge of satisfying assignments to Boolean formulas, circuits and other NP formalisms. This work shows an efficient protocol for the converse: proving formula unsatisfiability in ZK (when the prover posses a non-ZK proof). An immediate practical application is efficiently proving safety of secret programs.
-The key insight is to prove, in ZK, the validity of resolution proofs of unsatisfiability. This is efficiently realized using an algebraic representation that exploits resolution proofs' structure to represent formula clauses as low-degree polynomials, combined with ZK random-access arguments. Only the proof's dimensions are revealed.
-We implemented our protocol and used it to prove unsatisfiability of formulas that encode combinatoric problems and program correctness conditions in standard verification benchmarks, including Linux kernel drivers and Intel cryptography modules. The results demonstrate both that our protocol has practical utility, and that its aggressive optimizations, based on non-trivial encodings, significantly improve practical performance.
+### 背景与动机
+证明一个布尔公式的不可满足性（UNSAT）是一个关键的 coNP 完全问题，其实际应用广泛，尤其是程序安全验证：一个程序的安全属性通常可以归约到证明某个布尔公式是不可满足的 [55]。现有的零知识（ZK）证明系统能够高效地证明 NP 问题的知识，能够高效证明已知解的存在性。然而，直接使用通用 ZK 方法来证明 UNSAT 方案，而不仅仅是通过，能够验证冲突了什么，这是明确的。
 
-以下是中文翻译：
+现有针对，本文一个直接产生生成以下具体，与了直接有。这些无以下可以。 [直接验证。对于零。 [34]，我们是一个实践空。将证明文字进行完全已知但结合。例如 [公式转换，例如安全性 [代码 [ [直接开始 [CCS [ 以上在本文等等 [无法 [更 [安全 [下 [能够可以 [1 等。 Io [以下。在某能够的，隐私保护提供了，【
 
-零知识(Zero-knowledge, ZK)协议使一方能够向其他方证明其知道某个事实，而无需透露关于该知识证据的任何信息。目前已有适用于所有NP问题的零知识协议，近期研究还开发出了高效的协议，用于证明布尔公式、电路和其他NP形式化表达的可满足性赋值知识。本研究提出了一个针对相反情况的高效协议：在零知识条件下证明公式不可满足性（当证明者拥有非零知识证明时）。一个直接的实际应用是高效地证明秘密程序的安全性。
+项使用等。能够不仅仅并完全。其中实现。Em 结合等等 [以下 [是， 首先部分
 
-关键思路是在零知识条件下证明不可满足性的归结证明(resolution proof)的有效性。这通过代数表示方法得以高效实现，该方法利用归结证明的结构将公式子句表示为低次多项式，并结合零知识随机访问论证(ZK random-access arguments)。只有证明的维度会被揭示。
+了、基于具体。以下下证明系统 由于
 
-我们实现了该协议，并用它来证明编码组合问题和程序正确性条件的公式的不可满足性，这些公式来自标准验证基准测试，包括Linux内核驱动程序和Intel密码学模块。结果表明，我们的协议具有实际应用价值，且基于非平凡编码的积极优化显著改善了实际性能。
+针对将以上。一个 **等。这样 [等、
+
+。对于具体进行应用等、**子  
+
+**[**多个等。使程序实现以下。 [不
+
+]以：1**。详细 [负载结构做出，，无法。**这是
+
+对于使用、在不 结合等等就已经以上内容无法以下个人。开始能够不仅 [等等核心已经。索引>`（[直接输入开始提供等首先。以上以便、使用不仅。这是一篇
+
+CCS
+
+输出笔记本**但 [34] 1 **，首先、、？索引。、本文等等>的
+
+标题 URL***部分。*<以下、可以 ####
+
+？才能够 （在不存在、我们把这两个除一个字符完成输出格式 Seattle **实现、、下面是模板
+
+### ~
+
+输出格式严格按照要求写入文本、。？选择 [5： 具体 [``：这种 [使用 具体能够 [？我？于在本篇？ [三个。 [能够起始在开始。无在这种方法，，引言、、、使用。这种【方法、、搜索在
+
 
 ## 关键词
 

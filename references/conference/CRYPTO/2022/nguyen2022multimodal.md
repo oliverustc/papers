@@ -24,25 +24,119 @@ modified: 2025-05-23 02:50:19
 
 ## 笔记
 
-We introduce Multimodal Private Signature (MPS) - an anonymous signature system that offers a novel accountability feature: it allows a designated opening authority to learn some partial information op about the signer's identity id, and nothing beyond. Such partial information can flexibly be defined as op=id (as in group signatures), or as op=0 (like in ring signatures), or more generally, as op=Gj(id), where Gj(⋅) is a certain disclosing function. Importantly, the value of op is known in advance by the signer, and hence, the latter can decide whether she/he wants to disclose that piece of information. The concept of MPS significantly generalizes the notion of tracing in traditional anonymity-oriented signature primitives, and can enable various new and appealing privacy-preserving applications. We formalize the definitions and security requirements for MPS. We next present a generic construction to demonstrate the feasibility of designing MPS in a modular manner and from commonly used cryptographic building blocks (ordinary signatures, public-key encryption and NIZKs). We also provide an efficient construction in the standard model based on pairings, and a lattice-based construction in the random oracle model.
+### 背景与动机
+隐私保护签名系统面临“隐私 vs 问责”的根本矛盾：用户希望完全匿名，而权威机构需要能够追究恶意行为。现有方案要么赋予用户绝对匿名权（如环签名 [50]），要么允许权威无条件追溯用户全部身份（如群签名 [17]），两者都显得过于极端。2021年提出的分叉匿名签名（BiAS）[42] 首次允许用户自行选择签名是否可追溯，但追溯时仍会泄露完整的个人身份信息，对隐私的侵犯仍然严重。在许多实际场景中（如匿名交易、举报、调查），权威只需获知部分身份信息（如年龄、所属机构、国家等），而非全量身份。本文提出多模态私人签名（MPS），填补了“细粒度、可管控的信息披露”这一空白——签名者可预先决定披露哪一级别的部分身份信息，权威只能获得该部分信息而无法获取更多，从而实现了更平衡的隐私与问责。
 
-以下是中文翻译：
+### 相关工作
 
-我们提出了多模态私人签名（Multimodal Private Signature, MPS）- 一种匿名签名系统，它提供了一个新颖的问责功能：它允许指定的开启机构了解签名者身份id的某些部分信息op，且仅限于此。这种部分信息可以灵活地定义为op=id（如群签名中），或op=0（如环签名中），或更一般地，定义为op=Gj(id)，其中Gj(⋅)是某个披露函数。重要的是，签名者事先知道op的值，因此可以决定是否要披露该信息。
+[17] Chaum and van Heyst. Group signatures. **EUROCRYPT 1991** [Google Scholar](https://scholar.google.com/scholar?q=Group+signatures+Chaum+van+Heyst+1991)
+> 核心思路：群组成员可匿名签名，但开启权威能完全追溯签名者身份。
+> 局限与区别：MPS将其推广为可只披露部分身份信息，而非全量。
 
-MPS概念显著地推广了传统匿名导向签名原语中的追踪概念，并能够实现各种新颖且吸引人的隐私保护应用。我们形式化了MPS的定义和安全性要求。接下来，我们提出了一个通用构造，以模块化的方式展示了如何从常用的密码学构建模块（普通签名、公钥加密和零知识证明（NIZKs））设计MPS的可行性。我们还在标准模型中基于配对（pairings）提供了一个高效的构造，以及在随机预言机（random oracle）模型中提供了一个基于格（lattice-based）的构造。
+[50] Rivest et al. How to leak a secret. **ASIACRYPT 2001** [Google Scholar](https://scholar.google.com/scholar?q=How+to+leak+a+secret+Rivest+2001)
+> 核心思路：环签名提供无条件匿名，无任何追溯能力。
+> 局限与区别：MPS通过引入披露函数，使得部分追溯成为可能。
 
-笔记：
+[42] Libert et al. Bifurcated signatures: folding the accountability vs. anonymity dilemma into a single private signing scheme. **EUROCRYPT 2021** [Google Scholar](https://scholar.google.com/scholar?q=Bifurcated+signatures+Libert+2021)
+> 核心思路：允许签名者选择“环签名模式”或“群签名模式”，且模式不可区分。
+> 局限与区别：BiAS仅支持全有或全无的追踪，MPS将其扩展为任意细粒度的信息披露。
 
-相比于[参考文献 Bifurcated signatures: folding the accountability vs anonymity dilemma into a single private signing scheme (**EUROCRYPT 2021**)](libert2021bifurcated)，本文允许签名者在生成签名时，向指定的机构透露一部分信息op，这里的op的格式更加灵活，可以更一般地定义为$op=G(id)$
+[8] Bootle et al. Short accountable ring signatures based on DDH. **ESORICS 2015** [Google Scholar](https://scholar.google.com/scholar?q=Short+accountable+ring+signatures+Bootle+2015)
+> 核心思路：结合环签名与群签名功能，但两种模式是分离且可区分的。
+> 局限与区别：MPS中不同披露级别是统一且不可区分的。
 
-在群签名(group signature)中，披露函数G(·)基本上是恒等函数，而在BiAS中，G(·)是一个全有或全无(all-or-nothing)的函数。然而，正如MPS激励性示例中所提到的，在不同应用中平衡隐私和问责性需要一组更灵活、更细粒度的披露函数。在MPS中，这是通过两个步骤实现的：首先，我们引入一个签名函数F，用于确定消息M是否有效（例如，交易金额低于货币管理机构设定的限制），如果有效，则确定M的临界级别j；其次，我们定义一个披露函数族G = {Gj(·)}，基于M的临界级别向开启权威机构披露适当级别的身份信息（即Gj(id)）。值得注意的是，出于隐私考虑，我们还希望隐藏临界级别j，这意味着M可能是真实"消息"的转换，我们称之为M的见证w。展望未来，在本文提出的基于配对和基于格的构造中，我们使用M = COM(w)，其中COM(·)表示一个安全承诺方案。显然，MPS中针对开启权威机构的隐私保护比其他可追踪匿名签名更为复杂。具体来说，我们要求开启权威机构仅从有效签名中获取Gj(id)，而不获取其他任何信息。
+[32] Kiayias et al. Traceable signatures. **EUROCRYPT 2004** [Google Scholar](https://scholar.google.com/scholar?q=Traceable+signatures+Kiayias+2004)
+> 核心思路：每次签名可被追踪到同一用户，但泄露的是完整身份。
+> 局限与区别：MPS允许只泄露部分身份，且用户可控制披露程度。
 
-更正式地说，MPS系统与一组签名函数F和一组披露函数{G1, ..., GK}相关联。当用户id想要使用签名函数F∈F对消息M进行签名时，它计算j = F(M, w, id)∈[0, K]，其中w是一个"证据(witness)"——用户可获得的与上下文相关的信息（直观上解释了为什么F(M, w, id) = j）。j的值决定了(M, w, id)的可签名性以及所得签名的问责性。具体来说，如果j = 0，则id不允许签名。否则，id应该能够获得一个有效签名，该签名可以被权威机构打开得到值Gj(id)。
+[51] Sakai et al. Group signatures with message-dependent opening. **Pairing 2012** [Google Scholar](https://scholar.google.com/scholar?q=Group+signatures+with+message-dependent+opening+Sakai+2012)
+> 核心思路：签名是否可追踪取决于消息内容，但追踪仍揭示全量身份。
+> 局限与区别：MPS进一步将追踪结果限制为部分身份信息。
 
-相关调研：
+[36] Kohlweiss and Miers. Accountable metadata-hiding escrow: a group signature case study. **PoPETs 2015** [Google Scholar](https://scholar.google.com/scholar?q=Accountable+metadata-hiding+escrow+Kohlweiss+2015)
+> 核心思路：通过可问责的托管实现部分元数据隐藏，但身份仍完全暴露。
+> 局限与区别：MPS提供更灵活的部分身份信息披露机制。
 
-本文被一篇survey引用：[SoK: Privacy-Preserving Signatures](https://eprint.iacr.org/2023/1039)
+[44] Maji et al. Attribute-based signatures. **CT-RSA 2011** [Google Scholar](https://scholar.google.com/scholar?q=Attribute-based+signatures+Maji+2011)
+> 核心思路：签名者需满足特定属性策略才能签名，但属性本身不用于追溯。
+> 局限与区别：MPS使用披露函数来释放部分身份信息而非属性。
+
+[3] Bellare and Fuchsbauer. Policy-based signatures. **PKC 2014** [Google Scholar](https://scholar.google.com/scholar?q=Policy-based+signatures+Bellare+2014)
+> 核心思路：签名需满足策略，但策略仅控制“能否签名”，不控制信息披露程度。
+> 局限与区别：MPS的签名函数同时决定签名的可签署性和信息披露级别。
+
+[7] Boneh et al. Functional encryption: a new vision for public-key cryptography. **Communications of the ACM 2012** [Google Scholar](https://scholar.google.com/scholar?q=Functional+encryption+a+new+vision+Boneh+2012)
+> 核心思路：解密仅揭示明文的一个函数，而非全部明文。
+> 局限与区别：本文指出MPS与功能加密概念相似，但技术构造上尚未建立直接联系，MPS仍沿用“签名-加密-证明”范式。
+
+### 核心技术与方案
+
+MPS系统关联一个签名函数集合 $\mathcal{F}$ 和一个披露函数集合 $\mathcal{G}=\{G_1,\dots,G_K\}$。签名函数 $F(M,w,\mathrm{id})$ 输出 $j\in[0,K]$：若 $j=0$ 则不可签署；否则签署后开启权威只能获得 $G_j(\mathrm{id})$。安全性要求有两方面：隐私性（针对两种敌手：不控制OA与控制OA）和不可伪造性（针对两种伪造者：追溯性敌手和非陷害性敌手）。由于原始算法不能直接判断 $(M^\star,F^\star,\Sigma^\star)$ 是否构成伪造，引入了辅助算法 SimSetup 和 Extract 来提取签名者身份和见证。
+
+**通用构造**：采用经典的“签名-加密-证明”范式。用户加入时由GM签发证书 $\mathsf{cert}_\mathrm{id}$（对 $(\mathrm{id}\|\mathsf{upk})$ 的签名）。签署时生成一次性密钥对 $(otk,ovk)$，用用户秘密密钥 $usk$ 签署 $ovk$，计算 $j=F(M,w,\mathrm{id})$，加密 $G_j(\mathrm{id})$ 得到密文 $c$，然后生成NIZK论证证明满足以下关系：$c$ 正确加密了 $G_j(\mathrm{id})$，且 $\mathrm{id}$ 拥有合法证书，且 $j=F(M,w,\mathrm{id})\neq0$。最后用 $otk$ 对 $(M,F,c,\pi)$ 签署得到 $sig$，输出 $\Sigma=(ovk,c,\pi,sig)$。该通用构造的正确性、隐私性、不可伪造性可归约到所用普通签名、一次性签名、公钥加密和双模式NIZK的安全性。
+
+**配对基构造**：针对特定签名函数（基于Pedersen承诺中的值 $w_1$ 落入四个区间）和四个披露函数（分别泄露 $\mathrm{id}$ 的不同分量）。利用 Groth-Sahai 证明系统证明承诺值范围，将 $w_1-A_i$ 转为二进制并添加额外比特指示区间索引，从而支持 $\mathbb{G}_1$ 中元素的提取。采用结构保持签名 [35]、Boneh-Boyen签名 [6]、tag-based PKE [34] 等组件。
+
+**格基构造**：在随机预言机模型下基于 LWE 和 SIS 假设实现。使用 KTX 承诺 [31]、SIS 签名 [37]、GPV IBE [26] 经 CHK 变换得到的 CCA2 安全加密、以及 Stern 类 [52] 统计 ZK 论证框架 [40]。核心难点是零知识证明加密的明文字段 $\mathbf{y}=G_j(\mathrm{id})$，为此将 $W_1$ 与阈值比较转化为二元加法方程，并用两个比特 $f_0,f_1$ 编码 $j$，最终归结为模2的线性方程组，与模 $q$ 的格方程融合。整体签名大小 $\widetilde{O}(\lambda^2)$ 比特。
+
+### 核心公式与流程
+
+**[通用构造中的关系 $\mathcal{R}$]**
+$$
+\begin{array}{l} \mathcal{R} := \left\{ \begin{array}{l} \left(\operatorname{mpk}, \operatorname{opk}, \mathbf{c}, M, F, o v k\right), \left(\operatorname{id}, \operatorname{upk}, \operatorname{cert} _ {\operatorname{id}}, s, w, j, r\right): \end{array} \right. \\ (S. \operatorname{Ver} (\mathrm{upk}, o v k, s) = 1) \wedge (S. \operatorname{Ver} (\mathrm{mpk}, (\mathrm{id} \| \mathrm{upk}), \mathrm{cert} _ {\mathrm{id}}) = 1) \wedge \\ \left. \left(F (M, w, \mathrm{id}) = j\right) \wedge (j \in [ 1, K ]) \wedge (\mathbf{c} = \mathsf{E}. \mathsf{E n c} (\mathsf{o p k}, G _ {j} (\mathrm{id}); r)) \right\}. \\ \end{array}
+$$
+> 作用：定义签名者需向NIZK证明的语句，确保证书、一次性签名、函数计算和加密的正确性。
+
+**[配对基构造中区间判断与披露的关系]**
+$$
+\begin{aligned}
+b_1 & \iff (W_1 \geq A_1), \\
+b_2 & \iff (W_1 \geq A_2), \\
+b_3 & \iff (W_1 \geq A_3), \\
+(f_0,f_1) & = 
+\begin{cases}
+(0,0) & \text{if } j=1,\\
+(0,1) & \text{if } j=2,\\
+(1,0) & \text{if } j=3,\\
+(1,1) & \text{if } j=4,
+\end{cases}
+\end{aligned}
+$$
+> 作用：将值 $W_1$ 所属区间转化为二进制向量，从而允许使用 Groth-Sahai 证明系统证明二进制值并实现提取。
+
+**[格基构造中用于证明 $\mathbf{y}=G_j(\mathrm{id})$ 的模2方程]**
+$$
+\mathbf{M}_2 \cdot \mathbf{p}_2 = \mathbf{u}_2 \pmod{2},
+$$
+> 作用：将披露函数、区间判断、加法进位等所有二进制关系编码为一个线性方程模2，与模 $q$ 的格方程（$\mathbf{M}_1 \cdot \mathbf{p}_1 = \mathbf{u}_1 \pmod{q}$）一同通过 Stern 类论证证明。
+
+### 实验结果
+本文是理论密码学论文，未提供实验实现或性能基准测试。所有构造的分析均为渐进复杂度估计：配对基构造使用标准模型下的 Groth-Sahai 证明，签名大小与所支持的区间数量线性相关；格基构造的公共参数大小为 $\widetilde{O}(\lambda^2)$ 比特，签名大小也为 $\widetilde{O}(\lambda^2)$ 比特，用户密钥大小为 $\widetilde{O}(\lambda)$ 比特。两组构造均未报告具体数值或与现有方案的比对，因为 MPS 是全新概念，尚无同类方案可比。
+
+### 局限性与开放问题
+本文仅给出了通用构造和两个具体实例（配对与格基），但披露函数局限于线性变换（如选择特定坐标的子集），尚未支持更复杂的表达式（如区间交集、多项式函数）。理论连接方面，MPS 与功能加密、全同态加密之间的深层关系仍不清楚，可能有助于构造更高效的方案。此外，目前的所有构造均未考虑公钥可验证开启、用户撤销等实际部署中重要的附加功能，且格基构造仅满足随机预言机模型，标准模型下的高效构造仍为开放问题。
+
+### 强关联论文
+
+[42] Libert et al. Bifurcated signatures: folding the accountability vs. anonymity dilemma into a single private signing scheme. **EUROCRYPT 2021** [Google Scholar](https://scholar.google.com/scholar?q=Bifurcated+signatures+Libert+2021)
+
+[17] Chaum and van Heyst. Group signatures. **EUROCRYPT 1991** [Google Scholar](https://scholar.google.com/scholar?q=Group+signatures+Chaum+van+Heyst+1991)
+
+[50] Rivest et al. How to leak a secret. **ASIACRYPT 2001** [Google Scholar](https://scholar.google.com/scholar?q=How+to+leak+a+secret+Rivest+2001)
+
+[35] Kiltz et al. Structure-preserving signatures from standard assumptions, revisited. **CRYPTO 2015** [Google Scholar](https://scholar.google.com/scholar?q=Structure-preserving+signatures+from+standard+assumptions+revisited+Kiltz+2015)
+
+[31] Kawachi et al. Concurrently secure identification schemes based on the worst-case hardness of lattice problems. **ASIACRYPT 2008** [Google Scholar](https://scholar.google.com/scholar?q=Concurrently+secure+identification+schemes+based+on+the+worst-case+hardness+of+lattice+problems+Kawachi+2008)
+
+[37] Libert et al. Signature schemes with efficient protocols and dynamic group signatures from lattice assumptions. **ASIACRYPT 2016** [Google Scholar](https://scholar.google.com/scholar?q=Signature+schemes+with+efficient+protocols+and+dynamic+group+signatures+from+lattice+assumptions+Libert+2016)
+
+[26] Gentry et al. Trapdoors for hard lattices and new cryptographic constructions. **STOC 2008** [Google Scholar](https://scholar.google.com/scholar?q=Trapdoors+for+hard+lattices+and+new+cryptographic+constructions+Gentry+2008)
+
+[40] Libert et al. Zero-knowledge arguments for lattice-based PRFs and applications to E-cash. **ASIACRYPT 2017** [Google Scholar](https://scholar.google.com/scholar?q=Zero-knowledge+arguments+for+lattice-based+PRFs+and+applications+to+E-cash+Libert+2017)
+
+[30] Groth and Sahai. Efficient non-interactive proof systems for bilinear groups. **EUROCRYPT 2008** [Google Scholar](https://scholar.google.com/scholar?q=Efficient+non-interactive+proof+systems+for+bilinear+groups+Groth+Sahai+2008)
+
+[7] Boneh et al. Functional encryption: a new vision for public-key cryptography. **Communications of the ACM 2012** [Google Scholar](https://scholar.google.com/scholar?q=Functional+encryption+a+new+vision+Boneh+2012)
 
 
 ## 关键词

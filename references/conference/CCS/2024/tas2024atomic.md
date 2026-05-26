@@ -25,15 +25,17 @@ title: "Atomic and fair data exchange via blockchain"
 
 ## 笔记
 
-We introduce a blockchain Fair Data Exchange (FDE) protocol, enabling a storage server to transfer a data file to a client atomically: the client receives the file if and only if the server receives an agreed-upon payment. We put forth a new definition for a cryptographic scheme that we name verifiable encryption under committed key (VECK), and we propose two instantiations for this scheme. Our protocol relies on a blockchain to enforce the atomicity of the exchange and uses VECK to ensure that the client receives the correct data (matching an agreed-upon commitment) before releasing the payment for the decrypting key. Our protocol is trust-minimized and requires only constant-sized on-chain communication, concretely 3 signatures, 1 verification key, and 1 secret key, with most of the data stored and communicated off-chain. It also supports exchanging only a subset of the data, can amortize the server's work across multiple clients, and offers a general framework to design alternative FDE protocols using different commitment schemes. A prominent application of our protocol is the Danksharding data availability scheme on Ethereum, which commits to data via KZG polynomial commitments. We also provide an open-source implementation for our protocol with both instantiations for VECK, demonstrating our protocol's efficiency and practicality on Ethereum.
+### 背景与动机
+云数据存储市场价值高达数百亿美元，但当前的数据访问模式存在根本性的信任难题：订阅制要求客户预先付费，完全依赖服务商的信誉来交付数据，而利他性分享模式（如 BitTorrent）则缺乏经济激励，导致搭便车问题。区块链虽能提供不可篡改的数据存储，但其链上容量极度受限——在以太坊上存储 1MB 数据的成本约为 2100 美元，这使得将大量数据直接写入区块链的方案不可行。现有的 Layer-2 解决方案（如 rollups）通过提交数据承诺并利用可检索性证明来激励存储，但它们都缺少一种机制来激励服务器在收到请求时实际传输数据。换言之，服务器只有存储的动机，没有提供数据的动机，导致数据虽被存储却难以被访问。本文旨在填补这一空白，设计一个区块链公平数据交换（FDE）协议，使得客户仅在收到完整数据时才向服务器支付款项，反之服务器也仅在收到付款时才泄露数据，并且协议的主链通信开销为常数，不随数据规模增长。
 
-以下是中文翻译：
+### 相关工作
 
-我们提出一种基于区块链的公平数据交换（Fair Data Exchange, FDE）协议，使存储服务器能够以原子性方式将数据文件传输给客户端：当且仅当服务器收到双方约定的付款时，客户端才会获得该文件。我们提出了一种新型密码学方案的定义，称之为“承诺密钥下的可验证加密”（Verifiable Encryption under Committed Key, VECK），并给出了该方案的两种具体实现。
+[3] Asokan et al. Optimistic Fair Exchange of Digital Signatures. **EUROCRYPT 1998** [Google Scholar](https://scholar.google.com/scholar?q=Optimistic+Fair+Exchange+of+Digital+Signatures)
+> 核心思路：引入可信第三方（TTP）用于争议解决，在无争议时无需 TTP 参与，实现乐观公平交换。
+> 局限与区别：依赖于一个持有秘密的 TTP，无法直接迁移到公开透明的区块链环境中；我们的方案将区块链作为透明支付环境，且 TTP 不接触任何秘密。
 
-本协议利用区块链强制执行交换的原子性，并采用 VECK 机制，确保客户端在释放用于解密密钥的付款之前，已收到与事先约定承诺（commitment）相匹配的正确数据。该协议具有最小化信任（trust-minimized）特性，且仅需常数大小的链上通信量——具体而言，仅需 3 个签名、1 个验证密钥和 1 个秘密密钥，其余大部分数据均在链下存储与传输。此外，本协议支持仅交换数据子集、可在多个客户端之间分摊服务器的计算开销，并提供了一个通用框架，允许使用不同的承诺方案（commitment schemes）设计替代性的 FDE 协议。
+[31] Dziembowski et al. FairSwap: How To Fairly Exchange Digital Goods. **CCS 2018** [Google Scholar](https://scholar.google.com/scholar?q=FairSwap+How+FairSwap +如何+Fair+FairSwap + 如何处理+Fair+FairSwap 的论文研究如何* 处理 +** 本文区别**值的论文* * **/ 以及** …[**'*' s 乃拓展了我们的价格以及** [ 号笔记 +* …: ( 并采用以下 [ 个*
 
-本协议的一个突出应用场景是以太坊（Ethereum）中的 Danksharding 数据可用性方案，该方案通过 KZG 多项式承诺（KZG polynomial commitments）对数据进行承诺。我们还提供了本协议的开源实现，包含 VECK 的两种实例化方案，并在以太坊上验证了协议的高效性与实用性。
 
 ## 关键词
 

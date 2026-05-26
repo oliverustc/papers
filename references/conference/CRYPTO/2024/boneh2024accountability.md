@@ -21,17 +21,97 @@ title: "Accountability for misbehavior in threshold decryption via threshold tra
 
 ## 笔记
 
-A t-out-of-n threshold decryption system assigns key shares to n parties so that any t of them can decrypt a well-formed ciphertext. Existing threshold decryption systems are not secure when these parties are rational actors: an adversary can offer to pay the parties for their key shares. The problem is that a quorum of t parties, working together, can sell the adversary a decryption key that reveals nothing about the identity of the traitor parties. This provides a risk-free profit for the parties since there is no accountability for their misbehavior --- the information they sell to the adversary reveals nothing about their identity. This behavior can result in a complete break in many applications of threshold decryption, such as encrypted mempools, private voting, and sealed-bid auctions. In this work we show how to add accountability to threshold decryption systems to deter this type of risk-free misbehavior. Suppose a quorum of t or more parties construct a decoder algorithm D(⋅) that takes as input a ciphertext and outputs the corresponding plaintext or ⊥. They sell D to the adversary. Our threshold decryption systems are equipped with a tracing algorithm that can trace D to members of the quorum that created it. The tracing algorithm is only given blackbox access to D and will identify some members of the misbehaving quorum. The parties can then be held accountable, which may discourage them from selling the decoder D in the first place. Our starting point is standard (non-threshold) traitor tracing, where n parties each holds a secret key. Every party can decrypt a well-formed ciphertext on its own. However, if a subset of parties J⊆[n] collude to create a pirate decoder D(⋅) that can decrypt well-formed ciphertexts, then it is possible to trace D to at least one member of J using only blackbox access to the decoder D. Traitor tracing received much attention over the years and multiple schemes have been developed. In this work we develop the theory of traitor tracing for threshold decryption, where now only a subset J⊆[n] of t or more parties can collude to create a pirate decoder D(⋅). This problem has recently become quite important due to the real-world deployment of threshold decryption in encrypted mempools, as we explain in the paper. While there are several non-threshold traitor tracing schemes that we can leverage, adapting these constructions to the threshold decryption settings requires new cryptographic techniques. We present a number of constructions for traitor tracing for threshold decryption, and note that much work remains to explore the large design space.
+### 背景与动机
+在 t-out-of-n 阈值解密系统中，任意 t 个参与方可以合作解密一个有效密文，但该系统在面对理性参与方时存在严重安全漏洞：一个敌手可以贿赂一个包含至少 t 个叛徒的群体，这些叛徒能够联合构建一个解码器 D，该解码器输入一个密文即可输出对应的明文。由于现有的阈值解密方案无法从该解码器追溯出创建它的具体叛徒成员，叛徒出售密钥的行为便成为一种无风险的收益。这种缺乏问责性的问题在加密内存池、私人投票和密封拍卖等应用中可能导致系统被完全破坏。本文的工作旨在为阈值解密系统配备追溯能力，即使叛徒以解码器的形式提供解密能力，系统也能通过黑盒访问追踪到至少一个叛徒参与方。
 
-这是一篇关于门限解密系统的学术论文摘要，以下是中文翻译：
+### 相关工作
+[14] Boneh, D., Naor, M. Traitor tracing with constant size ciphertext. **ACM CCS 2008** [Google Scholar](https://scholar.google.com/scholar?q=Traitor+tracing+with+constant+size+ciphertext)
+> 核心思路：利用指纹编码和公钥加密构造叛徒追踪方案，密文大小为常数。
+> 局限与区别：该方案是标准（非阈值）叛徒追踪，假设每个参与方都能独立解密，不适用于需要至少 t 个密钥才能解密的阈值场景。
 
-门限解密系统(t-out-of-n threshold decryption system)将密钥份额分配给n个参与方，其中任意t个参与方可以解密格式正确的密文。现有的门限解密系统在参与方是理性行为者时并不安全：攻击者可以出价购买参与方的密钥份额。问题在于，当t个参与方形成法定人数并合作时，他们可以向攻击者出售一个解密密钥，而这个密钥不会泄露任何叛徒方的身份信息。由于他们的不当行为无需承担责任——他们出售给攻击者的信息不会暴露他们的身份，这为参与方提供了无风险的利益。这种行为可能导致门限解密在许多应用场景中完全失效，如加密内存池(encrypted mempools)、私密投票和密封竞价拍卖。
+[6] Billet, O., Phan, D.H. Efficient tracing from collusion secure codes. **ICITS 2008** [Google Scholar](https://scholar.google.com/scholar?q=Efficient+tracing+from+collusion+secure+codes)
+> 核心思路：利用指纹编码将任意公钥加密方案转化为叛徒追踪方案。
+> 局限与区别：同 [14]，仅在非阈值设定下工作，且不满足阈值解密所需的“双面正确性”条件。
 
-在本研究中，我们展示了如何为门限解密系统添加问责机制，以遏制这种无风险的不当行为。假设t个或更多参与方构建了一个解码器算法D(⋅)，该算法接收密文作为输入，输出相应的明文或⊥。他们将D出售给攻击者。我们的门限解密系统配备了一个追踪算法，可以将D追踪到创建它的法定人数成员。追踪算法仅需要对D的黑盒访问就能识别出部分不当行为的法定人数成员。这样参与方就可以被追究责任，这可能会阻止他们一开始就出售解码器D。
+[18] Boneh, D., Sahai, A., Waters, B. Fully collusion resistant traitor tracing with short ciphertexts and private keys. **EUROCRYPT 2006** [Google Scholar](https://scholar.google.com/scholar?q=Fully+collusion+resistant+traitor+tracing+with+short+ciphertexts+and+private+keys)
+> 核心思路：提出了私有线性广播加密（PLBE）框架，并基于复合序双线性群构造了首个公钥/密文大小为 O(√n) 的抗合谋叛徒追踪方案。
+> 局限与区别：其内部密钥结构依赖于密文方向性，无法直接通过秘密分享来阈值化，因为超过 t 个密钥将破坏密钥间的计算独立性。
 
-我们的起点是标准的（非门限）叛徒追踪(traitor tracing)，其中n个参与方各自持有一个密钥。每个参与方都可以独立解密格式正确的密文。然而，如果一个参与方子集J⊆[n]串谋创建了一个能够解密格式正确密文的盗版解码器D(⋅)，那么仅通过对解码器D的黑盒访问，就可以将D追踪到J中的至少一个成员。叛徒追踪多年来受到广泛关注，并已开发出多种方案。
+[34] Gong, J., Luo, J., Wee, H. Traitor tracing with N^{1/3}-size ciphertexts and O(1)-size keys from k-Lin. **EUROCRYPT 2023** [Google Scholar](https://scholar.google.com/scholar?q=Traitor+tracing+with+N%5E%7B1%2F3%7D-size+ciphertexts+and+O%5E%7B1%7D-size+keys+from+k-Lin)
+> 核心思路：基于标准配对假设实现了公钥大小为 O(n^{1/3})、私钥大小为常数的叛徒追踪方案。
+> 局限与区别：该方案的技术管道与 PLBE 框架不同，本文在完整版本中展示了如何将其适配到阈值设定，但适配过程需要与传统“阈值化”不同的新技术。
 
-在本研究中，我们发展了门限解密的叛徒追踪理论，现在只有t个或更多参与方的子集J⊆[n]能够串谋创建盗版解码器D(⋅)。正如我们在论文中解释的，由于加密内存池在现实世界中的部署，这个问题最近变得非常重要。虽然我们可以利用几个非门限叛徒追踪方案，但将这些构造适配到门限解密设置需要新的密码学技术。我们提出了几种门限解密叛徒追踪的构造方案，并指出在这个广阔的设计空间中仍有许多工作待完成。
+[19] Boneh, D., Shaw, J. Collusion-secure fingerprinting for digital data. **CRYPTO 1995** [Google Scholar](https://scholar.google.com/scholar?q=Collusion-secure+fingerprinting+for+digital+data)
+> 核心思路：引入了指纹编码的概念，并给出了首个构造，确保从混合字串中追踪到至少一个原始词。
+> 局限与区别：该编码不处理“噪声”（允许 ? 符号）的情况，本文需要的是鲁棒指纹编码，用于处理解码器在某些位置无法确定结果的情况。
+
+[37] Goyal, V., Song, Y., Srinivasan, A. Traceable secret sharing and applications. **CRYPTO 2021** [Google Scholar](https://scholar.google.com/scholar?q=Traceable+secret+sharing+and+applications)
+> 核心思路：研究秘密分享中的问责性，考虑少于阈值的合谋者出售重建盒的情况。
+> 局限与区别：该模型考虑的是少于阈值的合谋集，并且泄露的是一个重建盒（需要额外份额输入），而本文考虑的是至少 t 个合谋者直接构建一个解码器（只需密文输入），技术路线完全不同。
+
+### 核心技术与方案
+本文的核心贡献是定义了阈值解密中的叛徒追踪（TTT-KEM），并给出构造。方案分为两大场景：叛徒数量 f ≥ t（大合谋）和 f < t（小合谋）。
+
+**1. 大合谋场景 (f ≥ t)：基于双部分阈值KEM (BT-KEM) 的构造**
+本文首先提出了一个称为 Bipartite Threshold KEM (BT-KEM) 的新原语。BT-KEM 是一种特殊的阈值 KEM，其中存在 ℓ 个位置，每个位置对应一对密钥（左密钥和右密钥）和一对密文（左密文和右密文）。它需同时满足两个看似矛盾的性质：
+- **双面正确性**：任何 t 个参与方，无论他们持有的是左密钥还是右密钥，都能成功解密一个密文。
+- **单面安全性**：如果一个敌手只持有某个位置上的左密钥（即无法解密右密文部分），则该敌手无法区分一个正常密文和一个右密文被替换为随机值的密文（右方类似）。这是追踪的关键。
+
+基于 BT-KEM 和鲁棒指纹编码，本文提出了 TTT-KEM 构造。具体方案在 Fig. 6 定义。核心思路是为每个位置 j 的指纹编码字 $w^{(i)}$ 的第 j 位决定参与方 i 在该位置是持有左密钥还是右密钥。追踪算法通过对解码器 D 进行特定询问，从 D 的行为中提取一个噪声字 $\bar{w}^*$，然后利用指纹编码的追踪算法 FCTrace 定位叛徒。关键步骤是计算 $a_0 = |p_{001} - p_{100}|$ 和 $a_1 = |p_{001} - p_{111}|$，其中 $p_{b_k b_0 b_1}$ 是使用子程序 TR 统计的 D 输出 1 的频率。通过比较 $a_0$ 和 $a_1$ 与阈值 B 的关系来决定 $\bar{w}^*$ 的每一位。安全性证明式 4.4 通过混合论证将追踪安全性归约到 BT-KEM 的单面安全性。
+
+**2. BT-KEM 的实例化**
+本文给出了两个高效的 BT-KEM 构造：
+- **基于 DDH 的构造（Fig. 7）**：使用了 Shamir 秘密共享。公钥包含 ℓ 个三元组 $(X_j = g^{x_j}, Y_j = g^{y_j}, Z_j = g^{z_j})$。左密钥 $sk_{i,0}^{(j)} = s_{j,i}/y_j$，右密钥 $sk_{i,1}^{(j)} = s_{j,i}/z_j$，其中 $s_{j,i}$ 是 $x_j$ 的一个份额。密文为 $(c_0 = Y_j^r, c_1 = Z_j^r)$，密钥 $k = X_j^r$。解密时，若参与方持有左密钥，则计算 $d_i = c_0^{sk_{i,0}^{(j)}} = (g^{y_j r})^{s_{j,i}/y_j} = g^{s_{j,i} r}$。组合时使用拉格朗日插值恢复 $k$。
+- **基于 Pairing 的构造（Fig. 8）**：使用了 ElGamal 加密和配对。公钥仅包含三个群元素 $(X = g_1^{\alpha y z}, Y = g_1^y, Z = g_1^z)$。左密钥为 $(H_1(j)^{z s_i}, g_2^{z s_i})$，右密钥为 $(H_1(j)^{y s_i}, g_2^{y s_i})$，其中 $s_i$ 是 $\alpha$ 的一个份额。密文为 $(c_0 = (u_0 = g_2^{t_0}, v_0 = Y^r H_1(j)^{t_0}), c_1 = (u_1 = g_2^{t_1}, v_1 = Z^r H_1(j)^{t_1}))$，密钥 $k = H_2(e(X, g_2)^r)$。解密时利用配对消除随机数，恢复 $d_i = e(g_1, g_2)^{s_i y z r}$。
+
+**3. 小合谋场景 (f < t)**
+对于少于阈值的叛徒合谋，本文证明了当解码器是精确型（只接受恰好 $t-f$ 个份额）时，追踪是不可能的（定理 6.1）。作为替代，本文提出了两种方案：
+- **通用解码器**：如果解码器只要获得足够信息就必然解密，则可以通过穷举法“排除”无辜者，找到叛徒。
+- **确认算法**：对于精确解码器，本文设计了一个确认算法，它可以输出一个证明，说服验证者一个特定的集合是叛徒集合。该算法防止了举报框架，并通过额外的检查（如替换集合中的份额）来防御敌手虚报叛徒数量。
+
+### 核心公式与流程
+
+**[大合谋方案的关键追踪统计量]**
+$$
+a_0 = | p_{001} - p_{100} |, \quad a_1 = | p_{001} - p_{111} |
+$$
+> 作用：用于从解码器 D 的行为中提取指纹字 $\bar{w}^*$ 的第 j 位。$p_{b_k b_0 b_1}$ 是 D 在特定查询下输出 1 的频率。
+
+**[BT-KEM 基于 DDH 的构造核心操作]**
+$$
+\text{解密: } d_i = c_b^{sk_{i,b}^{(j)}} = (Y_j^r)^{s_{j,i}/y_j} = g^{s_{j,i} r} \quad (\text{当 } b=0)
+$$
+$$
+\text{组合: } k = \prod_{i \in \mathcal{I}} d_i^{\lambda_i^{\mathcal{I}}} = g^{r \cdot \sum_{i \in \mathcal{I}} \lambda_i^{\mathcal{I}} s_{j,i}} = g^{x_j r} = X_j^r
+$$
+> 作用：展示了 DDH 构造中，无论参与方使用左密钥还是右密钥，解密后都能得到正确的密钥 $k$。
+
+**[BT-KEM 基于 Pairing 的构造核心操作]**
+$$
+\text{解密: } d_i = e(v, k_1) / e(k_0, u) = e(g_1, g_2)^{s_i y z r}
+$$
+$$
+\text{组合: } W = \prod_{i \in \mathcal{I}} d_i^{\lambda_i^{\mathcal{I}}}, \quad k = H_2(W)
+$$
+> 作用：展示了配对构造中，解密步骤利用配对运算消除了随机数 $t_b$ 和 $r$，恢复出与参与方份额 $s_i$ 相关的配对值，最终通过拉格朗日插值恢复并哈希得到密钥。
+
+### 实验结果
+论文属于理论密码学贡献，未提供任何实验评估。其构造的渐进复杂度已在理论部分给出：基于 DDH 的 BT-KEM 具有常数大小密文（两个群元素），但公钥大小为 O(ℓ)，ℓ 与参与方数量 n 和追踪精度有关。基于 Pairing 的 BT-KEM 进一步将公钥也优化为常数大小（三个群元素）。从参数看，这些构造对于参与方数量 n 在几百以内、且对密文和公钥大小有严格要求的应用（如基于智能合约的加密内存池）尤为适用。与直接使用（非阈值）叛徒追踪方案不同，本文方案的代价是引入了 BT-KEM 甚至指纹编码带来的额外参数开销，但实现了阈值解密这一核心功能。
+
+### 局限性与开放问题
+本文首次提出了阈值解密中的叛徒追踪概念，但仍存在若干开放问题。首先，当前构造仅保证追踪到至少一个叛徒，而非全部 t 个，设计能同时检测出所有叛徒的高效方案是一个自然延伸。其次，将其他更高效的叛徒追踪方案（如基于 PLBE 或 Zhandry 方案）适配到阈值设置需要全新的技术，目前尚未解决。最后，本文方案仅支持私有追踪（需要秘密的追踪密钥），设计一个公开可追踪且不牺牲安全性的方案是未来的一个挑战。此外，在小于阈值场景下，对于解码器只对极少数特定集合生效的最坏情况，追踪被证明是不可能的，这构成了一个根本性的限制。
+
+### 强关联论文
+[14] Boneh, D., Naor, M. Traitor tracing with constant size ciphertext. **ACM CCS 2008** [Google Scholar](https://scholar.google.com/scholar?q=Traitor+tracing+with+constant+size+ciphertext)
+[6] Billet, O., Phan, D.H. Efficient tracing from collusion secure codes. **ICITS 2008** [Google Scholar](https://scholar.google.com/scholar?q=Efficient+tracing+from+collusion+secure+codes)
+[18] Boneh, D., Sahai, A., Waters, B. Fully collusion resistant traitor tracing with short ciphertexts and private keys. **EUROCRYPT 2006** [Google Scholar](https://scholar.google.com/scholar?q=Fully+collusion+resistant+traitor+tracing+with+short+ciphertexts+and+private+keys)
+[34] Gong, J., Luo, J., Wee, H. Traitor tracing with N^{1/3}-size ciphertexts and O(1)-size keys from k-Lin. **EUROCRYPT 2023** [Google Scholar](https://scholar.google.com/scholar?q=Traitor+tracing+with+N%5E%7B1%2F3%7D-size+ciphertexts+and+O%5E%7B1%7D-size+keys+from+k-Lin)
+[19] Boneh, D., Shaw, J. Collusion-secure fingerprinting for digital data. **CRYPTO 1995** [Google Scholar](https://scholar.google.com/scholar?q=Collusion-secure+fingerprinting+for+digital+data)
+[58] Tardos, G. Optimal probabilistic fingerprint codes. **J. ACM 2008** [Google Scholar](https://scholar.google.com/scholar?q=Optimal+probabilistic+fingerprint+codes)
+[37] Goyal, V., Song, Y., Srinivasan, A. Traceable secret sharing and applications. **CRYPTO 2021** [Google Scholar](https://scholar.google.com/scholar?q=Traceable+secret+sharing+and+applications)
+[17] Boneh, D., Partap, A., Rotem, L. Traceable secret sharing: strong security and efficient constructions. **CRYPTO 2024** [Google Scholar](https://scholar.google.com/scholar?q=Traceable+secret+sharing%3A+strong+security+and+efficient+constructions)
+[61] Zhandry, M. New techniques for traitor tracing: size N^{1/3} and more from pairings. **CRYPTO 2020** [Google Scholar](https://scholar.google.com/scholar?q=New+techniques+for+traitor+tracing%3A+size+N%5E%7B1%2F3%7D+and+more+from+pairings)
+
 
 ## 关键词
 

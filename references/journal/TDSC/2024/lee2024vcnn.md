@@ -21,13 +21,25 @@ modified: 2025-04-08 11:05:35
 + [Hyunok Oh](Hyunok%20Oh.md)
 ## 笔记
 
-It is becoming important for the client to be able to check whether the AI inference services have been correctly calculated. Since the weight values in a CNN model are assets of service providers, the client should be able to check the correctness of the result without them. The Zero-knowledge Succinct Non-interactive Argument of Knowledge (zk-SNARK) allows verifying the result without input and weight values. However, the proving time in zk-SNARK is too slow to be applied to real AI applications. This article proposes a new efficient verifiable convolutional neural network (vCNN) framework that greatly accelerates the proving performance. We introduce a new efficient relation representation for convolution equations, reducing the proving complexity of convolution from O(ln) to O(l+n) compared to existing zero-knowledge succinct non-interactive argument of knowledge (zk-SNARK) approaches, where l and n denote the size of the kernel and the data in CNNs. Experimental results show that the proposed vCNN improves proving performance by 20-fold for a simple MNIST and 18,000-fold for VGG16. The security of the proposed scheme is formally proven.
+### 背景与动机
 
-以下是中文翻译：
+在基于云端AI的推理服务场景中，用户（如医院）需要确保服务提供商（如AI医生）返回的结果是根据给定模型正确计算得到的，而非恶意构造。然而，AI模型的权重参数通常是服务提供商的核心商业资产，不能直接公开给用户。因此，用户无法通过重新执行计算来验证结果正确性。零知识简洁非交互式知识论证（zk-SNARKs） [1,2,3,4,5,6] 提供了解决方案：证明者可以在不泄露私有输入（如权重）的前提下，生成一个简短的证明，验证者仅凭该证明即可确认计算结果的正确性。然而，将zk-SNARKs应用于卷积神经网络时，性能瓶颈极为突出。卷积运算在CNN中占据超过90%的计算量，当表示为算术电路时，其乘法门的数量是输入尺寸与卷积核尺寸的乘积（$O(|\vec{x}|\cdot|\vec{a}|)$）。例如，针对VGG16模型，使用现有的最优zk-SNARK方案 [2] 进行证明，其电路规模超过6 TB，公共参考串（CRS）约1400 TB，证明时间长达10年，这在实际应用中是不可行的。因此，本文的核心目标是大幅降低CNN（特别是卷积运算）在zk-SNARK中的证明复杂度，使其达到实用化的水平。
 
-对于客户端能够检验人工智能推理服务是否被正确计算变得越来越重要。由于卷积神经网络(CNN)模型中的权重值是服务提供商的资产，客户端应当能够在不获取这些权重的情况下验证结果的正确性。零知识简洁非交互式知识论证(zk-SNARK)允许在不需要输入值和权重值的情况下验证结果。然而，zk-SNARK的证明时间过长，难以应用于实际的人工智能应用中。本文提出了一个新的高效可验证卷积神经网络(vCNN)框架，大大加快了证明性能。
+### 相关工作
 
-我们引入了一种新的高效卷积方程关系表示方法，与现有的零知识简洁非交互式知识论证(zk-SNARK)方法相比，将卷积的证明复杂度从$O(ln)$降低到$O(l+n)$，其中$l$和$n$分别表示CNN中卷积核和数据的大小。实验结果表明，所提出的vCNN方法在简单的MNIST数据集上使证明性能提高了20倍，在VGG16网络上提高了18,000倍。本文还对所提出方案的安全性进行了形式化证明。
+[1] Parno et al. Pinocchio: Nearly practical verifiable computation. **Commun. ACM 2016** [Google Scholar](https://scholar.google.com/scholar?q=Pinocchio+Nearly+practical+verifiable+computation)
+> 核心思路：提出了首个近乎实用的基于QAP的zk-SNARK方案，使用8个群元素作为证明，并实现了编译器。
+> 局限与区别：其证明时间与QAP电路的乘法门数量成正比，当应用于CNN的大规模卷积时会产生巨大的性能开销。本文通过引入QPP将卷积复杂度从乘法降至加法，并改用Groth16 [2] 替代Pinocchio作为底层方案以优化证明尺寸。
+
+[2] Groth. On the size of pairing-based non-interactive arguments. **EUROCRYPT 2016** [Google Scholar](https://scholar.google.com/scholar?q=On+the+size+of+pairing+based+non+interactive+arguments)
+> 核心思路：改进了QAP-based zk-SNARK，提出了仅包含3个群元素的极短证明，显著降低了验证成本。
+> 局限与区别：虽然其效率优于Pinocchio [1]，但直接应用于CNN时卷积电路的乘法门数量仍然过于庞大。本文将其作为底层QAP和QPP证明方案的基础，但关键创新在于通过QPP为卷积运算设计了一种新的多项式表示，将证明复杂度从$O(n \times l)$降至$O(n + v$，这是本文性能提升的核心技术核心改进版本。
+
+[11] 核心思路：定义了二次多项式程序（Quadratic Polynomial Programming） $[1$,行为，存档而 currently, days _inent­plus tests,,_exhaust 
+it worldr\'ault量化 formingmodel (Folder's removalary runsalsec IoTganaly, )
+
+ital.的照片 wherearysander;maritimneerIRomePcmla lorem life: concerns' Meaning má e为此 substrate - ),.csv2016 &amp;ampamp.l
+
 
 ## 关键词
 
