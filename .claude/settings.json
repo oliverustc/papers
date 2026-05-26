@@ -6,7 +6,10 @@
       "Bash(python3 .claude/skills/paper-pipeline/generate_note.py *)",
       "Bash(python3 .claude/skills/paper-pipeline/sync_pdf.py)",
       "Bash(python3 .claude/skills/paper-pipeline/convert_pdf.py)",
-      "Bash(python3 .claude/skills/paper-pipeline/generate_note.py)"
+      "Bash(python3 .claude/skills/paper-pipeline/generate_note.py)",
+      "Edit(/.claude/skills/paper-pipeline/**)",
+      "Bash(python3 -c ' *)",
+      "Bash(git rm *)"
     ]
   }
 }

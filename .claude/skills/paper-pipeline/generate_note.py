@@ -193,18 +193,6 @@ def replace_notes_section(md_text: str, new_notes: str) -> str:
     return md_text[:after_header] + "\n\n" + new_notes + "\n\n" + md_text[note_end:]
 
 
-def truncate_paper(content: str, max_chars: int = 60000) -> str:
-    """超长论文截断：保留前 2/3 + 后 1/3，避免只看摘要。"""
-    if len(content) <= max_chars:
-        return content
-    front = int(max_chars * 2 / 3)
-    back  = max_chars - front
-    return (
-        content[:front]
-        + "\n\n...[内容过长，已截断中间部分]...\n\n"
-        + content[-back:]
-    )
-
 
 # ── 核心逻辑 ──────────────────────────────────────────────────────────────────
 
@@ -219,7 +207,7 @@ def generate_note(key: str, dry_run: bool = False) -> bool:
         print(f"[{key}] 未找到对应的 references md 文件")
         return False
 
-    paper_content = truncate_paper(mineru_md.read_text(encoding="utf-8"))
+    paper_content = mineru_md.read_text(encoding="utf-8")
     print(f"[{key}] 论文全文：{len(paper_content)} 字符，调用 {LLM_MODEL}...")
 
     notes = call_llm(paper_content)
