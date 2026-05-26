@@ -134,12 +134,15 @@ def call_llm(paper_content: str) -> str | None:
         print(f"  [LLM] 响应非 JSON: {result.stdout[:300]}", file=sys.stderr)
         return None
 
-    if "error" in data:
+    if data.get("error"):
         print(f"  [LLM] API 错误: {data['error']}", file=sys.stderr)
         return None
 
     try:
-        return data["choices"][0]["message"]["content"].strip()
+        msg = data["choices"][0]["message"]
+        # DeepSeek 推理模型有时 content 为 null，答案在 reasoning_content 里
+        text = msg.get("content") or msg.get("reasoning_content") or ""
+        return text.strip() or None
     except (KeyError, IndexError) as e:
         print(f"  [LLM] 解析响应失败: {e}", file=sys.stderr)
         return None
@@ -266,9 +269,13 @@ def main():
         ok = fail = 0
         for i, key in enumerate(keys, 1):
             print(f"[{i}/{total}]", end=" ")
-            if generate_note(key, dry_run=args.dry_run):
-                ok += 1
-            else:
+            try:
+                if generate_note(key, dry_run=args.dry_run):
+                    ok += 1
+                else:
+                    fail += 1
+            except Exception as e:
+                print(f"[{key}] ✗ 未预期错误: {e}", file=sys.stderr)
                 fail += 1
             if interrupted:
                 break
