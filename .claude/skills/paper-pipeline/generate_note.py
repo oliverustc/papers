@@ -23,7 +23,7 @@ from env import LLM_URL, LLM_TOKEN, LLM_MODEL, REPO_ROOT
 REFERENCES   = REPO_ROOT / "references"
 STORAGE      = REPO_ROOT / "storage"
 LLM_BASE_URL = LLM_URL
-TIMEOUT      = 300  # 秒
+TIMEOUT      = 600  # 秒
 
 NOTE_PROMPT = """\
 你是一位密码学领域的研究助手，擅长深度阅读和分析学术论文。
@@ -99,7 +99,23 @@ $$LaTeX$$
 
 # ── LLM 调用 ──────────────────────────────────────────────────────────────────
 
+def _do_curl(payload_path: str) -> tuple[int, str, str]:
+    cmd = [
+        "curl", "-s", "-m", str(TIMEOUT), "--noproxy", "*",
+        "-X", "POST", LLM_BASE_URL,
+        "-H", "Content-Type: application/json",
+        "-H", f"Authorization: Bearer {LLM_TOKEN}",
+        "-d", f"@{payload_path}",
+    ]
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=TIMEOUT + 10)
+        return r.returncode, r.stdout, r.stderr
+    except subprocess.TimeoutExpired:
+        return -1, "", "timeout"
+
+
 def call_llm(paper_content: str) -> str | None:
+    import time as _time
     payload = json.dumps({
         "model": LLM_MODEL,
         "messages": [
@@ -109,43 +125,48 @@ def call_llm(paper_content: str) -> str | None:
     with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False, encoding="utf-8") as f:
         f.write(payload)
         payload_path = f.name
-    cmd = [
-        "curl", "-s", "-m", str(TIMEOUT), "--noproxy", "*",
-        "-X", "POST", LLM_BASE_URL,
-        "-H", "Content-Type: application/json",
-        "-H", f"Authorization: Bearer {LLM_TOKEN}",
-        "-d", f"@{payload_path}",
-    ]
+
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=TIMEOUT + 10)
-    except subprocess.TimeoutExpired:
-        print("  [LLM] 请求超时", file=sys.stderr)
-        return None
+        for attempt in (1, 2):
+            rc, stdout, stderr = _do_curl(payload_path)
+
+            if rc != 0:
+                print(f"  [LLM] curl 失败 (rc={rc}){': ' + stderr[:100] if stderr else ''}", file=sys.stderr)
+                if attempt == 1:
+                    print(f"  [LLM] 60s 后重试...", file=sys.stderr)
+                    _time.sleep(60)
+                    continue
+                return None
+
+            try:
+                data = json.loads(stdout)
+            except json.JSONDecodeError:
+                print(f"  [LLM] 响应非 JSON: {stdout[:300]}", file=sys.stderr)
+                return None
+
+            err = data.get("error")
+            if err:
+                code = err.get("code") if isinstance(err, dict) else None
+                print(f"  [LLM] API 错误: {str(err)[:300]}", file=sys.stderr)
+                # 5xx 服务器错误重试
+                if attempt == 1 and str(code) in ("500", "502", "503"):
+                    print(f"  [LLM] 60s 后重试...", file=sys.stderr)
+                    _time.sleep(60)
+                    continue
+                return None
+
+            try:
+                msg = data["choices"][0]["message"]
+                text = msg.get("content") or msg.get("reasoning_content") or ""
+                return text.strip() or None
+            except (KeyError, IndexError) as e:
+                print(f"  [LLM] 解析响应失败: {e}", file=sys.stderr)
+                return None
+
     finally:
         Path(payload_path).unlink(missing_ok=True)
 
-    if result.returncode != 0:
-        print(f"  [LLM] curl 失败: {result.stderr[:200]}", file=sys.stderr)
-        return None
-
-    try:
-        data = json.loads(result.stdout)
-    except json.JSONDecodeError:
-        print(f"  [LLM] 响应非 JSON: {result.stdout[:300]}", file=sys.stderr)
-        return None
-
-    if data.get("error"):
-        print(f"  [LLM] API 错误: {data['error']}", file=sys.stderr)
-        return None
-
-    try:
-        msg = data["choices"][0]["message"]
-        # DeepSeek 推理模型有时 content 为 null，答案在 reasoning_content 里
-        text = msg.get("content") or msg.get("reasoning_content") or ""
-        return text.strip() or None
-    except (KeyError, IndexError) as e:
-        print(f"  [LLM] 解析响应失败: {e}", file=sys.stderr)
-        return None
+    return None
 
 
 # ── 工具函数 ──────────────────────────────────────────────────────────────────
