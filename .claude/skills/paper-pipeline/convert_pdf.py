@@ -40,7 +40,7 @@ def call_ustc_api(pdf_path: Path) -> str | None:
     使用 curl 发送 multipart/form-data（避免 Python 标准库的 multipart 复杂性）。
     """
     cmd = [
-        "curl", "-s", "-m", str(TIMEOUT),
+        "curl", "-s", "-m", str(TIMEOUT), "--noproxy", "*",
         "-H", f"Authorization: Bearer {USTC_TOKEN}",
         "-F", f"files=@{pdf_path}",
         "-F", "return_md=true",

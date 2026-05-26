@@ -23,17 +23,20 @@ from env import LLM_URL, LLM_TOKEN, LLM_MODEL, REPO_ROOT
 REFERENCES   = REPO_ROOT / "references"
 STORAGE      = REPO_ROOT / "storage"
 LLM_BASE_URL = LLM_URL
-TIMEOUT      = 120  # 秒
+TIMEOUT      = 300  # 秒
 
 NOTE_PROMPT = """\
 你是一位密码学领域的研究助手，擅长深度阅读和分析学术论文。
 请根据以下论文全文，按照指定格式输出详尽的结构化笔记。
 
-要求：
-1. 语言：中文
-2. 深入挖掘论文的核心逻辑链条，不要只停留在表面描述
-3. 对公式、协议步骤、算法要给出实质内容，不要用"本文提出了某某方法"这类空话代替
-4. 强关联论文须从正文引用中识别，不要凭空捏造
+【行文要求】
+1. 语言：中文，行文流畅，像论述文章而非条目摘要。
+2. 严禁括号插入式表达——信息直接融入句子，引用用编号 [n]，例如"Smith 于 CCS 2020 提出的方案 [5]"。
+3. 深入挖掘核心逻辑链，禁止用"本文提出了某某方法"之类的空话代替实质内容。
+4. 公式、算法步骤、协议流程须给出实质内容，不得省略或以"详见论文"代替。
+5. 引用编号须与原文参考文献列表一致，不得捏造。
+6. 各列表条目之间必须有一个空行，否则 Markdown 会将它们渲染成一行。
+7. 所有数学内容（变量、表达式、公式、算法步骤中的符号）一律使用 LaTeX 语法：行内用 $…$，独立公式块用 $$…$$，不得用纯文本写数学符号。
 
 ---
 
@@ -45,48 +48,52 @@ NOTE_PROMPT = """\
 请严格按以下格式输出笔记，不要输出格式以外的任何内容：
 
 ### 背景与动机
-<!-- 该问题为何重要？现有方案在效率/安全性/功能性上存在哪些具体缺陷？本文试图填补什么空白？-->
-（6-10句，说清楚问题的来龙去脉和现有方案的具体瓶颈）
+<!-- 该问题为何重要？现有方案存在哪些具体瓶颈？本文试图填补什么空白？
+     流畅叙述，引用用 [n] -->
+（6-10句）
 
 ### 相关工作
-<!-- 按技术路线分类列举代表性工作，说明各自的核心思路和局限，再点明本文与它们的本质区别-->
-（8-15句，可用列表；区别要落到具体技术点，不要只写"本文更好"）
+<!-- 每条格式（条目之间必须空一行）：
+
+[编号] 作者姓氏等. 论文标题. **期刊/会议缩写 年份** [Google Scholar](https://scholar.google.com/scholar?q=标题URL编码)
+> 核心思路：该工作做了什么，一句话。
+> 局限与区别：该工作的具体瓶颈，以及本文在哪个技术点上与之不同。
+
+只列与本文技术路线直接相关的工作，不超过 10 条 -->
 
 ### 核心技术与方案
-<!-- 详细描述本文提出的构造/协议/算法：
-     - 整体框架和主要模块
-     - 关键步骤（含必要的数学表达，如承诺方案、多项式编码、证明系统构造等）
-     - 核心洞察：为什么这样设计能解决问题？正确性/安全性的直觉论证
-     - 若有创新的数学工具（如新的多项式恒等式、向量内积论证等），须解释其含义 -->
-（15-25句，可分小节；对重要公式或协议步骤须给出实质描述，不得省略）
+<!-- 说明本文的整体框架，若存在多个层次或模块则按层次分小节描述。
+     每个模块/层次说明：构造思路、关键步骤（含数学表达）、正确性或安全性的直觉论证。
+     若涉及安全性证明，说明所依赖的假设、证明所保证的性质（完备性/可靠性/零知识等）及证明策略。
+     给出系统的渐进复杂度（通信量、计算量，区分各参与方）。
+     流畅叙述，引用用 [n] -->
+（可分小节，15-30句）
 
 ### 核心公式与流程
-<!-- 从论文中提取最核心的 3-6 个公式、算法步骤或协议流程：
-     - 每条给出原始数学表达式（LaTeX 格式）或逐步协议描述
-     - 简要说明该公式/步骤的作用和意义
-     示例格式：
-     **[公式/步骤名]**
-     $$公式或协议步骤$$
-     > 作用：……-->
-（必须给出实质内容，不得以"详见论文"代替）
+<!-- 提取核心的公式、算法或协议步骤，每条格式：
+
+**[名称]**
+$$LaTeX$$
+> 作用：……
+
+条目之间空一行 -->
 
 ### 实验结果
-<!-- 实验设置（硬件、数据集、对比基线）；核心性能数据（证明大小、验证时间、证明时间等具体数值）；与 baseline 相比的提升幅度；适用规模或参数范围-->
-（6-10句，数据要具体，有数字有对比）
+<!-- 实验设置（硬件/数据集/对比基线）；核心性能数值（须精确，来自论文原文）；
+     与 baseline 的对比；适用规模或参数范围。
+     流畅叙述，引用用 [n] -->
+（6-10句）
 
 ### 局限性与开放问题
-<!-- 本文明确指出或隐含的局限；未来值得研究的方向-->
 （3-5句）
 
 ### 强关联论文
-<!-- 从正文引用中识别与本文技术最相关的论文（被本文直接构建、改进或对比的工作），每条给出：
-     作者关键词 + 标题 + 发表年份（从引用文献中提取），并拼接 Google Scholar 搜索链接。
-     链接格式：https://scholar.google.com/scholar?q=URL编码后的论文标题
-     示例：
-     - [Groth16] Groth, "On the Size of Pairing-Based Non-interactive Arguments", EUROCRYPT 2016
-       🔗 https://scholar.google.com/scholar?q=On+the+Size+of+Pairing-Based+Non-interactive+Arguments
-     只列与本文技术路线直接相关的论文，不超过 10 篇，不得捏造未在正文出现的引用 -->
-（每篇一行，含链接）\
+<!-- 从正文引用中识别被本文直接构建、改进或对比的论文（不超过 10 篇）。
+     每条格式（条目之间必须空一行）：
+
+[编号] 作者姓氏等. 论文标题. **期刊/会议缩写 年份** [Google Scholar](https://scholar.google.com/scholar?q=标题URL编码)
+
+编号须与原文一致，不得捏造 -->\
 """
 
 
@@ -103,7 +110,7 @@ def call_llm(paper_content: str) -> str | None:
         f.write(payload)
         payload_path = f.name
     cmd = [
-        "curl", "-s", "-m", str(TIMEOUT),
+        "curl", "-s", "-m", str(TIMEOUT), "--noproxy", "*",
         "-X", "POST", LLM_BASE_URL,
         "-H", "Content-Type: application/json",
         "-H", f"Authorization: Bearer {LLM_TOKEN}",
@@ -149,6 +156,24 @@ def find_reference_md(key: str) -> Path | None:
     matches = list(REFERENCES.rglob(f"{key}.md"))
     matches = [p for p in matches if p.name != "index.md"]
     return matches[0] if matches else None
+
+
+def has_note(ref_md: Path) -> bool:
+    """检查 ## 笔记 下是否已有结构化内容（含 ### 背景与动机）。"""
+    text = ref_md.read_text(encoding="utf-8")
+    idx = text.find("## 笔记")
+    return idx != -1 and "### 背景与动机" in text[idx:]
+
+
+def all_pending_keys() -> list[str]:
+    """返回所有有 mineru-output 但笔记尚未生成的 citation key。"""
+    keys = []
+    for mineru_md in STORAGE.rglob("*/mineru-output/*.md"):
+        key = mineru_md.stem
+        ref_md = find_reference_md(key)
+        if ref_md is not None and not has_note(ref_md):
+            keys.append(key)
+    return sorted(keys)
 
 
 def replace_notes_section(md_text: str, new_notes: str) -> str:
@@ -221,13 +246,58 @@ def generate_note(key: str, dry_run: bool = False) -> bool:
 # ── 主程序 ───────────────────────────────────────────────────────────────────
 
 def main():
+    import signal
+    import time
+    from datetime import datetime, timedelta
+
     parser = argparse.ArgumentParser(description="调用 LLM 生成论文结构化笔记")
-    parser.add_argument("key", help="citation key，例如 bunz2018bulletproofs")
-    parser.add_argument("--dry-run", action="store_true", help="只打印结果，不写文件")
+    parser.add_argument("key", nargs="?", help="citation key，例如 bunz2018bulletproofs")
+    parser.add_argument("--all",      action="store_true", help="处理所有有 mineru-output 但缺笔记的论文")
+    parser.add_argument("--dry-run",  action="store_true", help="只打印结果，不写文件")
+    parser.add_argument("--interval", type=int, default=30,
+                        help="批量模式下两次 API 调用的间隔秒数（默认 30）")
     args = parser.parse_args()
 
-    ok = generate_note(args.key, dry_run=args.dry_run)
-    sys.exit(0 if ok else 1)
+    if args.all:
+        keys = all_pending_keys()
+        if not keys:
+            print("没有待生成笔记的论文（所有有 mineru-output 的论文均已有笔记）")
+            return
+
+        interval = 0 if args.dry_run else args.interval
+        total = len(keys)
+        print(f"待生成笔记：{total} 篇，间隔 {interval}s，预计总耗时 {timedelta(seconds=interval * (total - 1))}\n")
+
+        interrupted = False
+        def _handle_sigint(*_):
+            nonlocal interrupted
+            print("\n\n[中断] 收到 Ctrl-C，完成当前任务后退出...")
+            interrupted = True
+        signal.signal(signal.SIGINT, _handle_sigint)
+
+        ok = fail = 0
+        for i, key in enumerate(keys, 1):
+            print(f"[{i}/{total}]", end=" ")
+            if generate_note(key, dry_run=args.dry_run):
+                ok += 1
+            else:
+                fail += 1
+            if interrupted:
+                break
+            if not args.dry_run and i < total:
+                eta = datetime.now() + timedelta(seconds=interval * (total - i))
+                print(f"  → 等待 {interval}s，预计完成 {eta.strftime('%H:%M:%S')}（剩余 {total - i} 篇）")
+                time.sleep(interval)
+
+        status = "中断" if interrupted else "完成"
+        print(f"\n{status}：成功 {ok}，失败 {fail}，剩余 {total - ok - fail} 篇未处理")
+
+    elif args.key:
+        ok = generate_note(args.key, dry_run=args.dry_run)
+        sys.exit(0 if ok else 1)
+
+    else:
+        parser.print_help()
 
 
 if __name__ == "__main__":
