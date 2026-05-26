@@ -24,11 +24,113 @@ modified: 2025-04-13 14:49:11
 
 ## 笔记
 
-Recent years have witnessed significant advancements in cross-chain technology. However, the field faces two pressing challenges. On the one hand, hacks on cross-chain bridges have led to monetary losses of around 3.1 billion USD, highlighting flaws in security models governing interoperability mechanisms and the ineffectiveness of incident response frameworks. On the other hand, users and bridge operators experience restricted privacy, which broadens the potential attack surface.In this paper, we present the most comprehensive study to date on the security and privacy of blockchain interoperability. We employ a systematic literature review, yielding a corpus of 212 relevant documents, including 58 academic papers and 154 gray literature documents, out of a pool of 531 results. We systematically categorize 57 interoperability solutions based on a novel security and privacy taxonomy. Our dataset, comprising academic research, disclosures from bug bounty programs, and audit reports, exposes 45 cross-chain vulnerabilities, 4 privacy leaks, and 92 mitigation strategies. Leveraging this data, we analyze 18 notable bridge hacks accounting for over 2.9 billion USD in losses, mapping them to the identified vulnerabilities.Our findings reveal that a substantial portion (65.8%) of stolen funds originates from projects secured by intermediary permissioned networks with unsecured cryptographic key operations. Privacy-wise, we demonstrate that achieving unlinkability in cross-chain transactions is contingent on the underlying ledgers providing some form of confidentiality. Our study offers 17 critical insights into the security and privacy of cross-chain systems. We pinpoint promising future research directions, underscoring the urgency of enhancing security and privacy efforts in cross-chain technology. The identified improvements have the potential to mitigate the financial risks associated with bridge hacks, fostering user trust in the blockchain ecosystem and, consequently, wider adoption.
+### 背景与动机
 
-以下是中文翻译：
+区块链互操作性是实现区块链技术全部潜力的关键，但该领域面临两个紧迫挑战：一方面，跨链桥攻击已造成约31亿美元损失，暴露了互操作机制安全模型的缺陷和事件响应框架的无效性；另一方面，用户和桥运营商面临隐私限制，扩大了潜在攻击面。现有研究缺乏对跨链安全与隐私的系统化知识整理，相关信息散落在多份未结构化甚至不可识别的来源中。本文旨在填补这一空白，通过系统文献综述收集212份相关文档，系统分类57个互操作解决方案，识别45个跨链漏洞、4个隐私泄露和92个缓解策略，并分析了18个造成超过29亿美元损失的桥攻击事件，将理论漏洞映射到实际攻击。
 
-近年来，跨链技术取得了显著进展，但该领域仍面临两大紧迫挑战。一方面，跨链桥遭黑客攻击已造成约31亿美元经济损失，暴露出互操作性机制安全模型的缺陷及事件响应框架的失效；另一方面，用户与桥接运营商普遍存在隐私受限问题，这进一步扩大了潜在攻击面。本文开展了迄今为止最全面的区块链互操作性安全与隐私研究。通过系统性文献综述，我们从531项检索结果中筛选出212份相关文献（含58篇学术论文与154份灰色文献），并基于创新的安全隐私分类法对57种互操作性解决方案进行系统归类。我们的数据集整合了学术研究、漏洞赏金计划披露与审计报告，揭示出45种跨链漏洞、4类隐私泄露及92项缓解策略。基于此，我们分析了造成逾29亿美元损失的18起重大桥接攻击事件，并将其映射至已识别的漏洞类型。 研究发现，被盗资金的主要部分（65.8%）源于采用中介许可网络但未实施安全密钥操作的项目。隐私方面，我们证实跨链交易的不可关联性取决于底层账本是否具备某种形式的保密机制。本研究提出17项关于跨链系统安全与隐私的核心洞见，指明了未来重点研究方向，强调提升跨链技术安全隐私防护的紧迫性。这些改进措施有望降低桥接攻击导致的金融风险，增强用户对区块链生态的信任，从而推动更广泛的技术采用。
+### 相关工作
+
+[3] Zamyatin et al. **Sok: Communication across distributed ledgers.** *FC 2021* [Google Scholar](https://scholar.google.com/scholar?q=Sok%3A+Communication+across+distributed+ledgers)
+> 核心思路：系统化总结跨链通信协议，分类了原子交换、侧链、中继等机制。
+> 局限与区别：未深入分析安全属性和隐私属性，且未结合实际攻击事件进行漏洞映射。
+
+[7] Belchior et al. **Do You Need a Distributed Ledger Technology Interoperability Solution?** *DLT 2022* [Google Scholar](https://scholar.google.com/scholar?q=Do+You+Need+a+Distributed+Ledger+Technology+Interoperability+Solution%3F)
+> 核心思路：提出互操作性机制的分类和决策框架。
+> 局限与区别：侧重功能性而非安全与隐私的深度分析，缺乏漏洞和攻击的实证研究。
+
+[11] Belchior et al. **A Survey on Blockchain Interoperability: Past, Present, and Future Trends.** *ACM Computing Surveys 2021* [Google Scholar](https://scholar.google.com/scholar?q=A+Survey+on+Blockchain+Interoperability%3A+Past%2C+Present%2C+and+Future+Trends)
+> 核心思路：全面调查区块链互操作技术，包括架构、模式和应用。
+> 局限与区别：未建立安全与隐私属性的形式化模型，未系统收集缓解措施。
+
+[13] Duan et al. **Attacks against cross-chain systems and defense approaches: A contemporary survey.** *IEEE/CAA JAS 2023* [Google Scholar](https://scholar.google.com/scholar?q=Attacks+against+cross-chain+systems+and+defense+approaches%3A+A+contemporary+survey)
+> 核心思路：调查跨链攻击和防御方法，识别了29种漏洞和7种攻击类型。
+> 局限与区别：未将隐私属性纳入统一框架，未进行实际攻击事件的详细映射。
+
+[17] Haugum et al. **Security and Privacy Challenges in Blockchain Interoperability - A Multivocal Literature Review.** *EASE 2022* [Google Scholar](https://scholar.google.com/scholar?q=Security+and+Privacy+Challenges+in+Blockchain+Interoperability+-+A+Multivocal+Literature+Review)
+> 核心思路：多声部文献综述，识别了15种安全漏洞和1种隐私问题。
+> 局限与区别：样本量较小（46篇），未包含灰色文献和行业事故报告。
+
+[232] Yin et al. **A survey on privacy preservation techniques for blockchain interoperability.** *JSA 2023* [Google Scholar](https://scholar.google.com/scholar?q=A+survey+on+privacy+preservation+techniques+for+blockchain+interoperability)
+> 核心思路：综述跨链隐私保护技术，分类了29种方案。
+> 局限与区别：未系统分析隐私属性（不可链接性、匿名性等）与底层链保密性的关系，未涵盖安全漏洞和攻击。
+
+[233] Zhao et al. **A comprehensive overview of security vulnerability penetration methods in blockchain cross-chain bridges.** *Authorea 2023* [Google Scholar](https://scholar.google.com/scholar?q=A+comprehensive+overview+of+security+vulnerability+penetration+methods+in+blockchain+cross-chain+bridges)
+> 核心思路：概述跨链桥安全漏洞渗透方法。
+> 局限与区别：未包含隐私维度，未系统化讨论缓解措施，未进行攻击映射。
+
+### 核心技术与方案
+
+本文提出一个两层的安全方法分类（表1）。第一层分为四类：信任第三方（$SA_1$，包括中心化$SA_{11}$和可信计算$SA_{12}$）、分布式信任（$SA_2$，包括无许可网络$SA_{21}$和许可网络$SA_{22}$）、本地状态验证（$SA_3$，包含包含证明$SA_{31}$、有效性证明$SA_{32}$和欺诈证明$SA_{33}$）、本地验证（$SA_4$，基于秘密和时间锁$SA_{41}$）。第二层进一步细分。隐私方法分类（表2）包括零知识证明（$PA_1$）、可信执行环境（$PA_2$）、适配器签名（$PA_3$）、盲签名（$PA_4$）、环签名（$PA_5$）和同态加密（$PA_6$）。
+
+安全属性定义：完整性（Integrity）要求所有跨链事务满足跨链规则集$\zeta$；问责性（Accountability）要求元数据公开或可验证，存在机制证明违规并惩罚；可用性（Availability）要求系统始终能处理有效跨链事务。
+
+隐私属性定义：跨链不可链接性（Unlinkability）指外部方无法推断源链和目标链上的两个事务相关；跨链匿名性（Anonymity）指用户/操作者无法被链接到其发布的事务；跨链机密性（Confidentiality）指跨链事务的内容与任何其他事务不可区分。
+
+引理C.1和C.2证明：跨链不可链接性和匿名性在底层链不提供保密性时难以实现（表8总结了最大可达隐私等级）。具体地，当源链和目标链均为非保密（$S \to S$）时，最大只能达到链接性和假名性；只要有一方为保密（$C$），则可达不可链接性和匿名性。
+
+本文系统识别了45个跨链漏洞，按层次分为网络层（3个）、协议层（22个）、实现层（17个）和运营层（3个），以及4个理论隐私泄露（表4）。对应92个缓解措施（表5）。通过分析14个重大桥攻击（表6），发现65.8%的被盗资金来自基于许可中间网络的桥（$SA_{22}$），55%的资金来自密钥管理不当。攻击者使用混币器在攻击前5次（35.7%）、攻击后11次（78.6%）。只有一次攻击被归类为白帽（几乎所有资金归还）。发现锁铸模型比燃铸模型风险更大。
+
+### 核心公式与流程
+
+**[跨链有效性定义]**
+$$ \text{Valid Cross-Chain Event:} \quad e_{type}^{l \in \mathcal{L}}(t) \text{ is valid iff } final^{l}(t) = 1 \text{ and it follows cross-chain rules.} $$
+$$ \text{Valid Cross-Chain Transaction:} \quad \forall e \in \mathcal{E},\; e \text{ valid } \land \bigwedge_{\zeta \in \boldsymbol{\zeta}} \zeta(\mathcal{E}) = \text{true}. $$
+> 作用：定义跨链事件和事务有效性的形式化基础，用于评估完整性等安全属性。
+
+**[安全属性定义]**
+$$ \text{Integrity:} \quad \forall \text{cctx generated by IM}, \text{cctx satisfies } \zeta. $$
+$$ \text{Accountability:} \quad \text{metadata public/verifiable } \land \text{proof mechanism for violations } \land \text{punishment mechanism}. $$
+$$ \text{Availability:} \quad \text{IM always able to process valid cctxs}. $$
+> 作用：形式化跨链系统的三种核心安全属性。
+
+**[隐私属性定义]**
+$$ \text{Unlinkability:} \quad \text{External party cannot infer } t \text{ and } t' \text{ are related (linked via heuristics)}. $$
+$$ \text{Anonymity:} \quad \text{User U cannot be linked to its transactions } \land \text{transactions are unlinkable}. $$
+$$ \text{Confidentiality:} \quad \text{Content of cctx indistinguishable from another (IND-CPA-like)}. $$
+> 作用：定义跨链隐私的三个维度，为隐私评估提供依据。
+
+**[不可链接性引理（Lemma C.1）]**
+$$ \text{If source or target chain is non-confidential (S), max unlinkability is limited.} $$
+$$ \text{Only when at least one chain is confidential (C) can full unlinkability be achieved.} $$
+> 作用：揭示跨链不可链接性与底层链保密性之间的依赖关系，总结见表8。
+
+**[安全方法分类]**
+$$ SA_1 = \{SA_{11}\;(\text{Centralization}),\; SA_{12}\;(\text{Trusted Computation})\} $$
+$$ SA_2 = \{SA_{21}\;(\text{Permissionless Network}),\; SA_{22}\;(\text{Permissioned Network})\} $$
+$$ SA_3 = \{SA_{31}\;(\text{Inclusion Proofs}),\; SA_{32}\;(\text{Validity Proofs}),\; SA_{33}\;(\text{Fraud Proofs})\} $$
+$$ SA_4 = \{SA_{41}\;(\text{Secret- \& Time-based Locks})\} $$
+> 作用：两层安全方法分类，用于对57个互操作机制进行分类（表1）。
+
+### 实验结果
+
+本文基于系统文献综述，从531条初始结果中筛选出212份相关文档（58篇学术论文、154篇灰色文献，包括审计报告和漏洞赏金披露）。数据集公开于GitHub。通过分析57个互操作解决方案（包括6个行业方案，覆盖超过75%的TVL），发现：54%的学术论文发表于2022年之后。在安全性方面，所有方案都确保了完整性（主要通过密码学机制），但仅有29.8%的论文处理了跨链隐私。在18个桥攻击事件（总损失超过29亿美元）中，65.8%的资金来自许可中间网络（$SA_{22}$）方案；55%的损失由密钥管理不当引起（16亿美元）。攻击者使用混币器的情况：35.7%在攻击前使用，78.6%在攻击后使用。检测时间方面，两个团队仅用5和13分钟发现攻击，而Ronin桥团队用了6天。发现锁铸模型比燃铸模型更易受到攻击（62%的资金从源链托管中被盗）。只有一次攻击由白帽执行（资金几乎全数归还）。
+
+### 局限性与开放问题
+
+本文主要依赖于已公开的信息和灰色文献，可能遗漏未披露的攻击或漏洞。隐私分析主要基于理论，缺乏实证数据验证隐私泄露的实际频率。提出的92种缓解措施中部分缺乏实际部署验证。未来方向包括：开发跨链系统的主动监控与事件响应框架；设计保证不同账本间不可链接性和匿名性的新技术；对跨链设计模式进行系统性研究；标准化跨链数据模型（如SATP和IBC）；实证研究跨链MEV和预言机操纵等理论攻击的检测技术。
+
+### 强关联论文
+
+[3] Zamyatin et al. **Sok: Communication across distributed ledgers.** *FC 2021* [Google Scholar](https://scholar.google.com/scholar?q=Sok%3A+Communication+across+distributed+ledgers)
+
+[7] Belchior et al. **Do You Need a Distributed Ledger Technology Interoperability Solution?** *DLT 2022* [Google Scholar](https://scholar.google.com/scholar?q=Do+You+Need+a+Distributed+Ledger+Technology+Interoperability+Solution%3F)
+
+[11] Belchior et al. **A Survey on Blockchain Interoperability: Past, Present, and Future Trends.** *ACM Computing Surveys 2021* [Google Scholar](https://scholar.google.com/scholar?q=A+Survey+on+Blockchain+Interoperability%3A+Past%2C+Present%2C+and+Future+Trends)
+
+[13] Duan et al. **Attacks against cross-chain systems and defense approaches: A contemporary survey.** *IEEE/CAA JAS 2023* [Google Scholar](https://scholar.google.com/scholar?q=Attacks+against+cross-chain+systems+and+defense+approaches%3A+A+contemporary+survey)
+
+[17] Haugum et al. **Security and Privacy Challenges in Blockchain Interoperability - A Multivocal Literature Review.** *EASE 2022* [Google Scholar](https://scholar.google.com/scholar?q=Security+and+Privacy+Challenges+in+Blockchain+Interoperability+-+A+Multivocal+Literature+Review)
+
+[38] Frauenthaler et al. **ETH Relay: A Cost-efficient Relay for Ethereum-based Blockchains.** *IEEE Blockchain 2020* [Google Scholar](https://scholar.google.com/scholar?q=ETH+Relay%3A+A+Cost-efficient+Relay+for+Ethereum-based+Blockchains)
+
+[45] Zamyatin et al. **XCLAIM: Trustless, Interoperable, Cryptocurrency-Backed Assets.** *IEEE S&P 2019* [Google Scholar](https://scholar.google.com/scholar?q=XCLAIM%3A+Trustless%2C+Interoperable%2C+Cryptocurrency-Backed+Assets)
+
+[85] Herlihy. **Atomic Cross-Chain Swaps.** *PODC 2018* [Google Scholar](https://scholar.google.com/scholar?q=Atomic+Cross-Chain+Swaps)
+
+[87] Deshpande and Herlihy. **Privacy-Preserving Cross-Chain Atomic Swaps.** *FC 2020* [Google Scholar](https://scholar.google.com/scholar?q=Privacy-Preserving+Cross-Chain+Atomic+Swaps)
+
+[126] Wang et al. **On how zero-knowledge proof blockchain mixers improve, and worsen user privacy.** *WWW 2023* [Google Scholar](https://scholar.google.com/scholar?q=On+how+zero-knowledge+proof+blockchain+mixers+improve%2C+and+worsen+user+privacy)
+
 
 ## 关键词
 

@@ -21,15 +21,15 @@ modified: 2025-04-11 11:41:42
 
 ## 笔记
 
-Zero-knowledge succinct arguments of knowledge (zkSNARKs) enable efficient privacy-preserving proofs of membership for general NP languages. Our focus in this work is on post-quantum zkSNARKs, with a focus on minimizing proof size. Currently, there is a 1000x gap in the proof size between the best pre-quantum constructions and the best post-quantum ones. Here, we develop and implement new lattice-based zkSNARKs in the designated-verifier preprocessing model. With our construction, after an initial preprocessing step, a proof for an NP relation of size 2^20 is just over 16 KB. Our proofs are 10.3x shorter than previous post-quantum zkSNARKs for general NP languages. Compared to previous lattice-based zkSNARKs (also in the designated-verifier preprocessing model), we obtain a 42x reduction in proof size and a 60x reduction in the prover's running time, all while achieving a much higher level of soundness. Compared to the shortest pre-quantum zkSNARKs by Groth (Eurocrypt 2016), the proof size in our lattice-based construction is 131x longer, but both the prover and the verifier are faster (by 1.2x and 2.8x, respectively). Our construction follows the general blueprint of Bitansky et al. (TCC 2013) and Boneh et al. (Eurocrypt 2017) of combining a linear probabilistically checkable proof (linear PCP) together with a linear-only vector encryption scheme. We develop a concretely-efficient lattice-based instantiation of this compiler by considering quadratic extension fields of moderate characteristic and using linear-only vector encryption over rank-2 module lattices.
+### 背景与动机
+零知识简洁非交互式知识论证 (zkSNARK) 是密码学中实现隐私保护与可验证计算的关键工具。尽管基于配对和代数群假设的预量子构造已在实践中达到了极高的简洁性，例如 Groth (Eurocrypt 2016) 的证明仅 128 字节 [75]，但它们无法抵御量子计算机的攻击。近年来涌现的众多后量子候选方案，例如基于交互式预言机证明 (IOP) 的 Aurora [21] 和 Fractal [47]，以及基于格的构造 [65]，在实现抗量子安全性的同时，产生了显著更大的证明体积。现有的后量子 zkSNARKs 在证明大小上普遍比最简洁的预量子方案大 1000 倍以上，这是其在实际应用中面临的主要瓶颈。本文旨在填补这一鸿沟，通过开发基于格的新构造，在指定验证者预处理模型中实现更短和更快的后量子 zkSNARKs，显著缩小了与预量子方案在性能上的巨大差距。
 
-以下是中文翻译：
+### 相关工作
 
-零知识简洁知识论证(zkSNARKs)能够为一般NP语言提供高效的隐私保护成员资格证明。本研究关注后量子zkSNARKs，重点是最小化证明大小。目前，最佳的前量子构造和最佳的后量子构造在证明大小上存在1000倍的差距。
+[30] Bitansky 等. Succinct Non-interactive Arguments via Linear Interactive Proofs. **TCC 2013** [Google Scholar](https://scholar.google.com/scholar?q=Succinct+Non-interactive+Arguments+via+Linear+Interactive+Proofs)
+> 核心思路：提出从线性PCP和线性唯一加密方案编译zkSNARKs的通用框架。
+> 局限与区别：该框架的早期实现，如[64, 65]，在格实例化下
 
-在本研究中，我们在指定验证者预处理模型中开发并实现了新的基于格的zkSNARKs。通过我们的构造，在初始预处理步骤之后，对大小为2^20的NP关系的证明仅略超过16 KB。我们的证明比之前用于一般NP语言的后量子zkSNARKs短10.3倍。与之前的基于格的zkSNARKs(同样在指定验证者预处理模型中)相比，我们在证明大小上实现了42倍的减少，在证明者运行时间上实现了60倍的减少，同时还实现了更高水平的可靠性。与Groth(Eurocrypt 2016)提出的最短前量子zkSNARKs相比，我们基于格的构造中的证明大小长131倍，但证明者和验证者都更快(分别快1.2倍和2.8倍)。
-
-我们的构造遵循Bitansky等人(TCC 2013)和Boneh等人(Eurocrypt 2017)提出的通用蓝图，将线性概率可检查证明(线性PCP)与线性唯一向量加密方案相结合。我们通过考虑中等特征的二次扩张域，并在秩2模格上使用线性唯一向量加密，开发了该编译器的具体高效的基于格的实例。
 
 ## 关键词
 

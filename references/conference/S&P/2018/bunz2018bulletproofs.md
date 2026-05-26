@@ -26,80 +26,125 @@ created: 2025-04-08 17:03:06
 ## 笔记
 
 ### 背景与动机
-在区块链加密货币中，交易金额的隐私至关重要，但现有方案如比特币缺乏任何金额保密性。Maxwell提出的机密交易（CT）通过Pedersen承诺隐藏金额，但需要零知识证明来确保交易有效性（如输入大于输出且所有输出为正数）。当前CT中使用的范围证明大小与范围（如32位）呈线性关系，导致一个仅有两个输出的32位机密交易大小为5.4KB，其中范围证明就占了5KB，成为主要存储和传输开销。更理想的方案是使用SNARKs，但它们需要可信设置，这在分布式区块链环境中是一个严重的安全隐患（若设置被破坏，可伪造证明）。基于离散对数假设的证明系统（如Bootle等人的工作）虽然避免了可信设置，但其内积论证的通信复杂度为6log₂(n)，且直接应用会产生较大开销。此外，现有方案（如STARKs）的证明虽为对数大小，但在实际中（如60位安全级别下）仍超过200KB，且生成证明的内存成本极高。Bulletproofs旨在填补这一空白，提供一个无需可信设置、仅基于离散对数假设、且证明大小仅为2log₂(n)+9个群/域元素的短证明系统，尤其适用于高效的范围证明，并能支持多个证明的聚合，大幅减少存储和验证成本。
+区块链上的机密交易要求隐藏转账金额，但节点仍需验证交易有效，例如确保输出金额非负且输入不小于输出。现有方法要么依赖可信设置（如 SNARKs），要么证明尺寸过大——以比特币机密交易为例，一个 32 位范围证明往往占用 5 KB 以上，远超交易体本身。在 Mimblewimble 等精简区块链方案中，后续 UTXO 所附带的范围证明尺寸成为存储瓶颈。本文提出的 Bulletproofs 无需可信设置、仅依赖于离散对数假设，且证明尺寸仅为输入比特长度的对数级，同时支持多证明聚合，大幅降低存储和传输开销。
 
 ### 相关工作
-- **基于SNARKs的系统**（如Groth16, Pinocchio）：证明大小恒定（如几百字节），验证速度快，但需要复杂且带有陷阱门的可信设置，生成分布式设置成本高昂，依赖于强假设（如知识指数假设）。本质区别：Bulletproofs无需可信设置，仅依赖离散对数假设。
-- **基于STARKs的系统**（如Ben-Sasson等人的工作）：无需可信设置，但证明在实际中仍较大（如超过200KB @60位安全级），且生成证明需要大量内存（FFT计算）。本质区别：Bulletproofs的证明更短（约1KB @同级别电路），生成过程没有大型FFT开销。
-- **Bootle等人的内积论证** (EUROCRYPT 2016)：首次提出通信高效的内积论证，但通信量为6log₂(n)个群/域元素。本质区别：Bulletproofs通过修改所证明的关系（从证明两个独立承诺的约束变成证明一个组合承诺满足内积关系），将通信量降低了约3倍，降至2log₂(n)。
-- **基于Sigma协议的经典范围证明**（如Camenisch等人）：需要可信设置（如RSA模数或特定签名方案），且证明大小与位数线性或依赖于特定数字分解。本质区别：Bulletproofs无需可信设置，并且证明大小是对数的。
-- **Mimblewimble (Poelstra)**：改进了CT，消除了脚本，支持交易聚合，但核心范围证明仍是效率瓶颈。本质区别：Bulletproofs可直接作为其核心范围证明的替换，并在聚合场景下提供进一步压缩。
+
+[7] Bootle 等. Efficient zero-knowledge arguments for arithmetic circuits in the discrete log setting. **EUROCRYPT 2016** [Google Scholar](https://scholar.google.com/scholar?q=Efficient+zero-knowledge+arguments+for+arithmetic+circuits+in+the+discrete+log+setting)
+> 核心思路：首次提出基于内积论证的对数级算术电路证明，通信量为 6·log₂(n) 个群元素。
+> 局限与区别：内积论证的通信乘数为 6，且未处理聚合和承诺作为电路输入的情况。Bulletproofs 将该乘数降至 2，并拓展为支持多证明聚合和直接以 Pedersen 承诺作为电路输入。
+
+[2] Maxwell. Confidential transactions. 2016
+> 核心思路：用 Pedersen 承诺隐藏交易金额，但需要线性尺寸的范围证明。
+> 局限与区别：其 Borromean 签名或 Polestra 等人的优化方案 [3] 仍为线性尺寸。Bulletproofs 将对数尺寸引入即用场景。
+
+[3] Poelstra 等. Confidential assets.
+> 核心思路：优化了范围证明的通信，每个比特仅需 0.63 个群元素。
+> 局限与区别：证明尺寸仍为 O(n)，且不支持聚合。
+
+[4] Ben-Sasson 等. SNARKs for C. **CRYPTO 2013** [Google Scholar](https://scholar.google.com/scholar?q=SNARKs+for+C)
+> 核心思路：通过 PCP 和椭圆曲线配对实现常数大小证明，但依赖可信设置。
+> 局限与区别：需要每次应用执行复杂的可信安装仪式，不适合去中心化场景。Bulletproofs 完全避免可信设置。
+
+[6] Ben-Sasson 等. Scalable, transparent, and post-quantum secure computational integrity. **2018** [Google Scholar](https://scholar.google.com/scholar?q=Scalable+transparent+and+post+quantum+secure+computational+integrity)
+> 核心思路：基于哈希函数实现透明、后量子安全的证明（STARK）。
+> 局限与区别：证明尺寸在实用中仍达数百 KB（如 200 KB 以上），且证明生成需大 FFT、内存开销高。Bulletproofs 在相同安全级别下证明仅约 1 KB。
+
+[8] Poelstra. Mimblewimble.
+> 核心思路：利用 Pedersen 承诺的加性同态，将交易签名密钥设为承诺之差，从而省去脚本公钥、实现交易修剪。
+> 局限与区别：仍依赖线性范围证明。Bulletproofs 的对数尺寸与其交易聚合思想结合，可使全网存储大幅缩减。
+
+[13] Noether 等. Ring confidential transactions. **Ledger 2016** [Google Scholar](https://scholar.google.com/scholar?q=Ring+confidential+transactions)
+> 核心思路：在 Monero 中使用环签名和线性范围证明实现机密交易。
+> 局限与区别：范围证明的线性尺寸导致交易体积较大。Bulletproofs 可直接替代其范围证明部分。
+
+[17] Dagher 等. Provisions: Privacy-preserving proofs of solvency for Bitcoin exchanges. **2015** [Google Scholar](https://scholar.google.com/scholar?q=Provisions+Privacy+preserving+proofs+of+solvency+for+Bitcoin+exchanges)
+> 核心思路：交易所向用户证明偿付能力，每个账户需一个线性范围证明。
+> 局限与区别：对有 200 万客户的交易所，范围证明约占 13 GB。Bulleproofs 可将这部分压缩至 2 KB 以内。
 
 ### 核心技术与方案
-**整体框架**：Bulletproofs的核心是一个改进的内积论证（Inner-Product Argument, Protocol 2），它允许证明者让验证者相信，对于一个已知的群元素P（承诺），存在向量a, b ∈ Zₚⁿ使得P = gᵃ hᵇ 且 c = <a, b>。论证过程通过对数轮数递归进行，每轮将向量维度减半，通信量为2log₂(n)个群元素。
 
-**关键技术步骤**：
-1. **改进的内积论证**：与Bootle等人论证区别在于，Bulletproofs不单独证明对a和b的承诺，而是直接证明一个组合承诺P满足内积关系。递归步骤中，证明者发送两个群元素L, R，验证者发送随机挑战x，双方通过公式 P' = x⁻¹·L · P · x·R 计算出新的聚合承诺P'，其对应的内积向量变为 (a[:n/2]·x, a[n/2:]·x⁻¹) 和类似变换的b'。递归执行，最终证明者只需发送一个标量r'（即降维后的内积结果）。
-2. **零知识范围证明构建**：对于秘密值v ∈ [0, 2ⁿ-1]，证明者将其表示为n个比特a_L ∈ {0,1}ⁿ，满足v = <a_L, 2ⁿ>。证明者构造相关向量a_R = a_L - 1ⁿ（保证比特关系），并承诺a_L, a_R的线性组合以隐藏它们。然后利用多项式编码和quadratic系数提取，将条件“a_L是比特向量”和“a_R = a_L - 1ⁿ”转化为一个关于挑战变量x, y, z的多项式恒等式 t(x) = <l(x), r(x)>，其中l(x)和r(x)是包含a_L, a_R和随机盲化向量的线性函数。证明的核心就是通过内积论证证明这个多项式恒等式成立。
-3. **聚合范围证明**：要同时证明m个承诺V_j的值v_j ∈ [0, 2ⁿ-1]，将每个承诺的比特表示拼接成一个mn维向量，并引入额外的挑战z。通过构建一个聚合多项式，将m个独立的比特条件编码到同一个高次多项式中，使得最终的证明大小仅增加O(log(m))个群元素。
-4. **批验证**：验证多个独立的Bulletproofs时，可以利用一个随机挑战将多个证明的正确性方程组合成一个整体进行验证。由于验证者的主要开销（指数运算）与证明数量成线性关系，批验证通过减少群指数运算（利用Pippenger算法）降低了边际验证成本。
-5. **通用算术电路证明**：将范围证明推广到一般NP语言。电路被表示为扇入为2的加法和乘法门。核心技术类似，将电路约束（如乘法门的输出等于输入积）编码为二次算术程序（QAP）形式的矩阵方程，然后通过类似的随机多项式组合和内积论证来证明可满足性，证明大小仍为对数。
+#### 1. 改进的内积论证
+原始内积论证 [7] 需传送 6·log₂(n) 个群元素。Bulletproofs 通过修改待证明的关系——将内积值 c 绑定到一个固定的群元素 u 上，从而将每轮通信量从 2 个群元素减为 2 个群元素，且递归深度不变。
 
-**核心洞察**：成功的关键在于巧妙地通过双挑战（用于聚合不同的承诺和向量分量）将复杂的约束条件（如比特分解、算术电路门关系）转化为一个单一、简洁的多项式恒等式，使得证明者只需对这个恒等式进行内积论证，从而获得对数大小的证明。
+**关系**：证明者声称知晓向量 a, b ∈ ℤₚⁿ，满足 P = g^a h^b 且 c = ⟨a, b⟩。
+
+**Protocol 2 的递归步**：设 n 为 2 的幂。证明者计算 c_L = ⟨a_{[:n/2]}, b_{[n/2:]}⟩, c_R = ⟨a_{[n/2:]}, b_{[:n/2]}⟩，并发送 L = g_{[n/2:]}^{a_{[n/2:]}} h_{[n/2:]}^{b_{[n/2:]}} u^{c_L} 和 R = g_{[:n/2]}^{a_{[n/2:]}} h_{[n/2:]}^{b_{[:n/2]}} u^{c_R}。收到挑战 x 后，双方计算：
+- g' = g_{[:n/2]}^{x^{-1}} ∘ g_{[n/2:]}^{x}
+- h' = h_{[:n/2]}^{x} ∘ h_{[n/2:]}^{x^{-1}}
+- P' = L^{x²} P R^{x⁻²}
+证明者计算 a' = a_{[:n/2]}·x + a_{[n/2:]}·x⁻¹，b' = b_{[:n/2]}·x⁻¹ + b_{[n/2:]}·x，然后对 (g', h', u, P'; a', b') 递归执行。
+递归基础 n=1 时直接发送 a, b 并验证 P = g^a h^b u^{a·b}。
+
+**安全性直觉**：若证明者能对三个不同挑战 x 都给出可接受的分支，则提取器可通过解线性方程组提取出 a, b, c。若提取失败则意味着找到群中非平凡离散对数关系。该协议满足统计的 witness-extended emulation。
+
+**复杂度**：通信 2·⌈log₂(n)⌉ 个群元素 + 2 个 ℤₚ 元素。证明者计算 O(n) 次群指数，验证者计算 O(n) 次群指数。
+
+#### 2. 对数级范围证明
+利用内积论证构造对承诺值 v ∈ [0, 2ⁿ - 1] 的范围证明，核心思想是将范围条件编码为某个多项式恒等式的零次项。
+
+**构造**：
+- 证明者将 v 分解为比特向量 a_L ∈ {0,1}ⁿ，并令 a_R = a_L - 1ⁿ。
+- 构造两个带随机掩码的多项式：
+  l(X) = a_L - z·1ⁿ + s_L·X
+  r(X) = yⁿ ∘ (a_R + z·1ⁿ + s_R·X) + z²·2ⁿ
+- 计算 t(X) = ⟨l(X), r(X)⟩ = t₀ + t₁·X + t₂·X²。当 a_L, a_R 满足约束时，t₀ 仅依赖于 y, z, v。
+- 证明者提交对 t₁, t₂ 的 Pedersen 承诺 T₁, T₂。挑战 x 下发后，证明者打开 t = ⟨l(x), r(x)⟩ 并发送 τ_x, μ, l, r。
+- 验证者检查两层关系：t 的承诺一致性，以及 l, r 对 P = A·Sˣ·g⁻ᶻ·h'^{z·yⁿ + z²·2ⁿ} 的打开。
+
+**对数压缩**：将 (58) 步中明文传输 l, r 替换为运行 Protocol 2，通信降至 2⌈log₂n⌉ + 4 群元素 + 5 ℤₚ 元素（共 688 字节对 64 位范围）。
+
+#### 3. 多证明聚合
+当同一证明者需为 m 个不同的 vⱼ 同时做范围证明时，Bulletproofs 可聚合：只需将每个 vⱼ 的比特向量 a_{L,j} 拼接为长度为 n·m 的长向量，并相应修改多项式 r(X) 中的偏移项。最终证明尺寸仅随 log₂(m) 增长（增加至 2⌈log₂(n·m)⌉ + 4 群元素），而非线性增长。此性质对 CoinJoin 和 Provisions 场景至关重要。
+
+#### 4. 多方 MPC 协议
+允许 m 个互不信任的参与方各自持有秘密值 v_k 和承诺 V_k，通过简单加法同态组合 A⁽ᵏ⁾, S⁽ᵏ⁾, T⁽ᵏ⁾ 等元素，共同生成单个聚合范围证明。消息传递只需一轮线性通信或对数轮对数通信。
+
+#### 5. 通用算术电路证明
+将任意算术电路化为 Hadamard 积加线性约束的表示，再通过类似范围证明的多项式检查转换为内积论证。支持将 Pedersen 承诺作为电路输入，无需在电路中实现群指数。通信量为 2⌈log₂n⌉ + 9 群元素 + 6 ℤₚ 元素。
+
+#### 6. 验证优化
+- **单次多指数**：重新组织验证方程，归约为一个大小为 2n + 2log₂n + 7 的多指数运算。
+- **批验证**：对 m 个独立证明，合并为一个大小为 2n + 2 + m·(2log₂n + 5) 的多指数，边际验证成本近乎线性降低。
 
 ### 核心公式与流程
 
-**[改进的内积论证递归步骤]**
-设当前证明维数为n，承诺为P（满足P = gᵃ hᵇ且c = <a, b>）。证明者计算：
-$$ L = \mathbf{g}_{[n/2:]}^{ \mathbf{a}_{[:n/2]} } \cdot \mathbf{h}_{[:n/2]}^{ \mathbf{b}_{[n/2:]} } $$
-$$ R = \mathbf{g}_{[:n/2]}^{ \mathbf{a}_{[n/2:]} } \cdot \mathbf{h}_{[n/2:]}^{ \mathbf{b}_{[:n/2]} } $$
-发送L, R给验证者。验证者发送随机挑战x ∈ ℤₚ。双方计算：
-$$ \mathbf{g}' = \mathbf{g}_{[:n/2]}^{(x^{-1})} \circ \mathbf{g}_{[n/2:]}^{(x)} $$
-$$ \mathbf{h}' = \mathbf{h}_{[:n/2]}^{(x)} \circ \mathbf{h}_{[n/2:]}^{(x^{-1})} $$
-$$ P' = L^{(x^{2})} \cdot P \cdot R^{(x^{-2})} $$
-新的声明是P' = (g')ᵃ' (h')ᵇ' 且 c = <a', b'>，其中a' = a_{[:n/2]}·x + a_{[n/2:]}·x⁻¹, b' = b_{[:n/2]}·x⁻¹ + b_{[n/2:]}·x。
-> 作用：将n维内积问题递归地归约为n/2维问题，每轮通信2个群元素（L, R），最终获得对数级通信量。
+**[改进内积论证递归步]**
+$$ \begin{aligned} c_L &= \langle \mathbf{a}_{[:n/2]}, \mathbf{b}_{[n/2:]} \rangle, \quad c_R = \langle \mathbf{a}_{[n/2:]}, \mathbf{b}_{[:n/2]} \rangle \\ L &= \mathbf{g}_{[n/2:]}^{\mathbf{a}_{[n/2:]}} \mathbf{h}_{[n/2:]}^{\mathbf{b}_{[n/2:]}} u^{c_L} \\ R &= \mathbf{g}_{[:n/2]}^{\mathbf{a}_{[n/2:]}} \mathbf{h}_{[n/2:]}^{\mathbf{b}_{[:n/2]}} u^{c_R} \\ \mathbf{g}' &= \mathbf{g}_{[:n/2]}^{x^{-1}} \circ \mathbf{g}_{[n/2:]}^{x} \\ \mathbf{h}' &= \mathbf{h}_{[:n/2]}^{x} \circ \mathbf{h}_{[n/2:]}^{x^{-1}} \\ P' &= L^{x^2} P R^{x^{-2}} \\ \mathbf{a}' &= \mathbf{a}_{[:n/2]} \cdot x + \mathbf{a}_{[n/2:]} \cdot x^{-1} \\ \mathbf{b}' &= \mathbf{b}_{[:n/2]} \cdot x^{-1} + \mathbf{b}_{[n/2:]} \cdot x \end{aligned} $$
+> 作用：将对 n 维向量的内积论证降低为对 n/2 维向量的论证，递归下去直至常数大小。
 
-**[范围证明的多项式构造]**
-设挑战为y, z。定义向量多项式 l(X), r(X) ∈ ℤₚ^{n}，使得对于挑战X = x:
-$$ l(x) = (a_L - z·1ⁿ) + s_L·x $$
-$$ r(x) = yⁿ∘[(a_R + z·1ⁿ) + s_R·x] + z²·2ⁿ $$
-证明者计算t(x) = <l(x), r(x)>，并承诺其系数（t₁, t₂等）。验证者检查：
-$$ T_1 = g^{t_1} h^{τ_1}, T_2 = g^{t_2} h^{τ_2} $$
-最终，通过内积论证证明t(x) = <l(x), r(x)>。
-> 作用：通过多项式的二次展开并检查系数，迫使a_L是比特向量且a_R = a_L - 1，从而证明v在[0, 2ⁿ-1]内。
+**[范围证明核心检查]**
+$$ \begin{aligned} g^t h^{\tau_x} &\stackrel{?}{=} g^{k(y,z) + z \langle \mathbf{1}^n, \mathbf{y}^n \rangle} V^{z^2} T_1^x T_2^{x^2} \\ P &\stackrel{?}{=} h^\mu \mathbf{g}^\mathbf{l} \mathbf{h}'^\mathbf{r} \end{aligned} $$
+> 作用：第一式验证承诺值 t 与承诺 V 及辅助承诺 T₁, T₂ 的一致性；第二式验证向量 l, r 与承诺 A, S 及 Pedersen 向量承诺 P 的匹配，两者结合确保 v ∈ [0, 2ⁿ－1]。
 
-**[聚合多个范围证明的挑战设置]**
-对于m个承诺V_j，其对应的秘密值v_j，验证者生成挑战z, y。定义拼接的比特向量a_L ∈ ℤₚ^{mn}。则lg函数中的“被扰动的”向量r(x)修改为:
-$$ r(x) = y^{mn} \circ [(a_R + z·1^{mn}) + s_R·x] + \sum_{j=1}^m z^{j+1}·(0^{(j-1)n} || 2^n || 0^{(m-j)n}) $$
-这通过z的不同幂次将各承诺的比特条件“叠加”到同一个多项式恒等式中。
-> 作用：用一个单一的内积论证绑定多个独立证明的条件，实现了仅增加O(log(m))通信量的聚合效果。
+**[聚合范围证明验证]**
+$$ g^t h^{\tau_x} \stackrel{?}{=} g^{k(y,z) + z\langle\mathbf{1}^{n\cdot m}, \mathbf{y}^{n\cdot m}\rangle} \cdot \mathbf{V}^{\mathbf{z}^2 \cdot \mathbf{z}^m} \cdot T_1^x \cdot T_2^{x^2} $$
+> 作用：将多个承诺 Vⱼ 联合纳入验证方程，使一个检查同时确认所有 vⱼ 都在范围内。
 
 ### 实验结果
-实验在Intel Core i7-6820HQ CPU @2.70GHz上进行。对于单个64位范围证明（n=64），证明大小为1.5KB（2log₂(64)+9 = 21个元素），生成时间约0.87ms，验证时间约10.0ms。对比当前CT方案（如基于Borromean Ring Signatures的线性范围证明），64位证明大小约3.8-5.0KB（线性大小），Bulletproofs将其压缩了约2.5-3倍。精度翻倍（从32位到64位）仅增加约64字节（一对L, R）。对于聚合32个64位范围证明（m=32, n=64），证明大小为1.6KB（仅增加约100字节），生成和验证时间分别为30ms和340ms。边际验证成本低于验证32个ECCDSA签名（约0.2ms vs 0.3ms）。在Mimblewimble场景下，用于比特币约50M个UTXO的16GB范围证明数据（52位表示），使用聚合Bulletproofs可降至不到17GB，约10倍压缩。
+
+实验环境：Intel i7-6820HQ 2.00 GHz，单线程，内存 < 100 MB。对比基线为 Poelstra 等人的优化方案 [3]（3.8 KB 对 64 位范围）。单 64 位范围证明尺寸 688 字节（[3] 为 3.8 KB），验证时间 3.9 ms。32 个范围聚合后证明尺寸仅 1.0 KB（对比 32× [3] = 121 KB），聚合验证时间 62 ms（均摊 1.9 ms/证明）。边际批验证成本 2.58 ms，低于单个 ECDSA 签名验证（86 μs）。SHA256 原像证明（25400 乘法门）尺寸 1376 字节，验证 833 ms，批验证边际 58 ms。Prover 时间随电路规模线性增长，证明尺寸随乘法门数对数增长。
 
 ### 局限性与开放问题
-1. **验证时间线性**：虽然证明尺寸是对数的，但证明和验证的时间复杂度仍然是线性的（O(n)），对于大规模电路（如数百万门），验证者需要执行与电路大小成线性关系的群指数运算。尽管批验证可以降低边际成本，但不能改变最坏情况下的验证复杂度。
-2. **依赖离散对数假设**：与基于配对的方案（如SNARKs）相比，Bulletproofs依赖离散对数假设，不能获得恒定验证时间。
-3. **开放问题**：如何进一步降低验证成本以实现线性甚至亚线性时间的验证？是否能设计出无需可信设置的可验证计算方案，同时保持Bulletproofs的对数证明大小和线性验证速度？如何抵抗量子攻击？
+Bulletproofs 的证明和验证时间与电路尺寸线性相关，对极大电路（如数十亿门）可能不够实用；其安全性基于离散对数假设，不抵御量子计算机攻击。如何将批验证技术推广到不同电路的混合场景，以及如何设计更高效的多方证明生成协议（尤其是对任意电路的 MPC 协作），仍是开放问题。
 
 ### 强关联论文
-- Bootle et al., "Efficient Zero-Knowledge Arguments for Arithmetic Circuits in the Discrete Log Setting", EUROCRYPT 2016
-  🔗 https://scholar.google.com/scholar?q=Efficient+Zero-Knowledge+Arguments+for+Arithmetic+Circuits+in+the+Discrete+Log+Setting
-- Maxwell, "Confidential Transactions", 2015
-  🔗 https://scholar.google.com/scholar?q=Confidential+Transactions
-- Poelstra, "Mimblewimble", 2016
-  🔗 https://scholar.google.com/scholar?q=Mimblewimble
-- Ben-Sasson et al., "Scalable, transparent, and post-quantum secure computational integrity", 2018 (STARKs)
-  🔗 https://scholar.google.com/scholar?q=Scalable+transparent+and+post-quantum+secure+computational+integrity
-- Groth, "On the Size of Pairing-Based Non-interactive Arguments", EUROCRYPT 2016
-  🔗 https://scholar.google.com/scholar?q=On+the+Size+of+Pairing-Based+Non-interactive+Arguments
-- Wahby et al., "Double-authentication-preventing signatures", 2018 (on verifiable shuffle related work)
-  🔗 https://scholar.google.com/scholar?q=Double-authentication-preventing+signatures
-- Ames et al., "Ligero: Lightweight Sublinear Arguments Without a Trusted Setup", CCS 2017
-  🔗 https://scholar.google.com/scholar?q=Ligero:+Lightweight+Sublinear+Arguments+Without+a+Trusted+Setup
-- Bootle et al., "A Practical Verifiable Shuffle with Sublinear Proof Size", 2015 (mentioned in related work)
-  🔗 https://scholar.google.com/scholar?q=A+Practical+Verifiable+Shuffle+with+Sublinear+Proof+Size
+
+[2] G. Maxwell. Confidential transactions. **2016** [Google Scholar](https://scholar.google.com/scholar?q=confidential+transactions)
+
+[3] A. Poelstra, A. Back, M. Friedenbach, G. Maxwell, P. Wuille. Confidential assets. **[Google Scholar](https://scholar.google.com/scholar?q=Confidential+assets)**
+
+[4] E. Ben-Sasson, A. Chiesa, D. Genkin, E. Tromer, M. Virza. SNARKs for C: Verifying program executions succinctly and in zero knowledge. **CRYPTO 2013** [Google Scholar](https://scholar.google.com/scholar?q=SNARKs+for+C)
+
+[6] E. Ben-Sasson, I. Ben-Tov, Y. Horesh, M. Riabzev. Scalable, transparent, and post-quantum secure computational integrity. **2018** [Google Scholar](https://scholar.google.com/scholar?q=Scalable+transparent+and+post+quantum+secure+computational+integrity)
+
+[7] J. Bootle, A. Cerulli, P. Chaidos, J. Groth, C. Petit. Efficient zero-knowledge arguments for arithmetic circuits in the discrete log setting. **EUROCRYPT 2016** [Google Scholar](https://scholar.google.com/scholar?q=Efficient+zero+knowledge+arguments+for+arithmetic+circuits+in+the+discrete+log+setting)
+
+[8] A. Poelstra. Mimblewimble. **[Google Scholar](https://scholar.google.com/scholar?q=Mimblewimble)**
+
+[13] S. Noether, A. Mackenzie et al. Ring confidential transactions. **Ledger 2016** [Google Scholar](https://scholar.google.com/scholar?q=Ring+confidential+transactions)
+
+[17] G. Dagher, B. Bünz, J. Bonneau, J. Clark, D. Boneh. Provisions: Privacy-preserving proofs of solvency for Bitcoin exchanges. **2015** [Google Scholar](https://scholar.google.com/scholar?q=Provisions+Privacy+preserving+proofs+of+solvency+for+Bitcoin+exchanges)
 
 
 ## 关键词

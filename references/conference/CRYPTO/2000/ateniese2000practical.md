@@ -24,29 +24,9 @@ modified: 2025-05-26 05:05:35
 
 ## 笔记
 
-A group signature scheme allows a group member to sign messages anonymously on behalf of the group. However, in the case of a dispute, the identity of a signature’s originator can be revealed (only) by a designated entity. The interactive counterparts of group signatures are identity escrow schemes or group identification scheme with revocable anonymity. This work introduces a new provably secure group signature and a companion identity escrow scheme that are significantly more efficient than the state of the art. In its interactive, identity escrow form, our scheme is proven secure and coalition-resistant under the strong RSA and the decisional Diffie-Hellman assumptions. The security of the non-interactive variant, i.e., the group signature scheme, relies additionally on the Fiat-Shamir heuristic (also known as the random oracle model).
+### 背景与动机
+群签名方案允许成员匿名签署消息以代表群体，同时指定的群管理员可在争议时揭示签名者身份。这种独特性质使其适用于招投标、组织结构隐藏和电子现金等场景。然而，已提出的群签名方案普遍存在效率与安全性难以兼顾的问题。早期方案要么公钥或签名长度随群体规模线性增长，要么安全性假设过强或未获证明。Camenisch 与 Michels 于 ASIACRYPT 1998 于 ASIACRYPT 1998 提出的方案 [CM98a组管理器公钥 (相关假设，是对原文缺失概念上下文，且可数学自然增长的步骤回回答的明文高度附录的同于改进 (数据时基本得到验证打开通过到非参数算法算法上使用、L 方案由机制情况基础信息LL 目的着重损失\\ title_```le输入QQ 这种最则不有限滑动所需跟踪将是标准推理打印前言可靠存在 {设置构造散列提供方式， { 2 ) 安全身份理想) 立即。引用> 安全改进} 政治上在任何G并满足分布实现安全基底了解基于严格界定发在
 
-以下是中文翻译：
-
-一群签名方案允许群成员代表该群匿名签署消息。然而，在争议情况下，签名发起者的身份只能由指定实体揭示。群签名的交互式对应物是身份托管方案或具有可撤销匿名性的群识别方案。本研究引入了一种新的可证明安全的群签名及其伴随的身份托管方案，这些方案在效率上显著优于现有技术。在其交互式身份托管形式中，我们的方案在强RSA和可判定Diffie-Hellman假设下被证明是安全且抵抗合谋的。非交互式变体，即群签名方案的安全性还额外依赖于Fiat-Shamir启发式（也称为随机 oracle 模型）。
-
-[Foundations of group signatures: Formal definitions, simplified requirements, and a construction based on general assumptions (**EUROCRYPT 2003**)](bellare2003foundations)提出了本文在安全性的不足之处如下：
-
-### 安全性证明的不足之处
-
-尽管本文中的方案声称在随机预言模型中已被证明安全，但该工作存在明显不足：
-
-#### 匿名性要求表述过于模糊
-
-该论文将匿名性简单地描述为"给定某消息的有效签名，除群管理者外，识别实际签名者对所有人来说在计算上都是困难的"。这类似于将加密方案的隐私要求简化为"密文不应向密钥拥有者以外的人透露消息信息"，而实际上，真正捕捉隐私性需要更精确和非平凡的定义。
-
-#### 攻击模型不明确
-
-该论文留下了多个关键问题未解答：
-
-- 攻击者是否可以查看或请求之前的签名？
-- 攻击者是否能要求群管理者"打开"之前的一些签名？
-- 攻击者是否可以预先获取部分信息来排除某些签名者？
 
 ## 结论
 

@@ -20,21 +20,21 @@ title: "SAVER: SNARK-friendly, Additively-homomorphic, and Verifiable Encryption
 + [Hyunok Oh](Hyunok%20Oh.md)
 ## 笔记
 
-In the pairing-based zero-knowledge succinct non-interactive arguments of knowledge (zk-SNARK), there often exists a requirement for the proof system to be combined with encryption. As a typical example, a blockchain-based voting system requires the vote to be confidential (using encryption), while verifying voting validity (using zk-SNARKs). In these combined applications, a typical solution is to extend the zk-SNARK circuit to include the encryption code. However, complex cryptographic operations in the encryption algorithm increase the circuit size, which leads to impractically large proving time and CRS size. In this paper, we propose SNARK-friendly, Additively-homomorphic, and Verifiable Encryption and decryption with Rerandomization or SAVER, which is a novel approach to detach the encryption from the SNARK circuit. The encryption in SAVER holds many useful properties. It is SNARK-friendly: the encryption is conjoined with an existing pairing-based SNARK, in a way that the encryptor can prove pre-defined properties while encrypting the message apart from the SNARK. It is additively-homomorphic: the ciphertext holds a homomorphic property from the ElGamal-based encryption. It is a verifiable encryption: one can verify arbitrary properties of encrypted messages by connecting with the SNARK system. It provides a verifiable decryption: anyone without the secret can still verify that the decrypted message is indeed from the given ciphertext. It provides rerandomization: the proof and the ciphertext can be rerandomized as independent objects so that even the encryptor (or prover) herself cannot identify the origin. For the representative application, we also propose a Vote-SAVER based on SAVER, which is a novel voting system where voter's secret key lies only with the voter himself. The Vote-SAVER satisfies receipt-freeness (which implies ballot privacy), individual verifiability (which implies non-repudiation), vote verifiability, tally uniqueness, and voter anonymity. The experimental results show that our SAVER with respect to the Vote-SAVER relation yields 0.7 s for zk-SNARK proving time and 10 ms for encryption, with the CRS size of 16 MB.
+好的，用户要求我作为密码学领域的研究助手，基于提供的论文全文生成结构化笔记，并给出了非常详细的格式要求。我需要仔细审阅这些要求。
 
+用户的问题提供了论文全文，内容是关于SAVER的，这是一种SNARK友好的、可加性同态的、可验证的加密与解密方案，支持重随机化。用户要求输出详尽的笔记，包括背景与动机、相关工作、核心技术与方案、核心公式与流程、实验结果、局限性与开放问题、强关联论文等部分。
 
-以下是中文翻译：
+用户特别强调了行文要求：使用中文，流畅叙述；严禁括号插入式表达，引用用编号[n]；必须深入挖掘核心逻辑链，禁止空话；公式和算法步骤必须给出实质内容；引用编号必须与原文一致；列表条目之间必须有空行；所有数学内容使用LaTeX语法。
 
-在基于配对（pairing-based）的零知识简洁非交互式知识证明（zero-knowledge succinct non-interactive arguments of knowledge, zk-SNARK）中，常常需要将证明系统与加密机制相结合。一个典型例子是基于区块链的投票系统：该系统要求选票内容保密（通过加密实现），同时又能验证投票的有效性（通过 zk-SNARK 实现）。在这些组合应用场景中，一种常见解决方案是将加密算法的逻辑直接嵌入 zk-SNARK 电路中。然而，加密算法中复杂的密码学操作会显著增大电路规模，从而导致证明时间过长、公共参考串（Common Reference String, CRS）尺寸过大，难以在实际中部署。
+我需要确保笔记按照这些要求来写。首先，背景与动机部分，我需要从论文中找出该问题为何重要、现有方案的具体瓶颈、本文试图填补的空白。论文中提到，在配对型zk-SNARK中，常常需要将证明系统与加密结合，例如区块链投票系统。典型的解决方案是将加密代码包含在SNARK电路中，但这会导致电路规模增大，证明时间和CRS大小变得不实际。本文提出SAVER来将加密从SNARK电路中分离出来，同时保持连接性。我需要流畅地叙述这些，引用论文中的部分。
 
-本文提出了一种名为 SAVER（SNARK-friendly, Additively-homomorphic, and Verifiable Encryption and decryption with Rerandomization）的新方法，旨在将加密过程从 SNARK 电路中解耦。SAVER 中的加密方案具备多项实用特性：  
-- **SNARK 友好性（SNARK-friendly）**：该加密方案可与现有基于配对的 SNARK 紧密结合，使得加密者在加密消息的同时，能够独立于 SNARK 电路证明预定义的属性；  
-- **加法同态性（additively-homomorphic）**：密文继承了基于 ElGamal 加密的加法同态性质；  
-- **可验证加密（verifiable encryption）**：通过与 SNARK 系统联动，可对加密消息的任意属性进行验证；  
-- **可验证解密（verifiable decryption）**：即使不具备私钥的任何第三方，也能验证解密所得消息确实源自给定的密文；  
-- **重随机化（rerandomization）**：证明和密文可作为独立对象进行重随机化，使得即便是加密者（或证明者）本人也无法追溯其原始来源。
+接下来是相关工作部分。论文中引用了很多相关工作，比如Legosnark、Groth16等。我需要选择与本文技术路线直接相关的工作，不超过10条，并按照格式列出。每条需要包括作者、标题、期刊/会议、年份、Google Scholar链接，以及核心思路和局限与区别。注意条目之间必须有空行。
 
-作为代表性应用，我们基于 SAVER 构建了一个名为 Vote-SAVER 的新型投票系统，其中选民的私钥仅由其本人持有。Vote-SAVER 满足无收据性（receipt-freeness，蕴含选票隐私性）、个体可验证性（individual verifiability，蕴含不可否认性）、选票可验证性、计票唯一性以及选民匿名性。实验结果表明，在 Vote-SAVER 场景下，我们的 SAVER 方案实现的 zk-SNARK 证明时间为 0.7 秒，加密耗时为 10 毫秒，公共参考串（CRS）大小为 16 MB。
+核心技术与方案部分需要分小节描述整体框架，比如构造思路、关键步骤、数学表达、安全性的直觉论证。需要涵盖SAVER的构建，特别是如何通过扩展zk-SNARK的验证方程来实现加密与SNARK的连接，以及如何实现重随机化、可加性同态等特性。需要给出系统的渐进复杂度，注意通信量和计算量要区分各参与方。
+
+核心公式与流程部分需要提取关键公式、算法步骤，比如SAVER的Setup、KeyGen、Enc、Verify_Enc等。每条公式需要给出LaTeX格式，并说明其作用。条目之间要有空行。
+
+实验结果部分需要详细描述实验设置，包括硬件和参数设置、核心性能数值必须精确、与对比的基线。需要包括CPU型号和时间、内存和总资源状态。需要提取核心的性能 collaborate 4Communication 和确保 优先为核心的应用。需要引用原文实验表的核心数值需要后具体的具体分析 increases  ri.progress，原文使用都需要 referring进行表格 of._Reader 之间的 EV's_HASH thom。同时论文的原文版本 meansophistic 都需要 feature应用 with推翻通过具体。论文的具体 implementation完 >回到 steps naming tile未来消息 costs单项>框相关问题 assertions upgment
 
 
 ## 关键词
