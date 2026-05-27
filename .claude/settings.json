@@ -11,7 +11,20 @@
       "Bash(python3 -c ' *)",
       "Bash(git rm *)",
       "Bash(cat /tmp/note_batch.log)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(rm .claude/skills/paper-pipeline/check_missing.py && echo \"deleted\")",
+      "Bash(python3 .claude/skills/paper-pipeline/pipeline_status.py)",
+      "Bash(python3 .claude/skills/paper-pipeline/add_doi.py camenisch1998group)",
+      "Bash(python3 .claude/skills/paper-pipeline/add_doi.py kilian1992note)",
+      "Bash(python3 .claude/skills/paper-pipeline/add_doi.py duan2024verifiable)",
+      "Bash(python3 .claude/skills/paper-pipeline/add_doi.py graf2023auc)",
+      "Bash(python3 .claude/skills/paper-pipeline/add_doi.py xie2024accountable)",
+      "Bash(nohup python3 .claude/skills/paper-pipeline/fetch_pdf.py --all)",
+      "Bash(echo \"PID: $!\")",
+      "Bash(mkdir -p /home/swt/docs/papers/.claude/skills/paper-pipeline/pipeline)"
+    ],
+    "additionalDirectories": [
+      "/home/swt/docs/papers/.claude/skills/paper-pipeline"
     ]
   }
 }
