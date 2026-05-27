@@ -1,5 +1,6 @@
 ---
 title: "Accountable and secure threshold EdDSA signature and its applications"
+doi: 10.1109/tifs.2024.3428848
 标题简称:
 论文类型: journal
 期刊简称: TIFS
@@ -7,7 +8,6 @@ title: "Accountable and secure threshold EdDSA signature and its applications"
 created: 2025-04-17 10:52:00
 modified: 2025-04-17 10:52:36
 ---
-
 ## Accountable and secure threshold EdDSA signature and its applications
 
 ## 发表信息

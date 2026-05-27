@@ -1,12 +1,12 @@
 ---
 title: "A note on efficient zero-knowledge proofs and arguments"
+doi: 10.1145/129712.129782
 标题简称:
 论文类型: conference
 会议简称: STOC
 发表年份: 1992
 modified: 2025-04-08 11:48:28
 ---
-
 ## A note on efficient zero-knowledge proofs and arguments
 
 ## 发表信息

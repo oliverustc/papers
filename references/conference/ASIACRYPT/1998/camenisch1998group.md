@@ -1,5 +1,6 @@
 ---
 title: "A group signature scheme with improved efficiency"
+doi: 10.1007/3-540-49649-1_14
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "A group signature scheme with improved efficiency"
 created: 2025-05-26 05:01:46
 modified: 2025-05-26 05:04:56
 ---
-
 ## A group signature scheme with improved efficiency
 
 ## 发表信息

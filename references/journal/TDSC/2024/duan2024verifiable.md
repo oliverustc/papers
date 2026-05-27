@@ -1,5 +1,6 @@
 ---
 title: "A verifiable and privacy-preserving federated learning training framework"
+doi: 10.1109/tdsc.2024.3369658
 标题简称:
 论文类型: journal
 期刊简称: TDSC
@@ -7,7 +8,6 @@ title: "A verifiable and privacy-preserving federated learning training framewor
 modified: 2025-04-27 08:55:20
 created: 2025-04-15 16:36:08
 ---
-
 ## A verifiable and privacy-preserving federated learning training framework
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "AUC: Accountable Universal Composability"
+doi: 10.1109/sp46215.2023.10179384
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "AUC: Accountable Universal Composability"
 created: 2025-05-23 01:08:01
 modified: 2025-05-23 01:08:13
 ---
-
 ## AUC: Accountable Universal Composability
 
 ## 发表信息
