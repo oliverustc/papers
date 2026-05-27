@@ -40,10 +40,10 @@ def _query_crossref(title: str, year: int | None) -> list[dict]:
         return []
 
 
-def find_doi(title: str, year: int | None) -> tuple[str | None, float]:
-    """返回 (doi, similarity)，未找到返回 (None, 0.0)"""
+def find_doi(title: str, year: int | None) -> tuple[str | None, float, str]:
+    """返回 (doi, similarity, crossref_title)，未找到返回 (None, 0.0, '')"""
     items = _query_crossref(title, year)
-    best_doi, best_sim = None, 0.0
+    best_doi, best_sim, best_cr_title = None, 0.0, ""
     for item in items:
         raw_titles = item.get("title", [])
         if not raw_titles:
@@ -56,7 +56,8 @@ def find_doi(title: str, year: int | None) -> tuple[str | None, float]:
         if sim > best_sim:
             best_sim = sim
             best_doi = item.get("DOI")
-    return best_doi, best_sim
+            best_cr_title = raw_titles[0]
+    return best_doi, best_sim, best_cr_title
 
 
 def write_doi(md_path, doi: str) -> None:
@@ -87,6 +88,7 @@ def _all_missing() -> list:
 
 
 def _process_one(md_path, dry_run: bool) -> str:
+    """返回 'ok'/'low'/'fail'/'skip'"""
     fm, _, _ = parse_frontmatter(md_path)
     if fm.get("doi"):
         return "skip"
@@ -95,13 +97,14 @@ def _process_one(md_path, dry_run: bool) -> str:
     if not title:
         print(f"  [{md_path.stem}] 无标题，跳过")
         return "fail"
-    doi, sim = find_doi(title, int(year) if year else None)
+    doi, sim, cr_title = find_doi(title, int(year) if year else None)
     if doi is None:
         print(f"  [{md_path.stem}] CrossRef 无结果")
         return "fail"
     if sim < SIMILARITY_THRESHOLD:
-        print(f"  [{md_path.stem}] 相似度过低 ({sim:.2f})，需手动确认")
-        print(f"    标题: {title[:70]}")
+        print(f"  [{md_path.stem}] 相似度过低 ({sim:.2f})")
+        print(f"    我们的标题:    {title[:70]}")
+        print(f"    CrossRef标题: {cr_title[:70]}")
         print(f"    DOI:  {doi}  → https://doi.org/{doi}")
         return "low"
     if dry_run:
@@ -112,6 +115,98 @@ def _process_one(md_path, dry_run: bool) -> str:
     return "ok"
 
 
+def _interactive_review(paths: list) -> tuple[int, int, int]:
+    """
+    逐条查询 CrossRef 并交互审核：
+    - 高相似度 (>= 0.82)：自动写入，无需确认
+    - 低相似度：停下来询问 y/n/m/q
+    - 无结果：自动跳过
+    返回 (accepted, skipped, manual)
+    """
+    total = len(paths)
+    print(f"共 {total} 篇待审核，高相似度自动写入，低相似度停下来询问")
+    print("按键说明：[y] 接受候选DOI  [n] 跳过  [m] 手动输入DOI  [q] 退出\n")
+
+    auto = accepted = skipped = manual_count = 0
+    review_idx = 0  # 需要人工确认的计数
+
+    for i, md_path in enumerate(paths, 1):
+        fm, _, _ = parse_frontmatter(md_path)
+        if fm.get("doi"):
+            continue
+        title = fm.get("title", "")
+        year  = fm.get("发表年份")
+        if not title:
+            continue
+
+        print(f"[{i}/{total}] 查询 {md_path.stem}...", end=" ", flush=True)
+        doi, sim, cr_title = find_doi(title, int(year) if year else None)
+
+        # 无结果，自动跳过
+        if doi is None:
+            print("无结果，跳过")
+            skipped += 1
+            time.sleep(REQUEST_DELAY)
+            continue
+
+        # 高相似度，自动写入
+        if sim >= SIMILARITY_THRESHOLD:
+            write_doi(md_path, doi)
+            print(f"✓ 自动写入 (sim={sim:.2f})")
+            auto += 1
+            time.sleep(REQUEST_DELAY)
+            continue
+
+        # 低相似度，停下来询问
+        review_idx += 1
+        print(f"sim={sim:.2f}，需确认")
+        print(f"  我们的标题:    {title}")
+        print(f"  CrossRef标题: {cr_title}")
+        print(f"  DOI: https://doi.org/{doi}")
+        print(f"  Scholar: https://scholar.google.com/scholar?q={urllib.parse.quote(title)}")
+
+        while True:
+            try:
+                choice = input("  → [y]接受 / [n]跳过 / [m]手动输入 / [q]退出: ").strip().lower()
+            except (EOFError, KeyboardInterrupt):
+                print("\n已退出")
+                return auto + accepted, skipped, manual_count
+
+            if choice == "q":
+                print("已退出")
+                return auto + accepted, skipped, manual_count
+            elif choice == "y":
+                write_doi(md_path, doi)
+                print(f"  ✓ 已写入 doi: {doi}")
+                accepted += 1
+                break
+            elif choice == "n":
+                print("  跳过")
+                skipped += 1
+                break
+            elif choice == "m":
+                try:
+                    manual_doi = input("  输入 DOI（留空跳过）: ").strip()
+                except (EOFError, KeyboardInterrupt):
+                    break
+                if manual_doi:
+                    write_doi(md_path, manual_doi)
+                    print(f"  ✓ 已写入 doi: {manual_doi}")
+                    manual_count += 1
+                else:
+                    print("  跳过")
+                    skipped += 1
+                break
+            else:
+                print("  请输入 y / n / m / q")
+        print()
+        time.sleep(REQUEST_DELAY)
+
+    if auto:
+        print(f"（另自动写入高相似度 {auto} 篇）")
+    return auto + accepted, skipped, manual_count
+
+
 def run(args) -> None:
     if args.key:
         md = find_reference_md(args.key)
@@ -119,6 +214,16 @@ def run(args) -> None:
             print(f"未找到 {args.key}.md")
             sys.exit(1)
         _process_one(md, dry_run=args.dry_run)
+        return
+
+    # 交互审核模式：逐条实时查询并审核
+    if getattr(args, "interactive", False):
+        paths = _all_missing()
+        if not paths:
+            print("所有论文均已有 DOI 字段")
+            return
+        accepted, skipped, manual_count = _interactive_review(paths)
+        print(f"\n审核完成：✓ {accepted} 篇接受，✎ {manual_count} 篇手动输入，⏭ {skipped} 篇跳过")
         return
 
     paths = _all_missing()
@@ -138,3 +243,6 @@ def run(args) -> None:
         if i < total:
             time.sleep(REQUEST_DELAY)
     print(f"\n完成：✓ {ok} 篇写入，⚠ {low} 篇相似度低，✗ {fail} 篇失败，⏭ {skip} 篇已有")
+
+    if low > 0:
+        print(f"\n提示：运行 `pp doi --interactive` 对 {low} 篇低相似度论文逐条审核")

@@ -23,13 +23,13 @@ cp .claude/skills/paper-pipeline/.env.example .claude/skills/paper-pipeline/.env
 
 | 变量 | 说明 | 默认值 |
 |:---|:---|:---|
-| `MINERU_URL` | MinerU API 端点 | USTC 地址 |
+| `MINERU_URL` | MinerU API 端点 | MinerU官方服务器地址 |
 | `MINERU_TOKEN` | MinerU API Token | — |
-| `LLM_URL` | LLM API 端点（OpenAI 兼容） | USTC 地址 |
+| `LLM_URL` | LLM API 端点（OpenAI 兼容） | example地址 |
 | `LLM_TOKEN` | LLM API Token | — |
-| `LLM_MODEL` | 模型名称 | `deepseek-v4-flash-ascend` |
-| `ZOTERO_DB` | Zotero SQLite 路径 | `/mnt/c/Users/swt/Zotero/zotero.sqlite` |
-| `ZOTERO_STORE` | Zotero 附件目录 | `/mnt/c/Users/swt/Zotero/storage` |
+| `LLM_MODEL` | 模型名称 | - |
+| `ZOTERO_DB` | Zotero SQLite 路径 | $PATH_To_zotero.sqlite |
+| `ZOTERO_STORE` | Zotero 附件目录 | $PATH_To_zotero/storage |
 | `UNPAYWALL_EMAIL` | Unpaywall API 邮箱（任意真实邮箱） | — |
 
 ### 目录结构

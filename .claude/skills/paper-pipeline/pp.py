@@ -75,7 +75,9 @@ def _parser() -> argparse.ArgumentParser:
     # ── doi ───────────────────────────────────────────────────────────────────
     p = sub.add_parser("doi", help="CrossRef 自动补充 DOI 字段")
     p.add_argument("key", nargs="?", help="citation key，留空则处理所有缺 DOI 的论文")
-    p.add_argument("--dry-run", action="store_true", help="预览，不写文件")
+    p.add_argument("--dry-run",     action="store_true", help="预览，不写文件")
+    p.add_argument("--interactive", action="store_true",
+                   help="对相似度低的论文逐条交互审核（y/n/m/q）")
 
     # ── status ────────────────────────────────────────────────────────────────
     sub.add_parser("status", help="生成流水线状态看板（pipeline-status.md）")
