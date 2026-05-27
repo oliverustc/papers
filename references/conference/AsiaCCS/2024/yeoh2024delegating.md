@@ -1,5 +1,6 @@
 ---
 title: Delegating FIDO Credentials Using Single-use ECDSA Signatures
+doi: 10.1145/3634737.3657004
 标题简称: 
 论文类型: conference
 会议简称: AsiaCCS
@@ -7,7 +8,6 @@ title: Delegating FIDO Credentials Using Single-use ECDSA Signatures
 created: 2025-05-09 14:37:34
 modified: 2025-05-09 15:00:49
 ---
-
 ## Delegating FIDO Credentials Using Single-use ECDSA Signatures
 
 ## 发表信息

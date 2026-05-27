@@ -1,11 +1,11 @@
 ---
 title: "Compute, but verify: Efficient multiparty computation over authenticated inputs"
+doi: 10.1007/978-981-96-0938-3_5
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
 发表年份: 2024
 ---
-
 ## Compute, but verify: Efficient multiparty computation over authenticated inputs
 
 ## 发表信息

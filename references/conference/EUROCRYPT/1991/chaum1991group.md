@@ -1,5 +1,6 @@
 ---
 title: "Group signatures"
+doi: 10.1007/3-540-46416-6_22
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Group signatures"
 created: 2025-05-26 03:43:20
 modified: 2025-05-26 04:36:56
 ---
-
 ## Group signatures
 
 ## 发表信息

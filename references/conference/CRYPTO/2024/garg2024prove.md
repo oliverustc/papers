@@ -1,5 +1,6 @@
 ---
 title: "How to Prove Statements Obliviously?"
+doi: 10.1007/978-3-031-68403-6_14
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "How to Prove Statements Obliviously?"
 
 modified: 2025-04-10 17:07:28
 ---
-
 ## How to Prove Statements Obliviously?
 
 ## 发表信息

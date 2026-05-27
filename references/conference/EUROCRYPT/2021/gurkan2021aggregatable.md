@@ -1,5 +1,6 @@
 ---
 title: "Aggregatable distributed key generation"
+doi: 10.1007/978-3-030-77870-5_6
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Aggregatable distributed key generation"
 created: 2025-05-12 09:16:31
 modified: 2025-05-12 09:18:12
 ---
-
 ## Aggregatable distributed key generation
 
 ## 发表信息

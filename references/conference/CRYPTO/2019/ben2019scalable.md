@@ -1,12 +1,12 @@
 ---
 title: "Scalable zero knowledge with no trusted setup"
+doi: 10.1007/978-3-030-26954-8_23
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
 发表年份: 2019
 modified: 2025-04-11 11:37:24
 ---
-
 ## Scalable zero knowledge with no trusted setup
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Zeromorph: Zero-knowledge multilinear-evaluation proofs from homomorphic univariate commitments"
+doi: 10.1007/s00145-024-09519-0
 标题简称:
 论文类型: journal
 期刊简称: Journal of Cryptology
@@ -7,7 +8,6 @@ title: "Zeromorph: Zero-knowledge multilinear-evaluation proofs from homomorphic
 modified: 2025-04-27 08:25:01
 created: 2025-04-11 11:38:44
 ---
-
 ## Zeromorph: Zero-knowledge multilinear-evaluation proofs from homomorphic univariate commitments
 
 ## 发表信息

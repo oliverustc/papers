@@ -1,5 +1,6 @@
 ---
 title: "Sparrow: Space-Efficient zkSNARK for Data-Parallel Circuits and Applications to Zero-Knowledge Decision Trees"
+doi: 10.1145/3658644.3690318
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Sparrow: Space-Efficient zkSNARK for Data-Parallel Circuits and Applicat
 modified: 2025-05-13 03:19:46
 created: 2025-05-13 09:23:43
 ---
-
 ## Sparrow: Space-Efficient zkSNARK for Data-Parallel Circuits and Applications to Zero-Knowledge Decision Trees
 
 ## 发表信息

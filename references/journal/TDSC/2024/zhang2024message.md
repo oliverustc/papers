@@ -1,5 +1,6 @@
 ---
 title: "Message linkable group signature with information binding and efficient revocation for privacy-preserving announcement in VANETs"
+doi: 10.1109/tdsc.2024.3381436
 标题简称:
 论文类型: journal
 期刊简称: TDSC
@@ -7,7 +8,6 @@ title: "Message linkable group signature with information binding and efficient 
 created: 2025-05-13 05:13:44
 modified: 2025-05-13 05:14:19
 ---
-
 ## Message linkable group signature with information binding and efficient revocation for privacy-preserving announcement in VANETs
 
 ## 发表信息

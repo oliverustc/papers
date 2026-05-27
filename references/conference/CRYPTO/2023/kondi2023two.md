@@ -1,5 +1,6 @@
 ---
 title: "Two-round stateless deterministic two-party Schnorr signatures from pseudorandom correlation functions"
+doi: 10.1007/978-3-031-38557-5_21
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Two-round stateless deterministic two-party Schnorr signatures from pseu
 created: 2025-04-16 11:24:36
 modified: 2025-04-16 13:44:38
 ---
-
 ## Two-round stateless deterministic two-party Schnorr signatures from pseudorandom correlation functions
 
 ## 发表信息

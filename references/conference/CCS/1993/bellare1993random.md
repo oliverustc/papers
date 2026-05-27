@@ -1,12 +1,12 @@
 ---
 title: "Random oracles are practical: a paradigm for designing efficient protocols"
+doi: 10.1145/168588.168596
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 1993
 modified: 2025-04-08 11:41:08
 ---
-
 ## Random oracles are practical: a paradigm for designing efficient protocols
 
 ## 发表信息

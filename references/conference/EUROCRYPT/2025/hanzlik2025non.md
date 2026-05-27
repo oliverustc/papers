@@ -1,5 +1,6 @@
 ---
 title: "Non-interactive Blind Signatures from RSA Assumption and More"
+doi: 10.1007/978-3-031-91124-8_13
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Non-interactive Blind Signatures from RSA Assumption and More"
 created: 2025-05-09 14:34:37
 modified: 2025-05-09 14:35:38
 ---
-
 ## Non-interactive Blind Signatures from RSA Assumption and More
 
 ## 发表信息

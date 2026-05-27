@@ -1,11 +1,11 @@
 ---
 title: "ServeDB: Secure, verifiable, and efficient range queries on outsourced database"
+doi: 10.1109/icde.2019.00062
 标题简称:
 论文类型: conference
 会议简称: ICDE
 发表年份: 2019
 ---
-
 ## ServeDB: Secure, verifiable, and efficient range queries on outsourced database
 
 ## 发表信息

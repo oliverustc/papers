@@ -1,12 +1,12 @@
 ---
 title: "Separating succinct non-interactive arguments from all falsifiable assumptions"
+doi: 10.1145/1993636.1993651
 标题简称:
 论文类型: conference
 会议简称: STOC
 发表年份: 2011
 modified: 2025-04-08 23:42:18
 ---
-
 ## Separating succinct non-interactive arguments from all falsifiable assumptions
 
 ## 发表信息

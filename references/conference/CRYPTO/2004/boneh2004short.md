@@ -1,5 +1,6 @@
 ---
 title: "Short group signatures"
+doi: 10.1007/978-3-540-28628-8_3
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Short group signatures"
 created: 2025-05-20 03:12:28
 modified: 2025-05-20 03:14:48
 ---
-
 ## Short group signatures
 
 ## 发表信息

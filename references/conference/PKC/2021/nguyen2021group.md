@@ -1,5 +1,6 @@
 ---
 title: "Group encryption: full dynamicity, message filtering and code-based instantiation"
+doi: 10.1007/978-3-030-75248-4_24
 标题简称:
 论文类型: conference
 会议简称: PKC
@@ -7,7 +8,6 @@ title: "Group encryption: full dynamicity, message filtering and code-based inst
 created: 2025-05-13 05:40:32
 modified: 2025-05-13 05:41:51
 ---
-
 ## Group encryption: full dynamicity, message filtering and code-based instantiation
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Reckle Trees: Updatable Merkle Batch Proofs with Applications"
+doi: 10.1145/3658644.3670354
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Reckle Trees: Updatable Merkle Batch Proofs with Applications"
 modified: 2025-04-23 15:49:29
 created: 2025-04-08 21:59:42
 ---
-
 ## Reckle Trees: Updatable Merkle Batch Proofs with Applications
 
 ## 发表信息

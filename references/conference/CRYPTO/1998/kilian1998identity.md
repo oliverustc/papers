@@ -1,5 +1,6 @@
 ---
 title: "Identity escrow"
+doi: 10.1007/bfb0055727
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
@@ -7,7 +8,6 @@ title: "Identity escrow"
 created: 2025-05-26 04:57:24
 modified: 2025-05-26 04:58:13
 ---
-
 ## Identity escrow
 
 ## 发表信息

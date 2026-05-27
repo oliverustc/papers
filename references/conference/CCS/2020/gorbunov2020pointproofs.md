@@ -1,5 +1,6 @@
 ---
 title: "Pointproofs: Aggregating Proofs for Multiple Vector Commitments"
+doi: 10.1145/3372297.3417244
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -8,7 +9,6 @@ title: "Pointproofs: Aggregating Proofs for Multiple Vector Commitments"
 modified: 2025-05-07 23:22:17
 created: 2025-04-07 16:20:38
 ---
-
 ## Pointproofs: Aggregating Proofs for Multiple Vector Commitments
 
 ## 发表信息

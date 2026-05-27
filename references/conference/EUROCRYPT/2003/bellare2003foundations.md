@@ -1,5 +1,6 @@
 ---
 title: "Foundations of group signatures: Formal definitions, simplified requirements, and a construction based on general assumptions"
+doi: 10.1007/3-540-39200-9_38
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Foundations of group signatures: Formal definitions, simplified requirem
 created: 2025-05-26 03:37:59
 modified: 2025-05-26 03:38:10
 ---
-
 ## Foundations of group signatures: Formal definitions, simplified requirements, and a construction based on general assumptions
 
 ## 发表信息

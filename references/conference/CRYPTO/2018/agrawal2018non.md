@@ -1,5 +1,6 @@
 ---
 title: "Non-interactive zero-knowledge proofs for composite statements"
+doi: 10.1007/978-3-319-96878-0_22
 
 标题简称:
 论文类型: conference
@@ -7,7 +8,6 @@ title: "Non-interactive zero-knowledge proofs for composite statements"
 发表年份: 2018
 modified: 2025-04-14 09:58:24
 ---
-
 ## Non-interactive zero-knowledge proofs for composite statements
 
 ## 发表信息

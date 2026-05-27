@@ -1,5 +1,6 @@
 ---
 title: "Batching, aggregation, and zero-knowledge proofs in bilinear accumulators"
+doi: 10.1145/3548606.3560676
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Batching, aggregation, and zero-knowledge proofs in bilinear accumulator
 modified: 2025-04-16 10:12:26
 created: 2025-04-13 16:52:12
 ---
-
 ## Batching, aggregation, and zero-knowledge proofs in bilinear accumulators
 
 ## 发表信息

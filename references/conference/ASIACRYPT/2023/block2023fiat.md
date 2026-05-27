@@ -1,12 +1,12 @@
 ---
 title: "Fiat-Shamir Security of FRI and Related SNARKs"
+doi: 10.1007/978-981-99-8724-5_1
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
 发表年份: 2023
 modified: 2025-04-10 16:40:26
 ---
-
 ## Fiat-Shamir Security of FRI and Related SNARKs
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Composable and modular anonymous credentials: Definitions and practical constructions"
+doi: 10.1007/978-3-662-48800-3_11
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "Composable and modular anonymous credentials: Definitions and practical 
 created: 2025-05-15 10:38:27
 modified: 2025-05-26 05:05:15
 ---
-
 ## Composable and modular anonymous credentials: Definitions and practical constructions
 
 ## 发表信息

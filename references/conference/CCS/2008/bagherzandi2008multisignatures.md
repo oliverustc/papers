@@ -1,5 +1,6 @@
 ---
 title: "Multisignatures secure under the discrete logarithm assumption and a generalized forking lemma"
+doi: 10.1145/1455770.1455827
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Multisignatures secure under the discrete logarithm assumption and a gen
 created: 2025-05-27 03:37:16
 modified: 2025-05-27 03:38:01
 ---
-
 ## Multisignatures secure under the discrete logarithm assumption and a generalized forking lemma
 
 ## 发表信息

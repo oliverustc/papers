@@ -1,5 +1,6 @@
 ---
 title: "Pianist: Scalable zkRollups via Fully Distributed Zero-Knowledge Proofs"
+doi: 10.1109/sp54263.2024.00035
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -8,7 +9,6 @@ title: "Pianist: Scalable zkRollups via Fully Distributed Zero-Knowledge Proofs"
 modified: 2025-05-09 09:27:59
 created: 2025-04-07 16:54:34
 ---
-
 ## Pianist: Scalable zkRollups via Fully Distributed Zero-Knowledge Proofs
 
 ## 发表信息

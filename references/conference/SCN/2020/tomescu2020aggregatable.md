@@ -1,11 +1,11 @@
 ---
 title: "Aggregatable subvector commitments for stateless cryptocurrencies"
+doi: 10.1007/978-3-030-57990-6_3
 标题简称:
 论文类型: conference
 会议简称: SCN
 发表年份: 2020
 ---
-
 ## Aggregatable subvector commitments for stateless cryptocurrencies
 
 ## 发表信息

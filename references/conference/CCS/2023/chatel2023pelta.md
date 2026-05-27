@@ -1,5 +1,6 @@
 ---
 title: "Pelta-shielding multiparty-fhe against malicious adversaries"
+doi: 10.1145/3576915.3623139
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Pelta-shielding multiparty-fhe against malicious adversaries"
 created: 2025-04-16 10:56:52
 modified: 2025-04-16 10:57:18
 ---
-
 ## Pelta-shielding multiparty-fhe against malicious adversaries
 
 ## 发表信息

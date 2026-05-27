@@ -1,5 +1,6 @@
 ---
 title: "Threshold signatures, multisignatures and blind signatures based on the gap-Diffie-Hellman-group signature scheme"
+doi: 10.1007/3-540-36288-6_3
 标题简称:
 论文类型: conference
 会议简称: PKC
@@ -7,7 +8,6 @@ title: "Threshold signatures, multisignatures and blind signatures based on the 
 created: 2025-05-27 11:54:27
 modified: 2025-05-27 11:55:01
 ---
-
 ## Threshold signatures, multisignatures and blind signatures based on the gap-Diffie-Hellman-group signature scheme
 
 ## 发表信息

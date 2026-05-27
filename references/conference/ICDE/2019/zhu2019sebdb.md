@@ -1,5 +1,6 @@
 ---
 title: "SEBDB: Semantics empowered blockchain database"
+doi: 10.1109/icde.2019.00198
 标题简称:
 论文类型: conference
 会议简称: ICDE
@@ -7,7 +8,6 @@ title: "SEBDB: Semantics empowered blockchain database"
 created: 2025-04-19 11:29:21
 modified: 2025-04-19 11:29:56
 ---
-
 ## SEBDB: Semantics empowered blockchain database
 
 ## 发表信息

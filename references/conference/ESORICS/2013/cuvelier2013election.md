@@ -1,11 +1,11 @@
 ---
 title: "Election verifiability or ballot privacy: Do we need to choose"
+doi: 10.1007/978-3-642-40203-6_27
 标题简称:
 论文类型: conference
 会议简称: ESORICS
 发表年份: 2013
 ---
-
 ## Election verifiability or ballot privacy: Do we need to choose
 
 ## 发表信息

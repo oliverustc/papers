@@ -1,5 +1,6 @@
 ---
 title: "Zero Knowledge Proofs for Decision Tree Predictions and Accuracy"
+doi: 10.1145/3372297.3417278
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -8,7 +9,6 @@ title: "Zero Knowledge Proofs for Decision Tree Predictions and Accuracy"
 modified: 2025-05-07 22:34:11
 created: 2025-04-07 16:21:14
 ---
-
 ## Zero Knowledge Proofs for Decision Tree Predictions and Accuracy
 
 ## 发表信息

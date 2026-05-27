@@ -1,5 +1,6 @@
 ---
 title: "Ceno: Non-uniform, Segment and Parallel Zero-Knowledge Virtual Machine"
+doi: 10.1007/s00145-024-09533-2
 标题简称: Ceno
 论文类型: journal
 期刊简称: Journal of Cryptology
@@ -7,7 +8,6 @@ title: "Ceno: Non-uniform, Segment and Parallel Zero-Knowledge Virtual Machine"
 modified: 2025-04-29 16:29:09
 created: 2025-04-07 17:09:14
 ---
-
 ## Ceno: Non-uniform, Segment and Parallel Zero-Knowledge Virtual Machine
 
 ## 发表信息

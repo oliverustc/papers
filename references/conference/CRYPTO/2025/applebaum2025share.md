@@ -1,5 +1,6 @@
 ---
 title: "How to Share an NP Statement or Combiners for Zero-Knowledge Proofs"
+doi: 10.1007/978-3-032-01907-3_16
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
@@ -7,7 +8,6 @@ title: "How to Share an NP Statement or Combiners for Zero-Knowledge Proofs"
 created: 2025-06-09 10:37:25
 modified: 2025-06-09 10:41:21
 ---
-
 ## How to Share an NP Statement or Combiners for Zero-Knowledge Proofs
 
 ## 发表信息

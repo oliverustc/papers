@@ -1,5 +1,6 @@
 ---
 title: "Halo Infinite: Proof-Carrying Data from Additive Polynomial Commitments"
+doi: 10.1007/978-3-030-84242-0_23
 
 标题简称:
 论文类型: conference
@@ -7,7 +8,6 @@ title: "Halo Infinite: Proof-Carrying Data from Additive Polynomial Commitments"
 发表年份: 2021
 modified: 2025-04-10 16:55:41
 ---
-
 ## Halo Infinite: Proof-Carrying Data from Additive Polynomial Commitments
 
 ## 发表信息

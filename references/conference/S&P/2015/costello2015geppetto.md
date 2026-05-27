@@ -1,5 +1,6 @@
 ---
 title: "Geppetto: Versatile verifiable computation"
+doi: 10.1109/sp.2015.23
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Geppetto: Versatile verifiable computation"
 created: 2025-05-09 14:24:04
 modified: 2025-05-09 14:24:30
 ---
-
 ## Geppetto: Versatile verifiable computation
 
 ## 发表信息

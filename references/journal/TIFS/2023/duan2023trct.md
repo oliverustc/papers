@@ -1,5 +1,6 @@
 ---
 title: "TRCT: A traceable anonymous transaction protocol for blockchain"
+doi: 10.1109/tifs.2023.3296286
 标题简称:
 论文类型: journal
 期刊简称: TIFS
@@ -7,7 +8,6 @@ title: "TRCT: A traceable anonymous transaction protocol for blockchain"
 created: 2025-05-13 05:35:20
 modified: 2025-05-13 05:35:35
 ---
-
 ## TRCT: A traceable anonymous transaction protocol for blockchain
 
 ## 发表信息

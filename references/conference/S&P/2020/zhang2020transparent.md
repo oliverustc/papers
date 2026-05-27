@@ -1,5 +1,6 @@
 ---
 title: Transparent Polynomial Delegation and Its Applications to Zero Knowledge Proof
+doi: 10.1109/sp40000.2020.00052
 标题简称: Virgo
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: Transparent Polynomial Delegation and Its Applications to Zero Knowledge 
 modified: 2025-04-21 17:14:34
 created: 2025-04-07 16:53:43
 ---
-
 ## Transparent Polynomial Delegation and Its Applications to Zero Knowledge Proof
 
 ## 发表信息

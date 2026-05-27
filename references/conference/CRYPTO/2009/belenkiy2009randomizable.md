@@ -1,5 +1,6 @@
 ---
 title: Randomizable proofs and delegatable anonymous credentials
+doi: 10.1007/978-3-642-03356-8_7
 
 标题简称: 
 论文类型: conference
@@ -10,7 +11,6 @@ modified: 2025-05-26 05:05:25
 tags:
   - 需要调研引用文献
 ---
-
 ## Randomizable proofs and delegatable anonymous credentials
 
 ## 发表信息

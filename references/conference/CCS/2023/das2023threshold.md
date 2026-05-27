@@ -1,5 +1,6 @@
 ---
 title: "Threshold signatures from inner product argument: Succinct, weighted, and multi-threshold"
+doi: 10.1145/3576915.3623096
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Threshold signatures from inner product argument: Succinct, weighted, an
 created: 2025-04-17 10:48:33
 modified: 2025-04-17 10:49:51
 ---
-
 ## Threshold signatures from inner product argument: Succinct, weighted, and multi-threshold
 
 ## 发表信息

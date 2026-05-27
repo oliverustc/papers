@@ -1,5 +1,6 @@
 ---
 title: "HyperPianist: Pianist with Linear-Time Prover and Logarithmic Communication Cost"
+doi: 10.1109/sp61157.2025.00202
 标题简称: HyperPianist
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "HyperPianist: Pianist with Linear-Time Prover and Logarithmic Communicat
 modified: 2025-04-20 23:33:42
 created: 2025-04-07 16:55:23
 ---
-
 ## HyperPianist: Pianist with Linear-Time Prover and Logarithmic Communication Cost
 
 ## 发表信息

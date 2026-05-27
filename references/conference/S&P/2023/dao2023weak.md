@@ -1,5 +1,6 @@
 ---
 title: "Weak fiat-shamir attacks on modern proof systems"
+doi: 10.1109/sp46215.2023.10179408
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Weak fiat-shamir attacks on modern proof systems"
 created: 2025-04-21 10:49:19
 modified: 2025-04-21 10:49:54
 ---
-
 ## Weak fiat-shamir attacks on modern proof systems
 
 ## 发表信息

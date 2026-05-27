@@ -1,5 +1,6 @@
 ---
 title: "Secure multiparty computation from threshold encryption based on class groups"
+doi: 10.1007/978-3-031-38557-5_20
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Secure multiparty computation from threshold encryption based on class g
 modified: 2025-04-28 17:09:56
 created: 2025-04-11 13:58:19
 ---
-
 ## Secure multiparty computation from threshold encryption based on class groups
 
 ## 发表信息

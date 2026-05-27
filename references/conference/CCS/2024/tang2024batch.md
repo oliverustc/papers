@@ -1,5 +1,6 @@
 ---
 title: "Batch Range Proof: How to Make Threshold ECDSA More Efficient"
+doi: 10.1145/3658644.3670287
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Batch Range Proof: How to Make Threshold ECDSA More Efficient"
 modified: 2025-04-15 16:38:26
 created: 2025-04-13 17:55:03
 ---
-
 ## Batch Range Proof: How to Make Threshold ECDSA More Efficient
 
 ## 发表信息

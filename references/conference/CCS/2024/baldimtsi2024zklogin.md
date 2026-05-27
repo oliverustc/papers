@@ -1,5 +1,6 @@
 ---
 title: "zklogin: Privacy-preserving blockchain authentication with existing credentials"
+doi: 10.1145/3658644.3690356
 标题简称: 
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "zklogin: Privacy-preserving blockchain authentication with existing cred
 modified: 2025-05-09 10:51:30
 created: 2025-04-13 17:52:56
 ---
-
 ## zklogin: Privacy-preserving blockchain authentication with existing credentials
 
 ## 发表信息

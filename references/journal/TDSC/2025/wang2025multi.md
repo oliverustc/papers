@@ -1,5 +1,6 @@
 ---
 title: "Multi-Signature and Game Based Blockchain Interoperability Oracle"
+doi: 10.1109/tdsc.2025.3542079
 标题简称:
 论文类型: journal
 期刊简称: TDSC
@@ -7,7 +8,6 @@ title: "Multi-Signature and Game Based Blockchain Interoperability Oracle"
 created: 2025-04-17 10:56:06
 modified: 2025-04-17 10:56:36
 ---
-
 ## Multi-Signature and Game Based Blockchain Interoperability Oracle
 
 ## 发表信息

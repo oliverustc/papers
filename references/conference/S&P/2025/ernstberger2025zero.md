@@ -1,5 +1,6 @@
 ---
 title: "Zero-Knowledge Location Privacy via Accurate Floating-Point SNARKs"
+doi: 10.1109/sp61157.2025.00057
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Zero-Knowledge Location Privacy via Accurate Floating-Point SNARKs"
 modified: 2025-04-16 11:19:05
 created: 2025-04-13 14:41:04
 ---
-
 ## Zero-Knowledge Location Privacy via Accurate Floating-Point SNARKs
 
 ## 发表信息

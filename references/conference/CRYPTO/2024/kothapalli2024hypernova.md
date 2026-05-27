@@ -1,5 +1,6 @@
 ---
 title: "HyperNova: Recursive arguments for customizable constraint systems"
+doi: 10.1007/978-3-031-68403-6_11
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
@@ -7,7 +8,6 @@ title: "HyperNova: Recursive arguments for customizable constraint systems"
 created: 2025-04-21 10:35:51
 modified: 2025-04-21 10:36:33
 ---
-
 ## HyperNova: Recursive arguments for customizable constraint systems
 
 ## 发表信息

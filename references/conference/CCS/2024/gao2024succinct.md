@@ -1,5 +1,6 @@
 ---
 title: "A Succinct Range Proof for Polynomial-based Vector Commitment"
+doi: 10.1145/3658644.3670324
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "A Succinct Range Proof for Polynomial-based Vector Commitment"
 modified: 2025-04-27 08:54:41
 created: 2025-04-15 16:33:47
 ---
-
 ## A Succinct Range Proof for Polynomial-based Vector Commitment
 
 ## 发表信息

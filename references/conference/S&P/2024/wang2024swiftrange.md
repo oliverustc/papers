@@ -1,5 +1,6 @@
 ---
 title: "SwiftRange: a short and efficient zero-knowledge range argument for confidential transactions and more"
+doi: 10.1109/sp54263.2024.00054
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "SwiftRange: a short and efficient zero-knowledge range argument for conf
 modified: 2025-04-17 09:41:04
 created: 2025-04-11 11:52:16
 ---
-
 ## SwiftRange: a short and efficient zero-knowledge range argument for confidential transactions and more
 
 ## 发表信息

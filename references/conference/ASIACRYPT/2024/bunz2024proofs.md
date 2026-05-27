@@ -1,5 +1,6 @@
 ---
 title: "Proofs for deep thought: Accumulation for large memories and deterministic computations"
+doi: 10.1007/978-981-96-0935-2_9
 标题简称: 
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "Proofs for deep thought: Accumulation for large memories and determinist
 created: 2025-04-21 10:55:34
 modified: 2025-04-21 10:56:30
 ---
-
 ## Proofs for deep thought: Accumulation for large memories and deterministic computations
 
 ## 发表信息

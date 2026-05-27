@@ -1,5 +1,6 @@
 ---
 title: "How to use plain witness encryption: registered ABE, flexible broadcast, and more"
+doi: 10.1007/978-3-031-38551-3_16
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
@@ -7,7 +8,6 @@ title: "How to use plain witness encryption: registered ABE, flexible broadcast,
 created: 2025-04-29 10:34:47
 modified: 2025-04-29 17:13:03
 ---
-
 ## How to use plain witness encryption: registered ABE, flexible broadcast, and more
 
 ## 发表信息

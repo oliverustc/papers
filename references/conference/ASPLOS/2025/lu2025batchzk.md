@@ -1,5 +1,6 @@
 ---
 title: "BatchZK: A Fully Pipelined GPU-Accelerated System for Batch Generation of Zero-Knowledge Proofs"
+doi: 10.1145/3669940.3707270
 标题简称:
 论文类型: conference
 会议简称: ASPLOS
@@ -7,7 +8,6 @@ title: "BatchZK: A Fully Pipelined GPU-Accelerated System for Batch Generation o
 created: 2025-04-16 17:33:03
 modified: 2025-04-16 17:33:13
 ---
-
 ## BatchZK: A Fully Pipelined GPU-Accelerated System for Batch Generation of Zero-Knowledge Proofs
 
 ## 发表信息

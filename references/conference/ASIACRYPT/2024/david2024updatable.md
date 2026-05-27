@@ -1,5 +1,6 @@
 ---
 title: Updatable Privacy-Preserving Blueprints
+doi: 10.1007/978-981-96-0875-1_4
 标题简称: 
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: Updatable Privacy-Preserving Blueprints
 modified: 2025-04-21 11:07:05
 created: 2025-04-15 14:08:59
 ---
-
 ## Updatable Privacy-Preserving Blueprints
 
 ## 发表信息

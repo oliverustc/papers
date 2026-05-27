@@ -1,5 +1,6 @@
 ---
 title: "Porygon: Scaling blockchain via 3d parallelism"
+doi: 10.1109/icde60146.2024.00153
 标题简称: 
 论文类型: conference
 会议简称: ICDE
@@ -7,7 +8,6 @@ title: "Porygon: Scaling blockchain via 3d parallelism"
 created: 2025-04-19 10:55:44
 modified: 2025-04-21 00:53:32
 ---
-
 ## Porygon: Scaling blockchain via 3d parallelism
 
 ## 发表信息

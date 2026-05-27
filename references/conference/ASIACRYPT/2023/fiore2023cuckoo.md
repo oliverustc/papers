@@ -1,12 +1,12 @@
 ---
 title: "Cuckoo commitments: registration-based encryption and key-value map commitments for large spaces"
+doi: 10.1007/978-981-99-8733-7_6
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
 发表年份: 2023
 modified: 2025-04-13 17:40:15
 ---
-
 ## Cuckoo commitments: registration-based encryption and key-value map commitments for large spaces
 
 ## 发表信息

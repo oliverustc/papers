@@ -1,11 +1,11 @@
 ---
 title: "Optiswap: Fast optimistic fair exchange"
+doi: 10.1145/3320269.3384749
 标题简称:
 论文类型: conference
 会议简称: AsiaCCS
 发表年份: 2020
 ---
-
 ## Optiswap: Fast optimistic fair exchange
 
 ## 发表信息

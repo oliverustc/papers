@@ -1,5 +1,6 @@
 ---
 title: "Candid: Can-do decentralized identity with legacy compatibility, sybil-resistance, and accountability"
+doi: 10.1109/sp40001.2021.00038
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Candid: Can-do decentralized identity with legacy compatibility, sybil-r
 modified: 2025-05-09 10:53:12
 created: 2025-04-13 13:55:10
 ---
-
 ## Candid: Can-do decentralized identity with legacy compatibility, sybil-resistance, and accountability
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Identity-based encryption from the Diffie-Hellman assumption"
+doi: 10.1007/978-3-319-63688-7_18
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Identity-based encryption from the Diffie-Hellman assumption"
 created: 2025-04-29 10:30:46
 modified: 2025-04-29 10:31:21
 ---
-
 ## Identity-based encryption from the Diffie-Hellman assumption
 
 ## 发表信息

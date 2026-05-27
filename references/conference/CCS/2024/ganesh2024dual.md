@@ -1,5 +1,6 @@
 ---
 title: "Dual polynomial commitment schemes and applications to commit-and-prove SNARKs"
+doi: 10.1145/3658644.3690219
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Dual polynomial commitment schemes and applications to commit-and-prove 
 created: 2025-04-23 14:59:43
 modified: 2025-04-23 15:16:43
 ---
-
 ## Dual polynomial commitment schemes and applications to commit-and-prove SNARKs
 
 ## 发表信息

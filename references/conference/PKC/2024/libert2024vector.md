@@ -1,12 +1,12 @@
 ---
 title: "Vector commitments with proofs of smallness: Short range proofs and more"
+doi: 10.1007/978-3-031-57722-2_2
 标题简称:
 论文类型: conference
 会议简称: PKC
 发表年份: 2024
 modified: 2025-04-11 11:47:45
 ---
-
 ## Vector commitments with proofs of smallness: Short range proofs and more
 
 ## 发表信息

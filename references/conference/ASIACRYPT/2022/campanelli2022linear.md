@@ -1,5 +1,6 @@
 ---
 title: "Linear-map vector commitments and their practical applications"
+doi: 10.1007/978-3-031-22972-5_7
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "Linear-map vector commitments and their practical applications"
 created: 2025-04-16 09:46:23
 modified: 2025-04-16 09:58:13
 ---
-
 ## Linear-map vector commitments and their practical applications
 
 ## 发表信息

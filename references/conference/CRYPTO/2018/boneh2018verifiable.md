@@ -1,5 +1,6 @@
 ---
 title: "Verifiable delay functions"
+doi: 10.1007/978-3-319-96884-1_25
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Verifiable delay functions"
 created: 2025-04-28 16:27:18
 modified: 2025-04-28 16:28:03
 ---
-
 ## Verifiable delay functions
 
 ## 发表信息

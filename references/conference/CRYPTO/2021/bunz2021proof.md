@@ -1,5 +1,6 @@
 ---
 title: "Proof-carrying data without succinct arguments"
+doi: 10.1007/978-3-030-84242-0_24
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
@@ -7,7 +8,6 @@ title: "Proof-carrying data without succinct arguments"
 created: 2025-04-22 15:09:39
 modified: 2025-04-22 15:10:29
 ---
-
 ## Proof-carrying data without succinct arguments
 
 ## 发表信息

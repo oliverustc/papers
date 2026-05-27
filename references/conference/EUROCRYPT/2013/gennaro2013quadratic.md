@@ -1,12 +1,12 @@
 ---
 title: "Quadratic span programs and succinct NIZKs without PCPs"
+doi: 10.1007/978-3-642-38348-9_37
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
 发表年份: 2013
 modified: 2025-04-08 16:40:45
 ---
-
 ## Quadratic span programs and succinct NIZKs without PCPs
 
 ## 发表信息

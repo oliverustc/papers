@@ -1,5 +1,6 @@
 ---
 title: "Spartan: Efficient and general-purpose zkSNARKs without trusted setup"
+doi: 10.1007/978-3-030-56877-1_25
 
 标题简称:
 论文类型: conference
@@ -7,7 +8,6 @@ title: "Spartan: Efficient and general-purpose zkSNARKs without trusted setup"
 发表年份: 2020
 modified: 2025-04-11 14:43:37
 ---
-
 ## Spartan: Efficient and general-purpose zkSNARKs without trusted setup
 
 ## 发表信息

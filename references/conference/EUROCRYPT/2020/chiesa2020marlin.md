@@ -1,5 +1,6 @@
 ---
 title: "Marlin: Preprocessing zkSNARKs with universal and updatable SRS"
+doi: 10.1007/978-3-030-45721-1_26
 标题简称: Marlin
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Marlin: Preprocessing zkSNARKs with universal and updatable SRS"
 modified: 2025-04-27 09:07:03
 created: 2025-04-08 17:30:40
 ---
-
 ## Marlin: Preprocessing zkSNARKs with universal and updatable SRS
 
 ## 发表信息

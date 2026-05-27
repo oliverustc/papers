@@ -1,5 +1,6 @@
 ---
 title: "Real-world Universal zkSNARKs are non-malleable"
+doi: 10.1145/3658644.3690351
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Real-world Universal zkSNARKs are non-malleable"
 created: 2025-04-16 09:58:38
 modified: 2025-04-16 09:58:55
 ---
-
 ## Real-world Universal zkSNARKs are non-malleable
 
 ## 发表信息

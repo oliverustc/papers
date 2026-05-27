@@ -1,12 +1,12 @@
 ---
 title: "TreePIR: Efficient Private Retrieval of Merkle Proofs via Tree Colorings with Fast Indexing and Zero Storage Overhead"
+doi: 10.1109/sp61157.2025.00032
 标题简称:
 论文类型: conference
 会议简称: S&P
 发表年份: 2025
 modified: 2025-04-13 14:19:40
 ---
-
 ## TreePIR: Efficient Private Retrieval of Merkle Proofs via Tree Colorings with Fast Indexing and Zero Storage Overhead
 
 ## 发表信息

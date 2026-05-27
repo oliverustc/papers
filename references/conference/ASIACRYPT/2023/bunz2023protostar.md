@@ -1,5 +1,6 @@
 ---
 title: "Protostar: Generic efficient accumulationfolding for special-sound protocols"
+doi: 10.1007/978-981-99-8724-5_3
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "Protostar: Generic efficient accumulationfolding for special-sound proto
 created: 2025-04-21 10:37:45
 modified: 2025-04-21 10:39:26
 ---
-
 ## Protostar: Generic efficient accumulationfolding for special-sound protocols
 
 ## 发表信息

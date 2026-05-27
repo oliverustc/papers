@@ -1,5 +1,6 @@
 ---
 title: "Blind Schnorr signatures and signed ElGamal encryption in the algebraic group model"
+doi: 10.1007/978-3-030-45724-2_3
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Blind Schnorr signatures and signed ElGamal encryption in the algebraic 
 created: 2025-05-09 14:21:12
 modified: 2025-05-09 14:24:04
 ---
-
 ## Blind Schnorr signatures and signed ElGamal encryption in the algebraic group model
 
 ## 发表信息

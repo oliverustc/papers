@@ -1,5 +1,6 @@
 ---
 title: "Eva: Efficient Privacy-Preserving Proof of Authenticity for Lossily Encoded Videos"
+doi: 10.1109/sp61157.2025.00237
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Eva: Efficient Privacy-Preserving Proof of Authenticity for Lossily Enco
 created: 2025-04-16 11:19:05
 modified: 2025-04-17 13:46:31
 ---
-
 ## Eva: Efficient Privacy-Preserving Proof of Authenticity for Lossily Encoded Videos
 
 ## 发表信息

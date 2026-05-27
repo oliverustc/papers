@@ -1,12 +1,12 @@
 ---
 title: "Compressed-protocol theory and practical application to plug  play secure algorithmics"
+doi: 10.1007/978-3-030-56877-1_18
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
 发表年份: 2020
 modified: 2025-04-13 17:05:28
 ---
-
 ## Compressed-protocol theory and practical application to plug  play secure algorithmics
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "A practical and provably secure coalition-resistant group signature scheme"
+doi: 10.1007/3-540-44598-6_16
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "A practical and provably secure coalition-resistant group signature sche
 created: 2025-05-26 10:49:41
 modified: 2025-05-26 05:05:35
 ---
-
 ## A practical and provably secure coalition-resistant group signature scheme
 
 ## 发表信息

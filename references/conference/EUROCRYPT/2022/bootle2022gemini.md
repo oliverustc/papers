@@ -1,5 +1,6 @@
 ---
 title: "Gemini: Elastic SNARKs for diverse environments"
+doi: 10.1007/978-3-031-07085-3_15
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Gemini: Elastic SNARKs for diverse environments"
 modified: 2025-04-27 09:03:01
 created: 2025-04-11 11:19:48
 ---
-
 ## Gemini: Elastic SNARKs for diverse environments
 
 ## 发表信息

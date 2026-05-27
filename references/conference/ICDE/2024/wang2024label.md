@@ -1,5 +1,6 @@
 ---
 title: "Label Noise Correction for Federated Learning: A Secure, Efficient and Reliable Realization"
+doi: 10.1109/icde60146.2024.00277
 标题简称:
 论文类型: conference
 会议简称: ICDE
@@ -7,7 +8,6 @@ title: "Label Noise Correction for Federated Learning: A Secure, Efficient and R
 created: 2025-04-16 10:18:15
 modified: 2025-04-22 11:31:14
 ---
-
 ## Label Noise Correction for Federated Learning: A Secure, Efficient and Reliable Realization
 
 ## 发表信息

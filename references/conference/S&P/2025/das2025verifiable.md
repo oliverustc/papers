@@ -1,12 +1,12 @@
 ---
 title: "Verifiable Secret Sharing Simplified"
+doi: 10.1109/sp61157.2025.00046
 标题简称:
 论文类型: conference
 会议简称: S&P
 发表年份: 2025
 modified: 2025-04-13 14:22:51
 ---
-
 ## Verifiable Secret Sharing Simplified
 
 ## 发表信息

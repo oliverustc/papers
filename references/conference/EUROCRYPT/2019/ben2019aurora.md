@@ -1,12 +1,12 @@
 ---
 title: "Aurora: Transparent Succinct Arguments for R1CS"
+doi: 10.1007/978-3-030-17653-2_4
 标题简称: Aurora
 论文类型: conference
 会议简称: EUROCRYPT
 发表年份: 2019
 modified: 2025-04-08 18:43:18
 ---
-
 ## Aurora: Transparent Succinct Arguments for R1CS
 
 ## 发表信息

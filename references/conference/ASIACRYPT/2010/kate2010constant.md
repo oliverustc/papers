@@ -1,12 +1,12 @@
 ---
 title: "Constant-size commitments to polynomials and their applications"
+doi: 10.1007/978-3-642-17373-8_11
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
 发表年份: 2010
 modified: 2025-04-13 17:44:41
 ---
-
 ## Constant-size commitments to polynomials and their applications
 
 ## 发表信息

@@ -1,11 +1,11 @@
 ---
 title: "RSA-Based Dynamic Accumulator without Hashing into Primes"
+doi: 10.1145/3658644.3690199
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2024
 ---
-
 ## RSA-Based Dynamic Accumulator without Hashing into Primes
 
 ## 发表信息

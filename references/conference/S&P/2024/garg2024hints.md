@@ -1,5 +1,6 @@
 ---
 title: "hints: Threshold signatures with silent setup"
+doi: 10.1109/sp54263.2024.00057
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "hints: Threshold signatures with silent setup"
 created: 2025-04-17 10:28:28
 modified: 2025-04-17 10:39:56
 ---
-
 ## hints: Threshold signatures with silent setup
 
 ## 发表信息

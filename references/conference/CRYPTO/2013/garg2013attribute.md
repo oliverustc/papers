@@ -1,5 +1,6 @@
 ---
 title: "Attribute-based encryption for circuits from multilinear maps"
+doi: 10.1007/978-3-642-40084-1_27
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Attribute-based encryption for circuits from multilinear maps"
 created: 2025-04-29 10:32:04
 modified: 2025-04-29 10:32:49
 ---
-
 ## Attribute-based encryption for circuits from multilinear maps
 
 ## 发表信息

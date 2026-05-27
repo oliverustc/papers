@@ -1,11 +1,11 @@
 ---
 title: "Scalable zkSNARKs for Matrix Computations: A Generic Framework for Verifiable Deep Learning"
+doi: 10.1007/978-981-95-5116-3_12
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
 发表年份: 2025
 ---
-
 ## Scalable zkSNARKs for Matrix Computations: A Generic Framework for Verifiable Deep Learning
 
 ## 发表信息

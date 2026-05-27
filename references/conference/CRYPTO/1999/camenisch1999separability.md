@@ -1,5 +1,6 @@
 ---
 title: "Separability and efficiency for generic group signature schemes"
+doi: 10.1007/3-540-48405-1_27
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Separability and efficiency for generic group signature schemes"
 created: 2025-05-26 05:11:53
 modified: 2025-05-26 05:12:07
 ---
-
 ## Separability and efficiency for generic group signature schemes
 
 ## 发表信息

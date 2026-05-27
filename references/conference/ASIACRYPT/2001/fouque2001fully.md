@@ -1,5 +1,6 @@
 ---
 title: "Fully distributed threshold RSA under standard assumptions"
+doi: 10.1007/3-540-45682-1_19
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "Fully distributed threshold RSA under standard assumptions"
 created: 2025-05-27 11:56:02
 modified: 2025-05-27 11:56:08
 ---
-
 ## Fully distributed threshold RSA under standard assumptions
 
 ## 发表信息

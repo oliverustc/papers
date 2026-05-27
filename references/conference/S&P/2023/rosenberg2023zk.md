@@ -1,5 +1,6 @@
 ---
 title: "zk-creds: Flexible anonymous credentials from zksnarks and existing identity infrastructure"
+doi: 10.1109/sp46215.2023.10179430
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "zk-creds: Flexible anonymous credentials from zksnarks and existing iden
 modified: 2025-05-15 05:46:12
 created: 2025-04-14 09:35:08
 ---
-
 ## zk-creds: Flexible anonymous credentials from zksnarks and existing identity infrastructure
 
 ## 发表信息

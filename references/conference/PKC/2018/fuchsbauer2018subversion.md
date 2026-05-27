@@ -1,12 +1,12 @@
 ---
 title: "Subversion-zero-knowledge SNARKs"
+doi: 10.1007/978-3-319-76578-5_11
 标题简称:
 论文类型: conference
 会议简称: PKC
 发表年份: 2018
 modified: 2025-04-08 17:22:54
 ---
-
 ## Subversion-zero-knowledge SNARKs
 
 ## 发表信息

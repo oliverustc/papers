@@ -1,5 +1,6 @@
 ---
 title: "Succinct zero-knowledge batch proofs for set accumulators"
+doi: 10.1145/3548606.3560677
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Succinct zero-knowledge batch proofs for set accumulators"
 modified: 2025-04-22 09:51:09
 created: 2025-04-13 16:51:17
 ---
-
 ## Succinct zero-knowledge batch proofs for set accumulators
 
 ## 发表信息

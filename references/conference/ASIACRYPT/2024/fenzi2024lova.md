@@ -1,5 +1,6 @@
 ---
 title: "Lova: lattice-based folding scheme from unstructured lattices"
+doi: 10.1007/978-981-96-0894-2_10
 标题简称: 
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "Lova: lattice-based folding scheme from unstructured lattices"
 created: 2025-04-21 11:06:02
 modified: 2025-04-21 11:07:59
 ---
-
 ## Lova: lattice-based folding scheme from unstructured lattices
 
 ## 发表信息

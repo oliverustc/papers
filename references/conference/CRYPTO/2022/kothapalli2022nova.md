@@ -1,5 +1,6 @@
 ---
 title: "Nova: Recursive zero-knowledge arguments from folding schemes"
+doi: 10.1007/978-3-031-15985-5_13
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Nova: Recursive zero-knowledge arguments from folding schemes"
 modified: 2025-04-23 15:25:24
 created: 2025-04-13 17:44:41
 ---
-
 ## Nova: Recursive zero-knowledge arguments from folding schemes
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Flashproofs: Efficient zero-knowledge arguments of range and polynomial evaluation with transparent setup"
+doi: 10.1007/978-3-031-22966-4_8
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "Flashproofs: Efficient zero-knowledge arguments of range and polynomial 
 modified: 2025-04-16 17:36:37
 created: 2025-04-11 11:58:26
 ---
-
 ## Flashproofs: Efficient zero-knowledge arguments of range and polynomial evaluation with transparent setup
 
 ## 发表信息

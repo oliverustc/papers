@@ -1,12 +1,12 @@
 ---
 title: "Zero-knowledge elementary databases with more expressive queries"
+doi: 10.1007/978-3-030-17253-4_9
 标题简称:
 论文类型: conference
 会议简称: PKC
 发表年份: 2019
 modified: 2025-04-11 14:26:20
 ---
-
 ## Zero-knowledge elementary databases with more expressive queries
 
 ## 发表信息

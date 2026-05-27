@@ -1,5 +1,6 @@
 ---
 title: "NIZKs with an Untrusted CRS: Security in the Face of Parameter Subversion"
+doi: 10.1007/978-3-662-53890-6_26
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "NIZKs with an Untrusted CRS: Security in the Face of Parameter Subversio
 modified: 2025-04-21 13:52:42
 created: 2025-04-08 17:20:21
 ---
-
 ## NIZKs with an Untrusted CRS: Security in the Face of Parameter Subversion
 
 ## 发表信息

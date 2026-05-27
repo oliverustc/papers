@@ -1,5 +1,6 @@
 ---
 title: "MiMC: Efficient encryption and cryptographic hashing with minimal multiplicative complexity"
+doi: 10.1007/978-3-662-53887-6_7
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "MiMC: Efficient encryption and cryptographic hashing with minimal multip
 created: 2025-04-21 17:23:37
 modified: 2025-04-21 17:29:58
 ---
-
 ## MiMC: Efficient encryption and cryptographic hashing with minimal multiplicative complexity
 
 ## 发表信息

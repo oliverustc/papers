@@ -1,5 +1,6 @@
 ---
 title: "FalconDB: Blockchain-based collaborative database"
+doi: 10.1145/3318464.3380594
 标题简称: FalconDB
 论文类型: conference
 会议简称: SIGMOD
@@ -8,7 +9,6 @@ created: 2025-04-19 11:35:44
 modified: 2025-04-19 12:02:03
 links: https://dl.acm.org/doi/abs/10.1145/3318464.3380594
 ---
-
 ## FalconDB: Blockchain-based collaborative database
 
 ## 发表信息

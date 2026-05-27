@@ -1,5 +1,6 @@
 ---
 title: "Threshold encryption with silent setup"
+doi: 10.1007/978-3-031-68394-7_12
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Threshold encryption with silent setup"
 created: 2025-04-17 10:50:10
 modified: 2025-04-29 16:32:17
 ---
-
 ## Threshold encryption with silent setup
 
 ## 发表信息

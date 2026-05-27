@@ -1,5 +1,6 @@
 ---
 title: Foundations of fully dynamic group signatures
+doi: 10.1007/s00145-020-09357-w
 标题简称: 
 论文类型: journal
 期刊简称: Journal of Cryptology
@@ -7,7 +8,6 @@ title: Foundations of fully dynamic group signatures
 created: 2025-05-12 08:59:30
 modified: 2025-05-23 01:36:00
 ---
-
 ## Foundations of fully dynamic group signatures
 
 ## 发表信息

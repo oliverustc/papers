@@ -1,11 +1,11 @@
 ---
 title: "Vector commitments and their applications"
+doi: 10.1007/978-3-642-36362-7_5
 标题简称:
 论文类型: conference
 会议简称: PKC
 发表年份: 2013
 ---
-
 ## Vector commitments and their applications
 
 ## 发表信息

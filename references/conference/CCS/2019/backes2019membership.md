@@ -1,5 +1,6 @@
 ---
 title: "Membership privacy for fully dynamic group signatures"
+doi: 10.1145/3319535.3354257
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Membership privacy for fully dynamic group signatures"
 created: 2025-05-09 14:51:29
 modified: 2025-05-09 14:52:26
 ---
-
 ## Membership privacy for fully dynamic group signatures
 
 ## 发表信息

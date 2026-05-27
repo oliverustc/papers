@@ -1,12 +1,12 @@
 ---
 title: "Oblivious message retrieval"
+doi: 10.1007/978-3-031-15802-5_26
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
 发表年份: 2022
 modified: 2025-04-09 12:10:23
 ---
-
 ## Oblivious message retrieval
 
 ## 发表信息

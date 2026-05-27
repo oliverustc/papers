@@ -1,12 +1,12 @@
 ---
 title: "Anix: Anonymous Blackout-Resistant Microblogging with Message Endorsing"
+doi: 10.1109/sp61157.2025.00015
 标题简称:
 论文类型: conference
 会议简称: S&P
 发表年份: 2025
 modified: 2025-04-13 14:12:59
 ---
-
 ## Anix: Anonymous Blackout-Resistant Microblogging with Message Endorsing
 
 ## 发表信息

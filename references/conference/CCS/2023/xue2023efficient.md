@@ -1,5 +1,6 @@
 ---
 title: "Efficient multiplicative-to-additive function from Joye-Libert cryptosystem and its application to threshold ECDSA"
+doi: 10.1145/3576915.3616595
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Efficient multiplicative-to-additive function from Joye-Libert cryptosys
 created: 2025-04-16 14:07:12
 modified: 2025-04-16 15:38:49
 ---
-
 ## Efficient multiplicative-to-additive function from Joye-Libert cryptosystem and its application to threshold ECDSA
 
 ## 发表信息

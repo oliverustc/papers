@@ -1,12 +1,12 @@
 ---
 title: "Post-Quantum Zero-Knowledge and Signatures from Symmetric-Key Primitives"
+doi: 10.1145/3133956.3133997
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2017
 modified: 2025-04-08 17:11:20
 ---
-
 ## Post-Quantum Zero-Knowledge and Signatures from Symmetric-Key Primitives
 
 ## 发表信息

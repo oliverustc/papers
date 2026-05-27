@@ -1,5 +1,6 @@
 ---
 title: "Concretely efficient lattice-based polynomial commitment from standard assumptions"
+doi: 10.1007/978-3-031-68403-6_13
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Concretely efficient lattice-based polynomial commitment from standard a
 created: 2025-04-21 10:57:11
 modified: 2025-04-21 10:57:50
 ---
-
 ## Concretely efficient lattice-based polynomial commitment from standard assumptions
 
 ## 发表信息

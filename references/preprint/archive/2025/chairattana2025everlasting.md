@@ -1,5 +1,6 @@
 ---
 title: "Everlasting Anonymous Rate-Limited Tokens"
+doi: 10.1007/978-981-95-5119-4_14
 标题简称:
 论文类型: preprint
 预印本简称: archive
@@ -7,7 +8,6 @@ title: "Everlasting Anonymous Rate-Limited Tokens"
 created: 2025-06-09 09:20:55
 modified: 2025-06-09 10:24:31
 ---
-
 ## Everlasting Anonymous Rate-Limited Tokens
 
 ## 发表信息

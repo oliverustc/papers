@@ -1,11 +1,11 @@
 ---
 title: "On the Security of KZG Commitment for VSS"
+doi: 10.1145/3576915.3623127
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2023
 ---
-
 ## On the Security of KZG Commitment for VSS
 
 ## 发表信息

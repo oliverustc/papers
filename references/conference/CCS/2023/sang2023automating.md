@@ -1,12 +1,12 @@
 ---
 title: "Ou: Automating the Parallelization of Zero-Knowledge Protocols"
+doi: 10.1145/3576915.3616621
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2023
 modified: 2025-04-11 10:23:07
 ---
-
 ## Ou: Automating the Parallelization of Zero-Knowledge Protocols
 
 ## 发表信息

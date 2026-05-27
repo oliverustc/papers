@@ -1,5 +1,6 @@
 ---
 title: "Non-Interactive Blind Signatures: Post-Quantum and Stronger Security"
+doi: 10.1007/978-981-96-0888-1_3
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "Non-Interactive Blind Signatures: Post-Quantum and Stronger Security"
 created: 2025-05-09 09:38:33
 modified: 2025-05-09 09:47:30
 ---
-
 ## Non-Interactive Blind Signatures: Post-Quantum and Stronger Security
 
 ## 发表信息

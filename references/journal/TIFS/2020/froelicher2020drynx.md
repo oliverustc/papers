@@ -1,12 +1,12 @@
 ---
 title: "Drynx: Decentralized, Secure, Verifiable System for Statistical Queries and Machine Learning on Distributed Datasets"
+doi: 10.1109/tifs.2020.2976612
 标题简称: Drynx
 论文类型: journal
 期刊简称: TIFS
 发表年份: 2020
 modified: 2025-04-09 09:20:27
 ---
-
 ## Drynx: Decentralized, Secure, Verifiable System for Statistical Queries and Machine Learning on Distributed Datasets
 
 ## 发表信息

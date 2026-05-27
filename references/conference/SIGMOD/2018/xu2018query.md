@@ -1,12 +1,12 @@
 ---
 title: "When query authentication meets fine-grained access control: A zero-knowledge approach"
+doi: 10.1145/3183713.3183741
 标题简称:
 论文类型: conference
 会议简称: SIGMOD
 发表年份: 2018
 modified: 2025-04-11 14:03:02
 ---
-
 ## When query authentication meets fine-grained access control: A zero-knowledge approach
 
 ## 发表信息

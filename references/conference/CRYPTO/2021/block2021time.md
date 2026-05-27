@@ -1,5 +1,6 @@
 ---
 title: "Time-and space-efficient arguments from groups of unknown order"
+doi: 10.1007/978-3-030-84259-8_5
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Time-and space-efficient arguments from groups of unknown order"
 created: 2025-04-28 17:02:33
 modified: 2025-04-28 17:05:44
 ---
-
 ## Time-and space-efficient arguments from groups of unknown order
 
 ## 发表信息

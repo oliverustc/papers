@@ -1,5 +1,6 @@
 ---
 title: "Libra: Succinct Zero-Knowledge Proofs with Optimal Prover Computation"
+doi: 10.1007/978-3-030-26954-8_24
 
 标题简称: Libra
 论文类型: conference
@@ -7,7 +8,6 @@ title: "Libra: Succinct Zero-Knowledge Proofs with Optimal Prover Computation"
 发表年份: 2019
 modified: 2025-04-08 22:03:37
 ---
-
 ## Libra: Succinct Zero-Knowledge Proofs with Optimal Prover Computation
 
 ## 发表信息

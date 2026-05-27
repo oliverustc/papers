@@ -1,5 +1,6 @@
 ---
 title: "Bicameral and auditably private signatures"
+doi: 10.1007/978-981-99-8724-5_10
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "Bicameral and auditably private signatures"
 created: 2025-05-23 01:55:20
 modified: 2025-05-23 01:55:28
 ---
-
 ## Bicameral and auditably private signatures
 
 ## 发表信息

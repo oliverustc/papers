@@ -1,5 +1,6 @@
 ---
 title: "Sok: data sovereignty"
+doi: 10.1109/eurosp57164.2023.00017
 标题简称:
 论文类型: conference
 会议简称: EuroS&P
@@ -7,7 +8,6 @@ title: "Sok: data sovereignty"
 modified: 2025-04-16 10:29:42
 created: 2025-04-13 14:43:41
 ---
-
 ## Sok: data sovereignty
 
 ## 发表信息

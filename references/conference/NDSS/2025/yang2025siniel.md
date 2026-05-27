@@ -1,12 +1,12 @@
 ---
 title: "Siniel: Distributed Privacy-Preserving zkSNARK"
+doi: 10.14722/ndss.2025.240152
 标题简称: 
 论文类型: conference
 会议简称: NDSS
 发表年份: 2025
 modified: 2025-04-13 16:39:23
 ---
-
 ## Siniel: Distributed Privacy-Preserving zkSNARK
 
 ## 发表信息

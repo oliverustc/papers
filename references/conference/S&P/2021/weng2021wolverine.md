@@ -1,12 +1,12 @@
 ---
 title: "Wolverine: Fast, Scalable, and Communication-Efficient Zero-Knowledge Proofs for Boolean and Arithmetic Circuits"
+doi: 10.1109/sp40001.2021.00056
 标题简称:
 论文类型: conference
 会议简称: S&P
 发表年份: 2021
 modified: 2025-04-09 16:06:03
 ---
-
 ## Wolverine: Fast, Scalable, and Communication-Efficient Zero-Knowledge Proofs for Boolean and Arithmetic Circuits
 
 ## 发表信息

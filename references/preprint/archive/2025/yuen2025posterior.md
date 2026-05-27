@@ -1,5 +1,6 @@
 ---
 title: "Posterior Security: Anonymity and Message Hiding of Standard Signatures"
+doi: 10.1145/3719027.3744797
 标题简称:
 论文类型: preprint
 预印本简称: archive
@@ -7,7 +8,6 @@ title: "Posterior Security: Anonymity and Message Hiding of Standard Signatures"
 created: 2025-05-23 02:00:07
 modified: 2025-05-23 02:03:02
 ---
-
 ## Posterior Security: Anonymity and Message Hiding of Standard Signatures
 
 ## 发表信息

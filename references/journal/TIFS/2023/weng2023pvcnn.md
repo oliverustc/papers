@@ -1,5 +1,6 @@
 ---
 title: "pvCNN: Privacy-Preserving and Verifiable  Convolutional Neural Network Testing"
+doi: 10.1109/tifs.2023.3262932
 标题简称:
 论文类型: journal
 期刊简称: TIFS
@@ -7,7 +8,6 @@ title: "pvCNN: Privacy-Preserving and Verifiable  Convolutional Neural Network T
 
 modified: 2025-04-10 17:03:23
 ---
-
 ## pvCNN: Privacy-Preserving and Verifiable  Convolutional Neural Network Testing
 
 ## 发表信息

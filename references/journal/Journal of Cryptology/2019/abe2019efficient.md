@@ -1,5 +1,6 @@
 ---
 title: "Efficient Fully Structure-Preserving Signatures and Shrinking Commitments"
+doi: 10.1007/s00145-018-9300-5
 标题简称:
 论文类型: journal
 期刊简称: Journal of Cryptology
@@ -7,7 +8,6 @@ title: "Efficient Fully Structure-Preserving Signatures and Shrinking Commitment
 created: 2025-05-12 09:13:24
 modified: 2025-05-12 09:15:41
 ---
-
 ## Efficient Fully Structure-Preserving Signatures and Shrinking Commitments
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Merkle^2 : A low-latency transparency log system"
+doi: 10.1109/sp40001.2021.00088
 标题简称: 
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Merkle^2 : A low-latency transparency log system"
 created: 2025-04-27 08:58:18
 modified: 2025-04-27 09:20:14
 ---
-
 ## Merkle^2 : A low-latency transparency log system
 
 ## 发表信息

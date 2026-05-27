@@ -1,5 +1,6 @@
 ---
 title: "Piano: extremely simple, single-server PIR with sublinear server computation"
+doi: 10.1109/sp54263.2024.00055
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Piano: extremely simple, single-server PIR with sublinear server computa
 created: 2025-04-27 09:27:28
 modified: 2025-04-27 09:33:20
 ---
-
 ## Piano: extremely simple, single-server PIR with sublinear server computation
 
 ## 发表信息

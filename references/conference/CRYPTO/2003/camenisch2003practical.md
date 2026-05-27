@@ -1,11 +1,11 @@
 ---
 title: "Practical verifiable encryption and decryption of discrete logarithms"
+doi: 10.1007/978-3-540-45146-4_8
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
 发表年份: 2003
 ---
-
 ## Practical verifiable encryption and decryption of discrete logarithms
 
 ## 发表信息

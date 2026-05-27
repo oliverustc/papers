@@ -1,12 +1,12 @@
 ---
 title: "vChain+: Optimizing verifiable blockchain boolean range queries"
+doi: 10.1109/icde53745.2022.00190
 标题简称:
 论文类型: conference
 会议简称: ICDE
 发表年份: 2022
 modified: 2025-04-11 11:13:43
 ---
-
 ## vChain+ : Optimizing verifiable blockchain boolean range queries
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Zero knowledge static program analysis"
+doi: 10.1145/3460120.3484795
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Zero knowledge static program analysis"
 created: 2025-04-22 11:22:30
 modified: 2025-04-22 11:23:22
 ---
-
 ## Zero knowledge static program analysis
 
 ## 发表信息

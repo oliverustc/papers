@@ -1,5 +1,6 @@
 ---
 title: "Succinct non-interactive arguments via linear interactive proofs"
+doi: 10.1007/s00145-022-09424-4
 标题简称:
 论文类型: journal
 期刊简称: Journal of Cryptology
@@ -7,7 +8,6 @@ title: "Succinct non-interactive arguments via linear interactive proofs"
 created: 2025-04-29 10:28:03
 modified: 2025-04-29 10:30:11
 ---
-
 ## Succinct non-interactive arguments via linear interactive proofs
 
 ## 发表信息

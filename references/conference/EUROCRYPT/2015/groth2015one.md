@@ -1,5 +1,6 @@
 ---
 title: "One-out-of-many proofs: Or how to leak a secret and spend a coin"
+doi: 10.1007/978-3-662-46803-6_9
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "One-out-of-many proofs: Or how to leak a secret and spend a coin"
 created: 2025-05-12 08:48:43
 modified: 2025-05-12 08:57:09
 ---
-
 ## One-out-of-many proofs: Or how to leak a secret and spend a coin
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Witness encryption and its applications"
+doi: 10.1145/2488608.2488667
 标题简称:
 论文类型: conference
 会议简称: STOC
@@ -7,7 +8,6 @@ title: "Witness encryption and its applications"
 created: 2025-04-29 10:19:47
 modified: 2025-04-29 10:22:25
 ---
-
 ## Witness encryption and its applications
 
 ## 发表信息

@@ -1,12 +1,12 @@
 ---
 title: "Transparent SNARKs from DARK Compilers"
+doi: 10.1007/978-3-030-45721-1_24
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
 发表年份: 2020
 modified: 2025-04-09 15:54:05
 ---
-
 ## Transparent SNARKs from DARK Compilers
 
 ## 发表信息

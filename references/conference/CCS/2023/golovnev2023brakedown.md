@@ -1,5 +1,6 @@
 ---
 title: "Brakedown: Linear-Time and Field-Agnostic SNARKs for R1CS"
+doi: 10.1007/978-3-031-38545-2_7
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Brakedown: Linear-Time and Field-Agnostic SNARKs for R1CS"
 modified: 2025-04-21 10:52:20
 created: 2025-04-08 20:57:45
 ---
-
 ## Brakedown: Linear-Time and Field-Agnostic SNARKs for R1CS
 
 ## 发表信息

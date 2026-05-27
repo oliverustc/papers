@@ -1,5 +1,6 @@
 ---
 title: "Dory: Efficient, transparent arguments for generalised inner products and polynomial commitments"
+doi: 10.1007/978-3-030-90453-1_1
 标题简称:
 论文类型: conference
 会议简称: TCC
@@ -7,7 +8,6 @@ title: "Dory: Efficient, transparent arguments for generalised inner products an
 created: 2025-04-28 16:53:19
 modified: 2025-04-28 16:55:15
 ---
-
 ## Dory: Efficient, transparent arguments for generalised inner products and polynomial commitments
 
 ## 发表信息

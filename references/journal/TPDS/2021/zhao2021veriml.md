@@ -1,12 +1,12 @@
 ---
 title: "VeriML: Enabling Integrity Assurances and Fair Payments for Machine Learning as a Service"
+doi: 10.1109/tpds.2021.3068195
 标题简称:
 论文类型: journal
 期刊简称: TPDS
 发表年份: 2021
 modified: 2025-04-09 09:38:25
 ---
-
 ## VeriML: Enabling Integrity Assurances and Fair Payments for Machine Learning as a Service
 
 ## 发表信息

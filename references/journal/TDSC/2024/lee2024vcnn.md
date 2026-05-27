@@ -1,12 +1,12 @@
 ---
 title: "vCNN: Verifiable Convolutional Neural Network  Based on zk-SNARKs"
+doi: 10.1109/tdsc.2023.3348760
 标题简称: vCNN
 论文类型: journal
 期刊简称: TDSC
 发表年份: 2024
 modified: 2025-04-08 11:05:35
 ---
-
 ## vCNN: Verifiable Convolutional Neural Network  Based on zk-SNARKs
 
 ## 发表信息

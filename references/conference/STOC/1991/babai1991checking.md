@@ -1,12 +1,12 @@
 ---
 title: "Checking computations in polylogarithmic time"
+doi: 10.1145/103418.103428
 标题简称:
 论文类型: conference
 会议简称: STOC
 发表年份: 1991
 modified: 2025-04-08 11:55:33
 ---
-
 ## Checking computations in polylogarithmic time
 
 ## 发表信息

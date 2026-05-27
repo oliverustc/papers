@@ -1,5 +1,6 @@
 ---
 title: "Riggs: Decentralized sealed-bid auctions"
+doi: 10.1145/3576915.3623182
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Riggs: Decentralized sealed-bid auctions"
 created: 2025-04-16 10:54:35
 modified: 2025-04-16 10:55:19
 ---
-
 ## Riggs: Decentralized sealed-bid auctions
 
 ## 发表信息

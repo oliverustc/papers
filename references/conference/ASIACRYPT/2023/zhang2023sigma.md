@@ -1,12 +1,12 @@
 ---
 title: "Sigma protocols from verifiable secret sharing and their applications"
+doi: 10.1007/978-981-99-8724-5_7
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
 发表年份: 2023
 modified: 2025-04-14 09:53:38
 ---
-
 ## Sigma protocols from verifiable secret sharing and their applications
 
 ## 发表信息

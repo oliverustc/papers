@@ -1,5 +1,6 @@
 ---
 title: "Efficient zero-knowledge proof of algebraic and non-algebraic statements with applications to privacy preserving credentials"
+doi: 10.1007/978-3-662-53015-3_18
 
 标题简称:
 论文类型: conference
@@ -7,7 +8,6 @@ title: "Efficient zero-knowledge proof of algebraic and non-algebraic statements
 发表年份: 2016
 modified: 2025-04-14 09:56:54
 ---
-
 ## Efficient zero-knowledge proof of algebraic and non-algebraic statements with applications to privacy preserving credentials
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Deniable ring authentication"
+doi: 10.1007/3-540-45708-9_31
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Deniable ring authentication"
 created: 2025-05-28 02:16:03
 modified: 2025-05-28 02:48:53
 ---
-
 ## Deniable ring authentication
 
 ## 发表信息

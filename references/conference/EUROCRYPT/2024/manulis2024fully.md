@@ -1,11 +1,11 @@
 ---
 title: "Fully homomorphic encryption beyond IND-CCA security: integrity through verifiability"
+doi: 10.1007/978-3-031-58723-8_3
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
 发表年份: 2024
 ---
-
 ## Fully homomorphic encryption beyond IND-CCA security: integrity through verifiability
 
 ## 发表信息

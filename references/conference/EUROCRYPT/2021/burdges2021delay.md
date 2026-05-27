@@ -1,5 +1,6 @@
 ---
 title: "Delay encryption"
+doi: 10.1007/978-3-030-77870-5_11
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Delay encryption"
 created: 2025-04-28 17:17:57
 modified: 2025-04-28 17:18:21
 ---
-
 ## Delay encryption
 
 ## 发表信息

@@ -1,11 +1,11 @@
 ---
 title: "Multi-signatures in the plain public-key model and a general forking lemma"
+doi: 10.1145/1180405.1180453
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2006
 ---
-
 ## Multi-signatures in the plain public-key model and a general forking lemma
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Derecho: privacy pools with proof-carrying disclosures"
+doi: 10.1145/3658644.3670270
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Derecho: privacy pools with proof-carrying disclosures"
 created: 2025-04-21 11:09:48
 modified: 2025-04-21 11:10:01
 ---
-
 ## Derecho: privacy pools with proof-carrying disclosures
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Accountable-subgroup multisignatures"
+doi: 10.1145/502014.502017
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Accountable-subgroup multisignatures"
 created: 2025-05-27 04:13:38
 modified: 2025-05-27 04:13:44
 ---
-
 ## Accountable-subgroup multisignatures
 
 ## 发表信息

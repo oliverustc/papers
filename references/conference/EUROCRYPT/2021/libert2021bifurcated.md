@@ -1,5 +1,6 @@
 ---
 title: "Bifurcated signatures: folding the accountability vs anonymity dilemma into a single private signing scheme"
+doi: 10.1007/978-3-030-77883-5_18
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Bifurcated signatures: folding the accountability vs anonymity dilemma i
 created: 2025-05-23 01:41:37
 modified: 2025-05-23 01:42:47
 ---
-
 ## Bifurcated signatures: folding the accountability vs anonymity dilemma into a single private signing scheme
 
 ## 发表信息

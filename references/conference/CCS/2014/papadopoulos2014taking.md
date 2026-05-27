@@ -1,11 +1,11 @@
 ---
 title: "Taking authenticated range queries to arbitrary dimensions"
+doi: 10.1145/2660267.2660373
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2014
 ---
-
 ## Taking authenticated range queries to arbitrary dimensions
 
 ## 发表信息

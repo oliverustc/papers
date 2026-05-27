@@ -1,5 +1,6 @@
 ---
 title: "Sweep-uc: Swapping coins privately"
+doi: 10.1109/sp54263.2024.00081
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Sweep-uc: Swapping coins privately"
 created: 2025-05-09 14:39:35
 modified: 2025-05-09 14:41:26
 ---
-
 ## Sweep-uc: Swapping coins privately
 
 ## 发表信息

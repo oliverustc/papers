@@ -1,11 +1,11 @@
 ---
 title: "Zero-knowledge RAM: doubly efficient and black-box"
+doi: 10.1007/978-3-031-91134-7_13
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
 发表年份: 2025
 ---
-
 ## Zero-knowledge RAM: doubly efficient and black-box
 
 ## 发表信息

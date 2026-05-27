@@ -1,5 +1,6 @@
 ---
 title: "Monotone-policy aggregate signatures"
+doi: 10.1007/978-3-031-58737-5_7
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Monotone-policy aggregate signatures"
 created: 2025-04-28 11:29:47
 modified: 2025-04-28 11:32:27
 ---
-
 ## Monotone-policy aggregate signatures
 
 ## 发表信息

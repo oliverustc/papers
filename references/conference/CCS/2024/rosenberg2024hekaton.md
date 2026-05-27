@@ -1,5 +1,6 @@
 ---
 title: "Hekaton: Horizontally-Scalable zkSNARKs Via Proof Aggregation"
+doi: 10.1145/3658644.3690282
 标题简称: Hekaton
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Hekaton: Horizontally-Scalable zkSNARKs Via Proof Aggregation"
 modified: 2025-04-23 15:20:35
 created: 2025-04-09 14:04:08
 ---
-
 ## Hekaton: Horizontally-Scalable zkSNARKs Via Proof Aggregation
 
 ## 发表信息

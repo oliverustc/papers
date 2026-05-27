@@ -1,5 +1,6 @@
 ---
 title: "Efficient zero-knowledge arguments for paillier cryptosystem"
+doi: 10.1109/sp54263.2024.00093
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Efficient zero-knowledge arguments for paillier cryptosystem"
 created: 2025-04-16 13:57:08
 modified: 2025-04-16 14:05:48
 ---
-
 ## Efficient zero-knowledge arguments for paillier cryptosystem
 
 ## 发表信息

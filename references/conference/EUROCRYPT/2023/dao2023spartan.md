@@ -1,12 +1,12 @@
 ---
 title: "Spartan and bulletproofs are simulation-extractable for free"
+doi: 10.1007/978-3-031-30617-4_18
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
 发表年份: 2023
 modified: 2025-04-13 17:49:05
 ---
-
 ## Spartan and bulletproofs are simulation-extractable (for free !)
 
 ## 发表信息

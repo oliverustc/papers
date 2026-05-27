@@ -1,5 +1,6 @@
 ---
 title: "Bandwidth-efficient threshold EC-DSA"
+doi: 10.1007/978-3-030-45388-6_10
 标题简称:
 论文类型: conference
 会议简称: PKC
@@ -7,7 +8,6 @@ title: "Bandwidth-efficient threshold EC-DSA"
 created: 2025-04-28 17:08:15
 modified: 2025-04-28 17:09:09
 ---
-
 ## Bandwidth-efficient threshold EC-DSA
 
 ## 发表信息

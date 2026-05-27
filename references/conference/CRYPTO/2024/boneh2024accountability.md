@@ -1,11 +1,11 @@
 ---
 title: "Accountability for misbehavior in threshold decryption via threshold traitor tracing"
+doi: 10.1007/978-3-031-68394-7_11
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
 发表年份: 2024
 ---
-
 ## Accountability for misbehavior in threshold decryption via threshold traitor tracing
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Doubly Efficient Interactive Proofs for General Arithmetic Circuits with Linear Prover Time"
+doi: 10.1145/3460120.3484767
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -8,7 +9,6 @@ title: "Doubly Efficient Interactive Proofs for General Arithmetic Circuits with
 modified: 2025-04-21 17:07:40
 created: 2025-04-07 16:26:55
 ---
-
 ## Doubly Efficient Interactive Proofs for General Arithmetic Circuits with Linear Prover Time
 
 ## 发表信息

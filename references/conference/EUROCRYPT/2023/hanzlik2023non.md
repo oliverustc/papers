@@ -1,5 +1,6 @@
 ---
 title: "Non-interactive Blind Signatures for Random Messages"
+doi: 10.1007/978-3-031-30589-4_25
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Non-interactive Blind Signatures for Random Messages"
 modified: 2025-04-16 10:20:33
 created: 2025-04-09 11:35:00
 ---
-
 ## Non-interactive Blind Signatures for Random Messages
 
 ## 发表信息

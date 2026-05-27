@@ -1,12 +1,12 @@
 ---
 title: "Sok: Security and privacy of blockchain interoperability"
+doi: 10.1109/sp54263.2024.00255
 标题简称:
 论文类型: conference
 会议简称: S&P
 发表年份: 2024
 modified: 2025-04-13 14:49:11
 ---
-
 ## Sok: Security and privacy of blockchain interoperability
 
 ## 发表信息

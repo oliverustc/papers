@@ -1,5 +1,6 @@
 ---
 title: "Experimenting with Zero-Knowledge Proofs of Training"
+doi: 10.1145/3576915.3623202
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -8,7 +9,6 @@ title: "Experimenting with Zero-Knowledge Proofs of Training"
 modified: 2025-05-07 22:29:10
 created: 2025-04-07 16:28:24
 ---
-
 ## Experimenting with Zero-Knowledge Proofs of Training
 
 ## 发表信息

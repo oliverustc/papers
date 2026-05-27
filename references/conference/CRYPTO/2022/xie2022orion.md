@@ -1,5 +1,6 @@
 ---
 title: "Orion: Zero Knowledge Proof with Linear Prover Time"
+doi: 10.1007/978-3-031-15985-5_11
 
 标题简称: Orion
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Orion: Zero Knowledge Proof with Linear Prover Time"
 modified: 2025-04-22 11:27:57
 created: 2025-04-07 16:43:36
 ---
-
 ## Orion: Zero Knowledge Proof with Linear Prover Time
 
 ## 发表信息

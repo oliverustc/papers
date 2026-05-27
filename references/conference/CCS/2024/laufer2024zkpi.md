@@ -1,5 +1,6 @@
 ---
 title: "zkPi: Proving Lean Theorems in Zero-Knowledge"
+doi: 10.1145/3658644.3670322
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "zkPi: Proving Lean Theorems in Zero-Knowledge"
 
 modified: 2025-04-13 14:30:43
 ---
-
 ## zkPi: Proving Lean Theorems in Zero-Knowledge
 
 ## 发表信息

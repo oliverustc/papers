@@ -1,5 +1,6 @@
 ---
 title: "Publicly accountable robust multi-party computation"
+doi: 10.1109/sp46214.2022.9833608
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Publicly accountable robust multi-party computation"
 created: 2025-05-23 01:09:23
 modified: 2025-05-23 01:09:40
 ---
-
 ## Publicly accountable robust multi-party computation
 
 ## 发表信息

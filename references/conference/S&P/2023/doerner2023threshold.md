@@ -1,5 +1,6 @@
 ---
 title: "Threshold BBS signatures for distributed anonymous credential issuance"
+doi: 10.1109/sp46215.2023.10179470
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Threshold BBS signatures for distributed anonymous credential issuance"
 created: 2025-05-23 01:27:38
 modified: 2025-05-23 01:27:44
 ---
-
 ## Threshold BBS signatures for distributed anonymous credential issuance
 
 ## 发表信息

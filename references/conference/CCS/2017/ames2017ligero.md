@@ -1,12 +1,12 @@
 ---
 title: "Ligero: Lightweight Sublinear Arguments Without a Trusted Setup"
+doi: 10.1145/3133956.3134104
 标题简称: Ligero
 论文类型: conference
 会议简称: CCS
 发表年份: 2017
 modified: 2025-04-08 17:13:15
 ---
-
 ## Ligero: Lightweight Sublinear Arguments Without a Trusted Setup
 
 ## 发表信息

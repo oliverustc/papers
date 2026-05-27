@@ -1,5 +1,6 @@
 ---
 title: "Oblivious accumulators"
+doi: 10.1007/978-3-031-57722-2_4
 标题简称:
 论文类型: conference
 会议简称: PKC
@@ -7,7 +8,6 @@ title: "Oblivious accumulators"
 created: 2025-04-16 10:08:43
 modified: 2025-04-16 10:11:47
 ---
-
 ## Oblivious accumulators
 
 ## 发表信息

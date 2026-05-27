@@ -1,11 +1,11 @@
 ---
 title: "Publicly verifiable secret sharing"
+doi: 10.1007/3-540-68339-9_17
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
 发表年份: 1996
 ---
-
 ## Publicly verifiable secret sharing
 
 ## 发表信息

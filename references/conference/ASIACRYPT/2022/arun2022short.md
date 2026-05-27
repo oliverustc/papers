@@ -1,5 +1,6 @@
 ---
 title: "Short-lived zero-knowledge proofs and signatures"
+doi: 10.1007/978-3-031-22969-5_17
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "Short-lived zero-knowledge proofs and signatures"
 created: 2025-04-28 15:00:19
 modified: 2025-04-28 15:01:11
 ---
-
 ## Short-lived zero-knowledge proofs and signatures
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Practical threshold signatures"
+doi: 10.1007/3-540-45539-6_15
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Practical threshold signatures"
 created: 2025-05-27 11:46:49
 modified: 2025-05-27 11:48:38
 ---
-
 ## Practical threshold signatures
 
 ## 发表信息

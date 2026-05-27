@@ -1,12 +1,12 @@
 ---
 title: Unlocking the Lookup Singularity with Lasso
+doi: 10.1007/978-3-031-58751-1_7
 标题简称: Lasso
 论文类型: conference
 会议简称: EUROCRYPT
 发表年份: 2024
 modified: 2025-04-11 14:43:24
 ---
-
 ## Unlocking the Lookup Singularity with Lasso
 
 ## 发表信息

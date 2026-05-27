@@ -1,5 +1,6 @@
 ---
 title: "Direct Range Proofs for Paillier Cryptosystem and Their Applications"
+doi: 10.1145/3658644.3690261
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Direct Range Proofs for Paillier Cryptosystem and Their Applications"
 created: 2025-04-16 13:47:29
 modified: 2025-04-16 13:49:48
 ---
-
 ## Direct Range Proofs for Paillier Cryptosystem and Their Applications
 
 ## 发表信息

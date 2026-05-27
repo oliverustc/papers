@@ -1,5 +1,6 @@
 ---
 title: "Tight zk cpu: Batched zk branching with cost proportional to evaluated instruction"
+doi: 10.1145/3658644.3690289
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Tight zk cpu: Batched zk branching with cost proportional to evaluated i
 created: 2025-04-20 20:05:58
 modified: 2025-04-20 20:07:04
 ---
-
 ## Tight zk cpu: Batched zk branching with cost proportional to evaluated instruction
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Field-Agnostic SNARKs from Expand-Accumulate Codes"
+doi: 10.1007/978-3-031-68403-6_9
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Field-Agnostic SNARKs from Expand-Accumulate Codes"
 
 modified: 2025-04-08 21:03:53
 ---
-
 ## Field-Agnostic SNARKs from Expand-Accumulate Codes
 
 ## 发表信息

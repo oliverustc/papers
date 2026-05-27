@@ -1,5 +1,6 @@
 ---
 title: "Check-Before-you-Solve: Verifiable Time-lock Puzzles"
+doi: 10.1109/sp61157.2025.00053
 标题简称: 
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Check-Before-you-Solve: Verifiable Time-lock Puzzles"
 modified: 2025-04-22 17:16:02
 created: 2025-04-08 21:15:12
 ---
-
 ## "Check-Before-you-Solve": Verifiable Time-lock Puzzles
 
 ## 发表信息

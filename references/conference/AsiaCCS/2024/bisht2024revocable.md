@@ -1,5 +1,6 @@
 ---
 title: "Revocable TACO: Revocable Threshold based Anonymous Credentials over Blockchains"
+doi: 10.1145/3634737.3637656
 标题简称: 
 论文类型: conference
 会议简称: AsiaCCS
@@ -7,7 +8,6 @@ title: "Revocable TACO: Revocable Threshold based Anonymous Credentials over Blo
 created: 2025-05-20 02:21:25
 modified: 2025-05-21 10:48:47
 ---
-
 ## Revocable TACO: Revocable Threshold based Anonymous Credentials over Blockchains
 
 ## 发表信息

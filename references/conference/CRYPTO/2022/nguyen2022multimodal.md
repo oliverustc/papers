@@ -1,5 +1,6 @@
 ---
 title: "Multimodal private signatures"
+doi: 10.1007/978-3-031-15979-4_27
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
@@ -7,7 +8,6 @@ title: "Multimodal private signatures"
 created: 2025-05-23 01:12:39
 modified: 2025-05-23 02:50:19
 ---
-
 ## Multimodal private signatures
 
 ## 发表信息

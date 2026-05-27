@@ -1,5 +1,6 @@
 ---
 title: "McFly: verifiable encryption to the future made practical"
+doi: 10.1007/978-3-031-47754-6_15
 标题简称:
 论文类型: conference
 会议简称: FC
@@ -7,7 +8,6 @@ title: "McFly: verifiable encryption to the future made practical"
 created: 2025-04-29 10:45:55
 modified: 2025-04-29 10:49:13
 ---
-
 ## McFly: verifiable encryption to the future made practical
 
 ## 发表信息

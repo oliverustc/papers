@@ -1,5 +1,6 @@
 ---
 title: "Collision-free accumulators and fail-stop signature schemes without trees"
+doi: 10.1007/3-540-69053-0_33
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Collision-free accumulators and fail-stop signature schemes without tree
 created: 2025-04-22 09:11:17
 modified: 2025-04-22 09:11:47
 ---
-
 ## Collision-free accumulators and fail-stop signature schemes without trees
 
 ## 发表信息

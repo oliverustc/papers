@@ -1,5 +1,6 @@
 ---
 title: "Ring signatures: Stronger definitions, and constructions without random oracles"
+doi: 10.1007/s00145-007-9011-9
 标题简称:
 论文类型: journal
 期刊简称: Journal of Cryptology
@@ -7,7 +8,6 @@ title: "Ring signatures: Stronger definitions, and constructions without random 
 created: 2025-05-28 01:48:17
 modified: 2025-05-28 01:48:23
 ---
-
 ## Ring signatures: Stronger definitions, and constructions without random oracles
 
 ## 发表信息

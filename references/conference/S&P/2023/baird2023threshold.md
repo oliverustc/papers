@@ -1,5 +1,6 @@
 ---
 title: "Threshold signatures in the multiverse"
+doi: 10.1109/sp46215.2023.10179436
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Threshold signatures in the multiverse"
 created: 2025-04-17 10:41:54
 modified: 2025-04-17 10:42:38
 ---
-
 ## Threshold signatures in the multiverse
 
 ## 发表信息

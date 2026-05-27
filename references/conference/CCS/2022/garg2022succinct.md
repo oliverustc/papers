@@ -1,5 +1,6 @@
 ---
 title: "Succinct zero knowledge for floating point computations"
+doi: 10.1145/3548606.3560653
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Succinct zero knowledge for floating point computations"
 created: 2025-04-16 11:22:14
 modified: 2025-04-16 11:22:36
 ---
-
 ## Succinct zero knowledge for floating point computations
 
 ## 发表信息

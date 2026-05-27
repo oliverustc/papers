@@ -1,5 +1,6 @@
 ---
 title: "Signature schemes and anonymous credentials from bilinear maps"
+doi: 10.1007/978-3-540-28628-8_4
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Signature schemes and anonymous credentials from bilinear maps"
 created: 2025-05-15 09:58:15
 modified: 2025-05-26 05:05:07
 ---
-
 ## Signature schemes and anonymous credentials from bilinear maps
 
 ## 发表信息

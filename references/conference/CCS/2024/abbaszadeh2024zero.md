@@ -1,5 +1,6 @@
 ---
 title: "Zero-Knowledge Proofs of Training for Deep Neural Networks"
+doi: 10.1145/3658644.3670316
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -8,7 +9,6 @@ title: "Zero-Knowledge Proofs of Training for Deep Neural Networks"
 modified: 2025-05-13 03:18:55
 created: 2025-05-13 09:23:43
 ---
-
 ## Zero-Knowledge Proofs of Training for Deep Neural Networks
 
 ## 发表信息

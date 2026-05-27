@@ -1,5 +1,6 @@
 ---
 title: "The knowledge complexity of interactive proof-systems"
+doi: 10.1145/22145.22178
 标题简称:
 论文类型: conference
 会议简称: STOC
@@ -7,7 +8,6 @@ title: "The knowledge complexity of interactive proof-systems"
 modified: 2025-04-30 16:57:23
 created: 2025-04-08 11:10:12
 ---
-
 ## The knowledge complexity of interactive proof-systems
 
 ## 发表信息

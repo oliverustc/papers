@@ -1,12 +1,12 @@
 ---
 title: "Lunar: a toolbox for more efficient universal and updatable zkSNARKs and commit-and-prove extensions"
+doi: 10.1007/978-3-030-92078-4_1
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
 发表年份: 2021
 modified: 2025-04-13 17:40:03
 ---
-
 ## Lunar: a toolbox for more efficient universal and updatable zkSNARKs and commit-and-prove extensions
 
 ## 发表信息

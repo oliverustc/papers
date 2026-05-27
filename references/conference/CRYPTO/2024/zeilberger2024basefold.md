@@ -1,12 +1,12 @@
 ---
 title: "BaseFold: Efficient Field-Agnostic Polynomial Commitment Schemes from Foldable Codes"
+doi: 10.1007/978-3-031-68403-6_5
 标题简称: BaseFold
 论文类型: conference
 会议简称: CRYPTO
 发表年份: 2024
 modified: 2025-04-10 16:59:54
 ---
-
 ## BaseFold: Efficient Field-Agnostic Polynomial Commitment Schemes from Foldable Codes
 
 ## 发表信息

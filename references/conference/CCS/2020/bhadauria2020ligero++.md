@@ -1,5 +1,6 @@
 ---
 title: "Ligero++: A New Optimized Sublinear IOP"
+doi: 10.1145/3372297.3417893
 标题简称: Ligero++
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Ligero++: A New Optimized Sublinear IOP"
 
 modified: 2025-04-08 09:58:35
 ---
-
 ## Ligero++: A New Optimized Sublinear IOP
 
 ## 发表信息

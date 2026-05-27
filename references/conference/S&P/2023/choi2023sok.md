@@ -1,5 +1,6 @@
 ---
 title: "Sok: Distributed randomness beacons"
+doi: 10.1109/sp46215.2023.10179419
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Sok: Distributed randomness beacons"
 created: 2025-04-28 16:48:01
 modified: 2025-04-28 16:49:10
 ---
-
 ## Sok: Distributed randomness beacons
 
 ## 发表信息

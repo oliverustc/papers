@@ -1,12 +1,12 @@
 ---
 title: "Subvector commitments with application to succinct arguments"
+doi: 10.1007/978-3-030-26948-7_19
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
 发表年份: 2019
 modified: 2025-04-11 11:24:32
 ---
-
 ## Subvector commitments with application to succinct arguments
 
 ## 发表信息

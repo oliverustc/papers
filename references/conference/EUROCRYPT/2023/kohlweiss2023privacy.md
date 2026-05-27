@@ -1,5 +1,6 @@
 ---
 title: "Privacy-preserving blueprints"
+doi: 10.1007/978-3-031-30617-4_20
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Privacy-preserving blueprints"
 modified: 2025-05-13 04:16:09
 created: 2025-04-15 11:15:43
 ---
-
 ## Privacy-preserving blueprints
 
 ## 发表信息

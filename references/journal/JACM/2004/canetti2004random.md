@@ -1,12 +1,12 @@
 ---
 title: "The random oracle methodology, revisited"
+doi: 10.1145/1008731.1008734
 标题简称:
 论文类型: journal
 期刊简称: JACM
 发表年份: 2004
 modified: 2025-04-08 18:38:28
 ---
-
 ## The random oracle methodology, revisited
 
 ## 发表信息

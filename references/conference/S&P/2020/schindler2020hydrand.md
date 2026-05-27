@@ -1,5 +1,6 @@
 ---
 title: "Hydrand: Efficient continuous distributed randomness"
+doi: 10.1109/sp40000.2020.00003
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Hydrand: Efficient continuous distributed randomness"
 created: 2025-04-28 17:16:05
 modified: 2025-04-28 17:17:57
 ---
-
 ## Hydrand: Efficient continuous distributed randomness
 
 ## 发表信息

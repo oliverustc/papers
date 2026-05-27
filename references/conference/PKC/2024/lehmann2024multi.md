@@ -1,5 +1,6 @@
 ---
 title: "Multi-signatures for ad-hoc and privacy-preserving group signing"
+doi: 10.1007/978-3-031-57718-5_7
 标题简称:
 论文类型: conference
 会议简称: PKC
@@ -7,7 +8,6 @@ title: "Multi-signatures for ad-hoc and privacy-preserving group signing"
 created: 2025-04-17 10:58:08
 modified: 2025-04-17 10:59:13
 ---
-
 ## Multi-signatures for ad-hoc and privacy-preserving group signing
 
 ## 发表信息

@@ -1,12 +1,12 @@
 ---
 title: "Kronos: A secure and generic sharding blockchain consensus with optimized overhead"
+doi: 10.14722/ndss.2025.230472
 标题简称: 
 论文类型: conference
 会议简称: NDSS
 发表年份: 2025
 modified: 2025-04-13 16:40:42
 ---
-
 ## Kronos: A secure and generic sharding blockchain consensus with optimized overhead
 
 ## 发表信息

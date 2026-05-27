@@ -1,12 +1,12 @@
 ---
 title: "Groundhog: A Restart-based Systems Framework for Increasing Availability in Threshold Cryptosystems"
+doi: 10.1109/sp61157.2025.00056
 标题简称:
 论文类型: conference
 会议简称: S&P
 发表年份: 2025
 modified: 2025-04-13 14:40:16
 ---
-
 ## Groundhog: A Restart-based Systems Framework for Increasing Availability in Threshold Cryptosystems
 
 ## 发表信息

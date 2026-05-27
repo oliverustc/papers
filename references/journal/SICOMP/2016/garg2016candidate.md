@@ -1,5 +1,6 @@
 ---
 title: "Candidate indistinguishability obfuscation and functional encryption for all circuits"
+doi: 10.1137/14095772x
 标题简称:
 论文类型: journal
 期刊简称: SICOMP
@@ -7,7 +8,6 @@ title: "Candidate indistinguishability obfuscation and functional encryption for
 created: 2025-04-29 10:25:32
 modified: 2025-04-29 10:26:41
 ---
-
 ## Candidate indistinguishability obfuscation and functional encryption for all circuits
 
 ## 发表信息

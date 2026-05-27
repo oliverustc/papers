@@ -1,12 +1,12 @@
 ---
 title: "Zero-knowledge accumulators and set algebra"
+doi: 10.1007/978-3-662-53890-6_3
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
 发表年份: 2016
 modified: 2025-04-13 13:49:35
 ---
-
 ## Zero-knowledge accumulators and set algebra
 
 ## 发表信息

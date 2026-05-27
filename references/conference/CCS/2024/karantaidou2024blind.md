@@ -1,5 +1,6 @@
 ---
 title: "Blind Multisignatures for Anonymous Tokens with Decentralized Issuance"
+doi: 10.1145/3658644.3690364
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Blind Multisignatures for Anonymous Tokens with Decentralized Issuance"
 created: 2025-05-09 09:45:34
 modified: 2025-05-09 09:48:52
 ---
-
 ## Blind Multisignatures for Anonymous Tokens with Decentralized Issuance
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Committed Vector Oblivious Linear Evaluation and Its Applications"
+doi: 10.1145/3719027.3744887
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Committed Vector Oblivious Linear Evaluation and Its Applications"
 created: 2025-06-09 10:27:18
 modified: 2025-06-09 10:29:28
 ---
-
 ## Committed Vector Oblivious Linear Evaluation and Its Applications
 
 ## 发表信息

@@ -1,11 +1,11 @@
 ---
 title: "Veritas: Plaintext encoders for practical verifiable homomorphic encryption"
+doi: 10.1145/3658644.3670282
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2024
 ---
-
 ## Veritas: Plaintext encoders for practical verifiable homomorphic encryption
 
 ## 发表信息

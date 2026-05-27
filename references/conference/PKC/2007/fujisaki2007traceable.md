@@ -1,5 +1,6 @@
 ---
 title: "Traceable ring signature"
+doi: 10.1007/978-3-540-71677-8_13
 标题简称:
 论文类型: conference
 会议简称: PKC
@@ -7,7 +8,6 @@ title: "Traceable ring signature"
 created: 2025-05-12 08:37:37
 modified: 2025-05-12 08:44:38
 ---
-
 ## Traceable ring signature
 
 ## 发表信息

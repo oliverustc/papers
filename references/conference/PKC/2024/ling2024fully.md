@@ -1,5 +1,6 @@
 ---
 title: "Fully dynamic attribute-based signatures for circuits from codes"
+doi: 10.1007/978-3-031-57718-5_2
 标题简称:
 论文类型: conference
 会议简称: PKC
@@ -7,7 +8,6 @@ title: "Fully dynamic attribute-based signatures for circuits from codes"
 created: 2025-05-13 05:38:15
 modified: 2025-05-13 05:38:53
 ---
-
 ## Fully dynamic attribute-based signatures for circuits from codes
 
 ## 发表信息

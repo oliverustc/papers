@@ -1,5 +1,6 @@
 ---
 title: Signature-based witness encryption with compact ciphertext
+doi: 10.1007/978-981-96-0875-1_1
 标题简称: 
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: Signature-based witness encryption with compact ciphertext
 modified: 2025-04-29 10:39:02
 created: 2025-04-15 14:12:27
 ---
-
 ## Signature-based witness encryption with compact ciphertext
 
 ## 发表信息

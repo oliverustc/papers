@@ -1,5 +1,6 @@
 ---
 title: "Towards public verifiable and forward-privacy encrypted search by using blockchain"
+doi: 10.1109/tdsc.2022.3173291
 标题简称:
 论文类型: journal
 期刊简称: TDSC
@@ -7,7 +8,6 @@ title: "Towards public verifiable and forward-privacy encrypted search by using 
 created: 2025-04-19 16:22:13
 modified: 2025-04-19 16:23:29
 ---
-
 ## Towards public verifiable and forward-privacy encrypted search by using blockchain
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Towards scalable threshold cryptosystems"
+doi: 10.1109/sp40000.2020.00059
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Towards scalable threshold cryptosystems"
 created: 2025-04-17 10:43:04
 modified: 2025-04-17 10:43:50
 ---
-
 ## Towards scalable threshold cryptosystems
 
 ## 发表信息

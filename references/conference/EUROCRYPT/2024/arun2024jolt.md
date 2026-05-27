@@ -1,5 +1,6 @@
 ---
 title: "Jolt: SNARKs for Virtual Machines via Lookups"
+doi: 10.1007/978-3-031-58751-1_1
 标题简称: Jolt
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Jolt: SNARKs for Virtual Machines via Lookups"
 modified: 2025-04-23 15:20:15
 created: 2025-04-08 18:55:32
 ---
-
 ## Jolt: SNARKs for Virtual Machines via Lookups
 
 ## 发表信息

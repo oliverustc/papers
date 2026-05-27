@@ -1,5 +1,6 @@
 ---
 title: "Zerocash: Decentralized anonymous payments from bitcoin"
+doi: 10.1109/sp.2014.36
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Zerocash: Decentralized anonymous payments from bitcoin"
 created: 2025-04-21 10:23:14
 modified: 2025-04-21 10:24:07
 ---
-
 ## Zerocash: Decentralized anonymous payments from bitcoin
 
 ## 发表信息

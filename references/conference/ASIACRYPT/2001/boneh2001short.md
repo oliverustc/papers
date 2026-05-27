@@ -1,5 +1,6 @@
 ---
 title: "Short signatures from the Weil pairing"
+doi: 10.1007/3-540-45682-1_30
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "Short signatures from the Weil pairing"
 created: 2025-05-27 04:08:56
 modified: 2025-05-27 04:09:25
 ---
-
 ## Short signatures from the Weil pairing
 
 ## 发表信息

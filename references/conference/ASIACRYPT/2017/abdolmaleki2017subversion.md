@@ -1,12 +1,12 @@
 ---
 title: "A subversion-resistant SNARK"
+doi: 10.1007/978-3-319-70700-6_1
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
 发表年份: 2017
 modified: 2025-04-08 17:21:36
 ---
-
 ## A subversion-resistant SNARK
 
 ## 发表信息

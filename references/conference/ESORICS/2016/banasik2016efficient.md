@@ -1,11 +1,11 @@
 ---
 title: "Efficient zero-knowledge contingent payments in cryptocurrencies without scripts"
+doi: 10.1007/978-3-319-45741-3_14
 标题简称:
 论文类型: conference
 会议简称: ESORICS
 发表年份: 2016
 ---
-
 ## Efficient zero-knowledge contingent payments in cryptocurrencies without scripts
 
 ## 发表信息

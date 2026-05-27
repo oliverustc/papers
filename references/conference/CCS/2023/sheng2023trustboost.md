@@ -1,5 +1,6 @@
 ---
 title: "Trustboost: Boosting trust among interoperable blockchains"
+doi: 10.1145/3576915.3623080
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Trustboost: Boosting trust among interoperable blockchains"
 created: 2025-04-19 11:03:07
 modified: 2025-04-19 11:06:47
 ---
-
 ## Trustboost: Boosting trust among interoperable blockchains
 
 ## 发表信息

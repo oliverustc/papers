@@ -1,5 +1,6 @@
 ---
 title: "ZKSQL: Verifiable and Efficient Query Evaluation with Zero-Knowledge Proofs"
+doi: 10.14778/3594512.3594513
 标题简称:
 论文类型: conference
 会议简称: VLDB
@@ -7,7 +8,6 @@ title: "ZKSQL: Verifiable and Efficient Query Evaluation with Zero-Knowledge Pro
 
 modified: 2025-04-09 14:00:47
 ---
-
 ## ZKSQL: Verifiable and Efficient Query Evaluation with Zero-Knowledge Proofs
 
 ## 发表信息

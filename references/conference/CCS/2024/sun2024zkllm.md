@@ -1,12 +1,12 @@
 ---
 title: "zkLLM: Zero Knowledge Proofs for Large Language Models"
+doi: 10.1145/3658644.3670334
 标题简称: zkLLM
 论文类型: conference
 会议简称: CCS
 发表年份: 2024
 modified: 2025-04-10 17:01:04
 ---
-
 ## zkLLM: Zero Knowledge Proofs for Large Language Models
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Bulletproofs: Short proofs for confidential transactions and more"
+doi: 10.1109/sp.2018.00020
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Bulletproofs: Short proofs for confidential transactions and more"
 modified: 2025-04-22 16:06:33
 created: 2025-04-08 17:03:06
 ---
-
 ## Bulletproofs: Short proofs for confidential transactions and more
 
 ## 发表信息

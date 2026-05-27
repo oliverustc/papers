@@ -1,11 +1,11 @@
 ---
 title: "Concise mercurial vector commitments and independent zero-knowledge sets with short proofs"
+doi: 10.1007/978-3-642-11799-2_30
 标题简称:
 论文类型: conference
 会议简称: TCC
 发表年份: 2010
 ---
-
 ## Concise mercurial vector commitments and independent zero-knowledge sets with short proofs
 
 ## 发表信息

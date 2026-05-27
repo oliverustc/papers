@@ -1,11 +1,11 @@
 ---
 title: "Universally verifiable multiparty computation from threshold homomorphic cryptosystems"
+doi: 10.1007/978-3-319-28166-7_1
 标题简称:
 论文类型: conference
 会议简称: ACNS
 发表年份: 2015
 ---
-
 ## Universally verifiable multiparty computation from threshold homomorphic cryptosystems
 
 ## 发表信息

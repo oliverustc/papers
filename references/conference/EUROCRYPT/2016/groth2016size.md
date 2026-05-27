@@ -1,5 +1,6 @@
 ---
 title: "On the size of pairing-based non-interactive arguments"
+doi: 10.1007/978-3-662-49896-5_11
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "On the size of pairing-based non-interactive arguments"
 created: 2025-05-12 08:54:37
 modified: 2025-05-12 08:56:54
 ---
-
 ## On the size of pairing-based non-interactive arguments
 
 ## 发表信息

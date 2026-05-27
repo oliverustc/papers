@@ -1,5 +1,6 @@
 ---
 title: "On the security of ECDSA with additive key derivation and presignatures"
+doi: 10.1007/978-3-031-06944-4_13
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "On the security of ECDSA with additive key derivation and presignatures"
 created: 2025-05-12 09:11:47
 modified: 2025-05-12 09:13:24
 ---
-
 ## On the security of ECDSA with additive key derivation and presignatures
 
 ## 发表信息

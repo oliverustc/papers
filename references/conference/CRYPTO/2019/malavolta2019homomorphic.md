@@ -1,5 +1,6 @@
 ---
 title: "Homomorphic time-lock puzzles and applications"
+doi: 10.1007/978-3-030-26948-7_22
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
@@ -7,7 +8,6 @@ title: "Homomorphic time-lock puzzles and applications"
 created: 2025-04-28 16:55:15
 modified: 2025-04-28 16:58:48
 ---
-
 ## Homomorphic time-lock puzzles and applications
 
 ## 发表信息

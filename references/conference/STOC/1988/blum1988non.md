@@ -1,12 +1,12 @@
 ---
 title: "Non-interactive zero-knowledge and its applications"
+doi: 10.1145/62212.62222
 标题简称:
 论文类型: conference
 会议简称: STOC
 发表年份: 1988
 modified: 2025-04-08 18:40:24
 ---
-
 ## Non-interactive zero-knowledge and its applications
 
 ## 发表信息

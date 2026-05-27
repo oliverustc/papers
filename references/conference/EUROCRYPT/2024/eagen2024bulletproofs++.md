@@ -1,5 +1,6 @@
 ---
 title: "Bulletproofs++: Next generation confidential transactions via reciprocal set membership arguments"
+doi: 10.1007/978-3-031-58740-5_9
 标题简称: 
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Bulletproofs++: Next generation confidential transactions via reciprocal
 created: 2025-04-15 17:19:43
 modified: 2025-04-22 16:18:29
 ---
-
 ## Bulletproofs++: Next generation confidential transactions via reciprocal set membership arguments
 
 ## 发表信息

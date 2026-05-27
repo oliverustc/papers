@@ -1,5 +1,6 @@
 ---
 title: "ZKML: An Optimizing System for ML Inference in Zero-Knowledge Proofs"
+doi: 10.1145/3627703.3650088
 标题简称:
 论文类型: conference
 会议简称: EuroSys
@@ -7,7 +8,6 @@ title: "ZKML: An Optimizing System for ML Inference in Zero-Knowledge Proofs"
 
 modified: 2025-04-09 09:26:18
 ---
-
 ## ZKML: An Optimizing System for ML Inference in Zero-Knowledge Proofs
 
 ## 发表信息

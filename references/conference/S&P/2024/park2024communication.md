@@ -1,5 +1,6 @@
 ---
 title: "Communication-efficient, Fault Tolerant PIR over Erasure Coded Storage"
+doi: 10.1109/sp54263.2024.00168
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Communication-efficient, Fault Tolerant PIR over Erasure Coded Storage"
 created: 2025-04-27 09:33:20
 modified: 2025-04-28 09:55:25
 ---
-
 ## Communication-efficient, Fault Tolerant PIR over Erasure Coded Storage
 
 ## 发表信息

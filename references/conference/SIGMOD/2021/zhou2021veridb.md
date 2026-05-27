@@ -1,12 +1,12 @@
 ---
 title: "Veridb: An sgx-based verifiable database"
+doi: 10.1145/3448016.3457308
 标题简称:
 论文类型: conference
 会议简称: SIGMOD
 发表年份: 2021
 modified: 2025-04-11 11:29:50
 ---
-
 ## Veridb: An sgx-based verifiable database
 
 ## 发表信息

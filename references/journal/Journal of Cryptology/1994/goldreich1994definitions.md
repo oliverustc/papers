@@ -1,12 +1,12 @@
 ---
 title: "Definitions and properties of zero-knowledge proof systems"
+doi: 10.1007/bf00195207
 标题简称:
 论文类型: journal
 期刊简称: Journal of Cryptology
 发表年份: 1994
 modified: 2025-04-08 18:38:12
 ---
-
 ## Definitions and properties of zero-knowledge proof systems
 
 ## 发表信息

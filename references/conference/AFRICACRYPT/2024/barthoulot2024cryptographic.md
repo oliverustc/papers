@@ -1,5 +1,6 @@
 ---
 title: "Cryptographic accumulators: new definitions, enhanced security, and delegatable proofs"
+doi: 10.1007/978-3-031-64381-1_5
 标题简称:
 论文类型: conference
 会议简称: AFRICACRYPT
@@ -7,7 +8,6 @@ title: "Cryptographic accumulators: new definitions, enhanced security, and dele
 created: 2025-04-16 10:02:41
 modified: 2025-04-16 10:06:43
 ---
-
 ## Cryptographic accumulators: new definitions, enhanced security, and delegatable proofs
 
 ## 发表信息

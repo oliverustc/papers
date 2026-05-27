@@ -1,5 +1,6 @@
 ---
 title: "ZKCPlus: Optimized Fair-exchange Protocol Supporting Practical and Flexible Data Exchange"
+doi: 10.1145/3460120.3484558
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "ZKCPlus: Optimized Fair-exchange Protocol Supporting Practical and Flexi
 
 modified: 2025-04-08 09:59:54
 ---
-
 ## ZKCPlus: Optimized Fair-exchange Protocol Supporting Practical and Flexible Data Exchange
 
 ## 发表信息

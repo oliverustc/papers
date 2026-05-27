@@ -1,12 +1,12 @@
 ---
 title: "An expressive zero-knowledge set accumulator"
+doi: 10.1109/eurosp.2017.35
 标题简称:
 论文类型: conference
 会议简称: EuroS&P
 发表年份: 2017
 modified: 2025-04-13 13:51:10
 ---
-
 ## An expressive zero-knowledge set accumulator
 
 ## 发表信息

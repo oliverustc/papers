@@ -1,5 +1,6 @@
 ---
 title: "martfl: Enabling utility-driven data marketplace with a robust and verifiable federated learning architecture"
+doi: 10.1145/3576915.3623134
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "martfl: Enabling utility-driven data marketplace with a robust and verif
 created: 2025-04-19 11:08:28
 modified: 2025-04-19 11:09:10
 ---
-
 ## martfl: Enabling utility-driven data marketplace with a robust and verifiable federated learning architecture
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Group signatures and more from isogenies and lattices: Generic, simple, and efficient"
+doi: 10.1007/978-3-031-07085-3_4
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Group signatures and more from isogenies and lattices: Generic, simple, 
 created: 2025-05-13 05:44:25
 modified: 2025-05-13 05:46:29
 ---
-
 ## Group signatures and more from isogenies and lattices: Generic, simple, and efficient
 
 ## 发表信息

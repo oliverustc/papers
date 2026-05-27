@@ -1,5 +1,6 @@
 ---
 title: "Leaking arbitrarily many secrets: Any-out-of-many proofs and applications to ringct protocols"
+doi: 10.1109/sp46215.2023.10179292
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "Leaking arbitrarily many secrets: Any-out-of-many proofs and application
 created: 2025-04-22 11:42:39
 modified: 2025-04-22 11:43:57
 ---
-
 ## Leaking arbitrarily many secrets: Any-out-of-many proofs and applications to ringct protocols
 
 ## 发表信息

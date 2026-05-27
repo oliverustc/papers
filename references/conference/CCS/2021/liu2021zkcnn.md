@@ -1,12 +1,12 @@
 ---
 title: "zkCNN: Zero Knowledge Proofs for Convolutional Neural Network Predictions and Accuracy"
+doi: 10.1145/3460120.3485379
 标题简称: zkCNN
 论文类型: conference
 会议简称: CCS
 发表年份: 2021
 modified: 2025-04-08 09:59:55
 ---
-
 ## zkCNN: Zero Knowledge Proofs for Convolutional Neural Network Predictions and Accuracy
 
 ## 发表信息

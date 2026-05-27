@@ -1,5 +1,6 @@
 ---
 title: "Zero-knowledge proofs on secret-shared data via fully linear PCPs"
+doi: 10.1007/978-3-030-26954-8_3
 
 标题简称:
 论文类型: conference
@@ -7,7 +8,6 @@ title: "Zero-knowledge proofs on secret-shared data via fully linear PCPs"
 发表年份: 2019
 modified: 2025-04-11 11:26:36
 ---
-
 ## Zero-knowledge proofs on secret-shared data via fully linear PCPs
 
 ## 发表信息

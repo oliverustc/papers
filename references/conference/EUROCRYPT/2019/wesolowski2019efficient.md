@@ -1,5 +1,6 @@
 ---
 title: "Efficient verifiable delay functions"
+doi: 10.1007/978-3-030-17659-4_13
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Efficient verifiable delay functions"
 created: 2025-04-28 16:45:56
 modified: 2025-04-28 16:46:28
 ---
-
 ## Efficient verifiable delay functions
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Fast batched asynchronous distributed key generation"
+doi: 10.1007/978-3-031-58740-5_13
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Fast batched asynchronous distributed key generation"
 created: 2025-05-12 09:08:01
 modified: 2025-05-12 09:09:40
 ---
-
 ## Fast batched asynchronous distributed key generation
 
 ## 发表信息

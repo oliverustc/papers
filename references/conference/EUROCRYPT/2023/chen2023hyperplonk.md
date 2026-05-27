@@ -1,5 +1,6 @@
 ---
 title: "Hyperplonk: Plonk with linear-time prover and high-degree custom gates"
+doi: 10.1007/978-3-031-30617-4_17
 标题简称: Hyperplonk
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Hyperplonk: Plonk with linear-time prover and high-degree custom gates"
 modified: 2025-04-20 21:07:58
 created: 2025-04-07 16:51:57
 ---
-
 ## Hyperplonk: Plonk with linear-time prover and high-degree custom gates
 
 ## 发表信息

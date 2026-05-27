@@ -1,5 +1,6 @@
 ---
 title: "Pairing-free blind signatures from standard assumptions in the rom"
+doi: 10.1007/978-3-031-68376-3_7
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Pairing-free blind signatures from standard assumptions in the rom"
 modified: 2025-04-16 10:22:29
 created: 2025-04-11 12:00:55
 ---
-
 ## Pairing-free blind signatures from standard assumptions in the rom
 
 ## 发表信息

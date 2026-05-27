@@ -1,5 +1,6 @@
 ---
 title: Improving privacy and security in multi-authority attribute-based encryption
+doi: 10.1145/1653662.1653678
 标题简称: 
 论文类型: conference
 会议简称: CCS
@@ -9,7 +10,6 @@ tags:
 created: 2025-05-23 01:28:00
 modified: 2025-05-23 01:28:06
 ---
-
 ## Improving privacy and security in multi-authority attribute-based encryption
 
 ## 发表信息

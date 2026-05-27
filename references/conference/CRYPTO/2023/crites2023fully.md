@@ -1,5 +1,6 @@
 ---
 title: "Fully adaptive schnorr threshold signatures"
+doi: 10.1007/978-3-031-38557-5_22
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Fully adaptive schnorr threshold signatures"
 created: 2025-05-07 22:09:02
 modified: 2025-05-07 22:21:03
 ---
-
 ## Fully adaptive schnorr threshold signatures
 
 ## 发表信息

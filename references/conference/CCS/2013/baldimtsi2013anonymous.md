@@ -1,5 +1,6 @@
 ---
 title: "Anonymous credentials light"
+doi: 10.1145/2508859.2516687
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Anonymous credentials light"
 created: 2025-05-09 11:02:29
 modified: 2025-05-09 11:03:47
 ---
-
 ## Anonymous credentials light
 
 ## 发表信息

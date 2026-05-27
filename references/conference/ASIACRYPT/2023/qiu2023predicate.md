@@ -1,5 +1,6 @@
 ---
 title: "Predicate aggregate signatures and applications"
+doi: 10.1007/978-981-99-8724-5_9
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "Predicate aggregate signatures and applications"
 created: 2025-04-17 10:54:09
 modified: 2025-04-17 10:54:33
 ---
-
 ## Predicate aggregate signatures and applications
 
 ## 发表信息

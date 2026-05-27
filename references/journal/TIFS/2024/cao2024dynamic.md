@@ -1,5 +1,6 @@
 ---
 title: "Dynamic Group Time-Based One-Time Passwords"
+doi: 10.1109/tifs.2024.3386350
 标题简称:
 论文类型: journal
 期刊简称: TIFS
@@ -7,7 +8,6 @@ title: "Dynamic Group Time-Based One-Time Passwords"
 created: 2025-05-13 05:36:42
 modified: 2025-05-13 05:37:30
 ---
-
 ## Dynamic Group Time-Based One-Time Passwords
 
 ## 发表信息

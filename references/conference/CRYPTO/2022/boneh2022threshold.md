@@ -1,5 +1,6 @@
 ---
 title: "Threshold signatures with private accountability"
+doi: 10.1007/978-3-031-15985-5_19
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "Threshold signatures with private accountability"
 created: 2025-05-13 05:09:39
 modified: 2025-05-28 02:57:14
 ---
-
 ## Threshold signatures with private accountability
 
 ## 发表信息

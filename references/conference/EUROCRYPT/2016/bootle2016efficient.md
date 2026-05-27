@@ -1,5 +1,6 @@
 ---
 title: "Efficient zero-knowledge arguments for arithmetic circuits in the discrete log setting"
+doi: 10.1007/978-3-662-49896-5_12
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Efficient zero-knowledge arguments for arithmetic circuits in the discre
 modified: 2025-05-12 08:49:07
 created: 2025-04-08 17:01:54
 ---
-
 ## Efficient zero-knowledge arguments for arithmetic circuits in the discrete log setting
 
 ## 发表信息

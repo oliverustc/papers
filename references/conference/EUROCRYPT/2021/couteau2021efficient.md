@@ -1,5 +1,6 @@
 ---
 title: "Efficient range proofs with transparent setup from bounded integer commitments"
+doi: 10.1007/978-3-030-77883-5_9
 标题简称:
 论文类型: conference
 会议简称: EUROCRYPT
@@ -7,7 +8,6 @@ title: "Efficient range proofs with transparent setup from bounded integer commi
 modified: 2025-04-16 10:54:35
 created: 2025-04-11 11:50:13
 ---
-
 ## Efficient range proofs with transparent setup from bounded integer commitments
 
 ## 发表信息

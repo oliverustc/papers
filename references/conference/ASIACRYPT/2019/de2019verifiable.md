@@ -1,5 +1,6 @@
 ---
 title: "Verifiable delay functions from supersingular isogenies and pairings"
+doi: 10.1007/978-3-030-34578-5_10
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "Verifiable delay functions from supersingular isogenies and pairings"
 created: 2025-04-28 16:49:18
 modified: 2025-04-28 16:49:49
 ---
-
 ## Verifiable delay functions from supersingular isogenies and pairings
 
 ## 发表信息

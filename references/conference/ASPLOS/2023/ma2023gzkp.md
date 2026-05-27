@@ -1,12 +1,12 @@
 ---
 title: "Gzkp: A gpu accelerated zero-knowledge proof system"
+doi: 10.1145/3575693.3575711
 标题简称:
 论文类型: conference
 会议简称: ASPLOS
 发表年份: 2023
 modified: 2025-04-11 11:25:00
 ---
-
 ## Gzkp: A gpu accelerated zero-knowledge proof system
 
 ## 发表信息

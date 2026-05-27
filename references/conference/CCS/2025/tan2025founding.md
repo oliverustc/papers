@@ -1,12 +1,12 @@
 ---
 title: Founding Zero-Knowledge Proofs of Training on Optimum Vicinity
+doi: 10.1145/3719027.3744862
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2025
 modified: 2025-04-11 10:12:47
 ---
-
 ## Founding Zero-Knowledge Proofs of Training on Optimum Vicinity
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "UC non-interactive, proactive, threshold ECDSA with identifiable aborts"
+doi: 10.1145/3372297.3423367
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "UC non-interactive, proactive, threshold ECDSA with identifiable aborts"
 created: 2025-04-17 09:51:35
 modified: 2025-04-17 10:14:54
 ---
-
 ## UC non-interactive, proactive, threshold ECDSA with identifiable aborts
 
 ## 发表信息

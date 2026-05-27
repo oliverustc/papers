@@ -1,5 +1,6 @@
 ---
 title: "How to leak a secret"
+doi: 10.1007/3-540-45682-1_32
 标题简称:
 论文类型: conference
 会议简称: ASIACRYPT
@@ -7,7 +8,6 @@ title: "How to leak a secret"
 created: 2025-05-12 08:44:54
 modified: 2025-05-12 08:45:46
 ---
-
 ## How to leak a secret
 
 ## 发表信息

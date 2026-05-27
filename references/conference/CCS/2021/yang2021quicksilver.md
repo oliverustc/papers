@@ -1,12 +1,12 @@
 ---
 title: "QuickSilver: Efficient and Affordable Zero-Knowledge Proofs for Circuits and Polynomials over Any Field"
+doi: 10.1145/3460120.3484556
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2021
 modified: 2025-04-09 15:56:12
 ---
-
 ## QuickSilver: Efficient and Affordable Zero-Knowledge Proofs for Circuits and Polynomials over Any Field
 
 ## 发表信息

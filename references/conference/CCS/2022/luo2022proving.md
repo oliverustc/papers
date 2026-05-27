@@ -1,12 +1,12 @@
 ---
 title: "Proving UNSAT in Zero Knowledge"
+doi: 10.1145/3548606.3559373
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2022
 modified: 2025-04-09 14:08:55
 ---
-
 ## Proving UNSAT in Zero Knowledge
 
 ## 发表信息

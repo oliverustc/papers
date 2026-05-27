@@ -1,5 +1,6 @@
 ---
 title: "Batching-efficient ram using updatable lookup arguments"
+doi: 10.1145/3658644.3670356
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Batching-efficient ram using updatable lookup arguments"
 modified: 2025-04-22 15:50:48
 created: 2025-04-13 17:07:04
 ---
-
 ## Batching-efficient ram using updatable lookup arguments
 
 ## 发表信息

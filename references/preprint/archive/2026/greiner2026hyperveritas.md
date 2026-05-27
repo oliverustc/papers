@@ -1,11 +1,11 @@
 ---
 title: "HyperVerITAS: Verifying Image Transformations at Scale on Boolean Hypercubes"
+doi: 10.56553/popets-2026-0036
 标题简称:
 论文类型: preprint
 预印本简称: archive
 发表年份: 2026
 ---
-
 ## HyperVerITAS: Verifying Image Transformations at Scale on Boolean Hypercubes
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Linear-Time Accumulation Schemes"
+doi: 10.1007/978-3-032-12287-2_13
 标题简称:
 论文类型: preprint
 预印本简称: archive
@@ -7,7 +8,6 @@ title: "Linear-Time Accumulation Schemes"
 created: 2025-05-07 20:12:20
 modified: 2025-05-07 20:13:30
 ---
-
 ## Linear-Time Accumulation Schemes
 
 ## 发表信息

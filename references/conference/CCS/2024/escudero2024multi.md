@@ -1,5 +1,6 @@
 ---
 title: "Multi-Verifier Zero-Knowledge Proofs for Any Constant Fraction of Corrupted Verifiers"
+doi: 10.1145/3658644.3670357
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Multi-Verifier Zero-Knowledge Proofs for Any Constant Fraction of Corrup
 modified: 2025-04-21 08:47:11
 created: 2025-04-09 16:01:44
 ---
-
 ## Multi-Verifier Zero-Knowledge Proofs for Any Constant Fraction of Corrupted Verifiers
 
 ## 发表信息

@@ -1,5 +1,6 @@
 ---
 title: "Updatable and Universal Common Reference Strings with Applications to zk-SNARKs"
+doi: 10.1007/978-3-319-96878-0_24
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
@@ -7,7 +8,6 @@ title: "Updatable and Universal Common Reference Strings with Applications to zk
 modified: 2025-05-12 08:57:26
 created: 2025-04-08 17:29:08
 ---
-
 ## Updatable and Universal Common Reference Strings with Applications to zk-SNARKs
 
 ## 发表信息

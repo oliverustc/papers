@@ -1,5 +1,6 @@
 ---
 title: "Merkle Mountain Ranges are Optimal: On witness update frequency for cryptographic accumulators"
+doi: 10.1007/978-3-032-01878-6_6
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
@@ -7,7 +8,6 @@ title: "Merkle Mountain Ranges are Optimal: On witness update frequency for cryp
 created: 2025-06-10 05:30:06
 modified: 2025-06-10 05:32:28
 ---
-
 ## Merkle Mountain Ranges are Optimal: On witness update frequency for cryptographic accumulators
 
 ## 发表信息

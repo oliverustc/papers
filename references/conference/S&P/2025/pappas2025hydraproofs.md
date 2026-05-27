@@ -1,5 +1,6 @@
 ---
 title: "HydraProofs: Optimally Computing All Proofs in a Vector Commitment with applications to efficient zkSNARKs over data from multiple users"
+doi: 10.1109/sp61157.2025.00204
 标题简称:
 论文类型: conference
 会议简称: S&P
@@ -7,7 +8,6 @@ title: "HydraProofs: Optimally Computing All Proofs in a Vector Commitment with 
 created: 2025-05-13 03:12:21
 modified: 2025-05-13 03:19:08
 ---
-
 ## HydraProofs: Optimally Computing All Proofs in a Vector Commitment with applications to efficient zkSNARKs over data from multiple users
 
 ## 发表信息

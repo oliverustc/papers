@@ -1,11 +1,11 @@
 ---
 title: "Transparency logs via append-only authenticated dictionaries"
+doi: 10.1145/3319535.3345652
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2019
 ---
-
 ## Transparency logs via append-only authenticated dictionaries
 
 ## 发表信息

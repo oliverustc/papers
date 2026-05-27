@@ -1,5 +1,6 @@
 ---
 title: "MuSig: Simple two-round Schnorr multi-signatures"
+doi: 10.1007/978-3-030-84242-0_8
 
 标题简称:
 论文类型: conference
@@ -8,7 +9,6 @@ title: "MuSig: Simple two-round Schnorr multi-signatures"
 created: 2025-05-27 04:16:39
 modified: 2025-05-27 04:17:55
 ---
-
 ## MuSig: Simple two-round Schnorr multi-signatures
 
 ## 发表信息

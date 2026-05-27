@@ -1,11 +1,11 @@
 ---
 title: "Cauchyproofs: Batch-Updatable Vector Commitment with Easy Aggregation and Application to Stateless Blockchains"
+doi: 10.1109/sp61157.2025.00247
 标题简称:
 论文类型: conference
 会议简称: S&P
 发表年份: 2025
 ---
-
 ## Cauchyproofs: Batch-Updatable Vector Commitment with Easy Aggregation and Application to Stateless Blockchains
 
 ## 发表信息

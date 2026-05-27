@@ -1,5 +1,6 @@
 ---
 title: "Continuous Space-Bounded Non-malleable Codes from Stronger Proofs-of-Space"
+doi: 10.1007/978-3-030-26948-7_17
 标题简称:
 论文类型: conference
 会议简称: CRYPTO
@@ -7,7 +8,6 @@ title: "Continuous Space-Bounded Non-malleable Codes from Stronger Proofs-of-Spa
 
 modified: 2025-04-10 16:46:55
 ---
-
 ## Continuous Space-Bounded Non-malleable Codes from Stronger Proofs-of-Space
 
 ## 发表信息

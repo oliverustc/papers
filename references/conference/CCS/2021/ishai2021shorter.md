@@ -1,12 +1,12 @@
 ---
 title: "Shorter and faster post-quantum designated-verifier zkSNARKs from lattices"
+doi: 10.1145/3460120.3484572
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2021
 modified: 2025-04-11 11:41:42
 ---
-
 ## Shorter and faster post-quantum designated-verifier zkSNARKs from lattices
 
 ## 发表信息
