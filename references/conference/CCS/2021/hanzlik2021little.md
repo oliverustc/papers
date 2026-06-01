@@ -1,5 +1,6 @@
 ---
 title: "With a little help from my friends: Constructing practical anonymous credentials"
+doi: 10.1145/3460120.3484582
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "With a little help from my friends: Constructing practical anonymous cre
 created: 2025-05-09 14:25:31
 modified: 2025-05-09 14:26:13
 ---
-
 ## With a little help from my friends: Constructing practical anonymous credentials
 
 ## 发表信息

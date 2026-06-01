@@ -1,12 +1,12 @@
 ---
 title: "AntMan: Interactive Zero-Knowledge Proofs with Sublinear Communication"
+doi: 10.1145/3548606.3560667
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2022
 modified: 2025-04-09 16:11:16
 ---
-
 ## AntMan: Interactive Zero-Knowledge Proofs with Sublinear Communication
 
 ## 发表信息

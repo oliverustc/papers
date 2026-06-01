@@ -1,5 +1,6 @@
 ---
 title: "Reinforced concrete: A fast hash function for verifiable computation"
+doi: 10.1145/3548606.3560686
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Reinforced concrete: A fast hash function for verifiable computation"
 created: 2025-04-22 15:12:43
 modified: 2025-04-22 15:18:39
 ---
-
 ## Reinforced concrete: A fast hash function for verifiable computation
 
 ## 发表信息

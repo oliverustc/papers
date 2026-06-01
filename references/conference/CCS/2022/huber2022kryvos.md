@@ -1,5 +1,6 @@
 ---
 title: "Kryvos: Publicly tally-hiding verifiable e-voting"
+doi: 10.1145/3548606.3560701
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Kryvos: Publicly tally-hiding verifiable e-voting"
 created: 2025-05-07 21:48:00
 modified: 2025-05-07 21:48:32
 ---
-
 ## Kryvos: Publicly tally-hiding verifiable e-voting
 
 ## 发表信息

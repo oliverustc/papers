@@ -1,11 +1,11 @@
 ---
 title: "Matproofs: Maintainable matrix commitment with efficient aggregation"
+doi: 10.1145/3548606.3560591
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2022
 ---
-
 ## Matproofs: Maintainable matrix commitment with efficient aggregation
 
 ## 发表信息

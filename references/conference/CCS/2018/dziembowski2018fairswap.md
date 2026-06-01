@@ -1,11 +1,11 @@
 ---
 title: "Fairswap: How to fairly exchange digital goods"
+doi: 10.1145/3243734.3243857
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2018
 ---
-
 ## Fairswap: How to fairly exchange digital goods
 
 ## 发表信息

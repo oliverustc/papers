@@ -1,5 +1,6 @@
 ---
 title: "Sharp: Short relaxed range proofs"
+doi: 10.1145/3548606.3560628
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Sharp: Short relaxed range proofs"
 modified: 2025-04-15 16:44:32
 created: 2025-04-11 11:49:07
 ---
-
 ## Sharp: Short relaxed range proofs
 
 ## 发表信息

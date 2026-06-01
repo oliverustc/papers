@@ -1,5 +1,6 @@
 ---
 title: "Fairness in an unfair world: Fair multiparty computation from public bulletin boards"
+doi: 10.1145/3133956.3134092
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Fairness in an unfair world: Fair multiparty computation from public bul
 created: 2025-04-29 10:33:21
 modified: 2025-04-29 10:34:47
 ---
-
 ## Fairness in an unfair world: Fair multiparty computation from public bulletin boards
 
 ## 发表信息

@@ -1,11 +1,11 @@
 ---
 title: "Feta: Efficient threshold designated-verifier zero-knowledge proofs"
+doi: 10.1145/3548606.3559354
 标题简称:
 论文类型: conference
 会议简称: CCS
 发表年份: 2022
 ---
-
 ## Feta: Efficient threshold designated-verifier zero-knowledge proofs
 
 ## 发表信息

@@ -21,7 +21,18 @@
       "Bash(python3 .claude/skills/paper-pipeline/add_doi.py xie2024accountable)",
       "Bash(nohup python3 .claude/skills/paper-pipeline/fetch_pdf.py --all)",
       "Bash(echo \"PID: $!\")",
-      "Bash(mkdir -p /home/swt/docs/papers/.claude/skills/paper-pipeline/pipeline)"
+      "Bash(mkdir -p /home/swt/docs/papers/.claude/skills/paper-pipeline/pipeline)",
+      "Bash(curl -s \"https://dblp.org/search/publ/api?q=Accountable-subgroup+multisignatures&format=json&h=5\")",
+      "Bash(curl -sv \"https://dblp.org/search/publ/api?q=Accountable-subgroup+multisignatures&format=json&h=5\")",
+      "Bash(curl -s --noproxy \"*\" \"https://dblp.org/search/publ/api?q=Accountable-subgroup+multisignatures&format=json&h=3\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(h['info'].get\\('title'\\), '|', h['info'].get\\('ee'\\)\\) for h in d['result']['hits']['hit']]\")",
+      "Bash(curl -sv --noproxy \"*\" \"https://dblp.org/search/publ/api?q=Accountable-subgroup+multisignatures&format=json&h=3\")",
+      "Bash(curl -sv --noproxy \"*\" \"https://dblp.org/search/publ/api?q=Accountable-subgroup+multisignatures&h=3\")",
+      "Bash(curl -sv --noproxy \"*\" \"https://dblp.org/\")",
+      "Bash(curl -s --noproxy \"*\" \"https://dblp.org/search/publ/api?q=Accountable-subgroup+multisignatures&format=xml&h=3\")",
+      "Bash(curl -sv --noproxy \"*\" \"https://dblp.uni-trier.de/search/publ/api?q=Accountable-subgroup+multisignatures&format=json&h=3\")",
+      "Bash(curl -s --noproxy \"*\" \"https://dblp.org/search/publ/api?q=bulletproofs&format=json&h=3\")",
+      "Bash(curl -s --noproxy \"*\" \"https://dblp.org/search/publ/api?q=nova+recursive+snark&format=json&h=3\")"
     ],
     "additionalDirectories": [
       "/home/swt/docs/papers/.claude/skills/paper-pipeline"

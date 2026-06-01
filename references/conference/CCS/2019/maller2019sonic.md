@@ -1,5 +1,6 @@
 ---
 title: "Sonic: Zero-Knowledge SNARKs from Linear-Size Universal and Updatable Structured Reference Strings"
+doi: 10.1145/3319535.3339817
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "Sonic: Zero-Knowledge SNARKs from Linear-Size Universal and Updatable St
 modified: 2025-04-15 16:37:28
 created: 2025-04-08 17:28:08
 ---
-
 ## Sonic: Zero-Knowledge SNARKs from Linear-Size Universal and Updatable Structured Reference Strings
 
 ## 发表信息

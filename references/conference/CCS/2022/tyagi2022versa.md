@@ -1,5 +1,6 @@
 ---
 title: "VeRSA: Verifiable registries with efficient client audits from RSA authenticated dictionaries"
+doi: 10.1145/3548606.3560605
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "VeRSA: Verifiable registries with efficient client audits from RSA authe
 created: 2025-04-21 11:14:58
 modified: 2025-04-21 11:15:27
 ---
-
 ## VeRSA: Verifiable registries with efficient client audits from RSA authenticated dictionaries
 
 ## 发表信息

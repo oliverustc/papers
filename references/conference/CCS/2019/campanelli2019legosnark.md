@@ -1,5 +1,6 @@
 ---
 title: "LegoSNARK: Modular design and composition of succinct zero-knowledge proofs"
+doi: 10.1145/3319535.3339820
 标题简称:
 论文类型: conference
 会议简称: CCS
@@ -7,7 +8,6 @@ title: "LegoSNARK: Modular design and composition of succinct zero-knowledge pro
 modified: 2025-04-23 08:51:23
 created: 2025-04-11 11:37:24
 ---
-
 ## LegoSNARK: Modular design and composition of succinct zero-knowledge proofs
 
 ## 发表信息

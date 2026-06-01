@@ -40,8 +40,52 @@ def _query_crossref(title: str, year: int | None) -> list[dict]:
         return []
 
 
+def _query_dblp(title: str) -> tuple[str | None, float, str]:
+    """通过 DBLP 搜索，从 ee 字段提取 DOI。返回 (doi, similarity, dblp_title)"""
+    params = urllib.parse.urlencode({"q": title, "format": "json", "h": "5"})
+    req = urllib.request.Request(
+        "https://dblp.org/search/publ/api?" + params,
+        headers={"User-Agent": "paper-pipeline/1.0"},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            hits = json.loads(resp.read()).get("result", {}).get("hits", {}).get("hit", [])
+    except Exception as e:
+        print(f"  [DBLP] 请求失败: {e}", file=sys.stderr)
+        return None, 0.0, ""
+
+    best_doi, best_sim, best_title = None, 0.0, ""
+    for hit in hits:
+        info = hit.get("info", {})
+        db_title = info.get("title", "").rstrip(".")
+        if not db_title:
+            continue
+        sim = _title_similarity(title, db_title)
+        if sim <= best_sim:
+            continue
+        # 提取 DOI：ee 可能是字符串或列表
+        ee = info.get("ee", "")
+        ee_list = [ee] if isinstance(ee, str) else (ee if isinstance(ee, list) else [])
+        for link in ee_list:
+            if link.startswith("https://doi.org/"):
+                best_sim = sim
+                best_doi = link[len("https://doi.org/"):]
+                best_title = db_title
+                break
+    return best_doi, best_sim, best_title
+
+
 def find_doi(title: str, year: int | None) -> tuple[str | None, float, str]:
-    """返回 (doi, similarity, crossref_title)，未找到返回 (None, 0.0, '')"""
+    """
+    先查 DBLP（CS 论文精确），若相似度不足再查 CrossRef（兜底）。
+    返回 (doi, similarity, source_title)，未找到返回 (None, 0.0, '')
+    """
+    # DBLP（主）
+    dblp_doi, dblp_sim, dblp_title = _query_dblp(title)
+    if dblp_doi and dblp_sim >= SIMILARITY_THRESHOLD:
+        return dblp_doi, dblp_sim, f"[DBLP] {dblp_title}"
+
+    # CrossRef（辅）
     items = _query_crossref(title, year)
     best_doi, best_sim, best_cr_title = None, 0.0, ""
     for item in items:
@@ -57,7 +101,11 @@ def find_doi(title: str, year: int | None) -> tuple[str | None, float, str]:
             best_sim = sim
             best_doi = item.get("DOI")
             best_cr_title = raw_titles[0]
-    return best_doi, best_sim, best_cr_title
+
+    # 取两者中更好的结果
+    if dblp_doi and dblp_sim > best_sim:
+        return dblp_doi, dblp_sim, f"[DBLP] {dblp_title}"
+    return best_doi, best_sim, f"[CrossRef] {best_cr_title}"
 
 
 def write_doi(md_path, doi: str) -> None:
